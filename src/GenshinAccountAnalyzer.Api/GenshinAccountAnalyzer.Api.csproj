@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GenshinAccountAnalyzer.Analyzer\GenshinAccountAnalyzer.Analyzer.csproj" />
+    <ProjectReference Include="..\GenshinAccountAnalyzer.Application\GenshinAccountAnalyzer.Application.csproj" />
+    <ProjectReference Include="..\GenshinAccountAnalyzer.Infrastructure\GenshinAccountAnalyzer.Infrastructure.csproj" />
+    <ProjectReference Include="..\GenshinAccountAnalyzer.Parser\GenshinAccountAnalyzer.Parser.csproj" />
+  </ItemGroup>
+
+</Project>

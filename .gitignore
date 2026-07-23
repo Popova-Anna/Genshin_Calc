@@ -1,0 +1,31 @@
+## .NET
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+*.user
+*.suo
+.vs/
+artifacts/
+*.nupkg
+
+## Rider / VS
+.idea/
+*.DotSettings.user
+
+## Test / coverage
+[Tt]est[Rr]esult*/
+coverage/
+*.coverage
+*.trx
+
+## Node / Angular (Web project, added later)
+node_modules/
+dist/
+.angular/
+
+## OS
+Thumbs.db
+.DS_Store

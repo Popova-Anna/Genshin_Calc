@@ -1,0 +1,1256 @@
+{
+  "10000002": {
+    "name": "Kamisato Ayaka",
+    "element": "Cryo",
+    "weapon": "Sword",
+    "rarity": 5,
+    "talents": [
+      10024,
+      10018,
+      10019
+    ]
+  },
+  "10000003": {
+    "name": "Jean",
+    "element": "Anemo",
+    "weapon": "Sword",
+    "rarity": 5,
+    "talents": [
+      10031,
+      10033,
+      10034
+    ]
+  },
+  "10000005": {
+    "name": "Traveler",
+    "element": "Anemo",
+    "weapon": "Sword",
+    "rarity": 5,
+    "talents": [
+      100543,
+      10067,
+      10068
+    ]
+  },
+  "10000006": {
+    "name": "Lisa",
+    "element": "Electro",
+    "weapon": "Catalyst",
+    "rarity": 4,
+    "talents": [
+      10060,
+      10061,
+      10062
+    ]
+  },
+  "10000007": {
+    "name": "Traveler",
+    "element": "Anemo",
+    "weapon": "Sword",
+    "rarity": 5,
+    "talents": [
+      100553,
+      10067,
+      10068
+    ]
+  },
+  "10000014": {
+    "name": "Barbara",
+    "element": "Hydro",
+    "weapon": "Catalyst",
+    "rarity": 4,
+    "talents": [
+      10070,
+      10071,
+      10072
+    ]
+  },
+  "10000015": {
+    "name": "Kaeya",
+    "element": "Cryo",
+    "weapon": "Sword",
+    "rarity": 4,
+    "talents": [
+      10073,
+      10074,
+      10075
+    ]
+  },
+  "10000016": {
+    "name": "Diluc",
+    "element": "Pyro",
+    "weapon": "Claymore",
+    "rarity": 5,
+    "talents": [
+      10160,
+      10161,
+      10165
+    ]
+  },
+  "10000020": {
+    "name": "Razor",
+    "element": "Electro",
+    "weapon": "Claymore",
+    "rarity": 4,
+    "talents": [
+      10201,
+      10202,
+      10203
+    ]
+  },
+  "10000021": {
+    "name": "Amber",
+    "element": "Pyro",
+    "weapon": "Bow",
+    "rarity": 4,
+    "talents": [
+      10041,
+      10032,
+      10017
+    ]
+  },
+  "10000022": {
+    "name": "Venti",
+    "element": "Anemo",
+    "weapon": "Bow",
+    "rarity": 5,
+    "talents": [
+      10221,
+      10224,
+      10225
+    ]
+  },
+  "10000023": {
+    "name": "Xiangling",
+    "element": "Pyro",
+    "weapon": "Polearm",
+    "rarity": 4,
+    "talents": [
+      10231,
+      10232,
+      10235
+    ]
+  },
+  "10000024": {
+    "name": "Beidou",
+    "element": "Electro",
+    "weapon": "Claymore",
+    "rarity": 4,
+    "talents": [
+      10241,
+      10242,
+      10245
+    ]
+  },
+  "10000025": {
+    "name": "Xingqiu",
+    "element": "Hydro",
+    "weapon": "Sword",
+    "rarity": 4,
+    "talents": [
+      10381,
+      10382,
+      10385
+    ]
+  },
+  "10000026": {
+    "name": "Xiao",
+    "element": "Anemo",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "talents": [
+      10261,
+      10262,
+      10265
+    ]
+  },
+  "10000027": {
+    "name": "Ningguang",
+    "element": "Geo",
+    "weapon": "Catalyst",
+    "rarity": 4,
+    "talents": [
+      10271,
+      10272,
+      10274
+    ]
+  },
+  "10000029": {
+    "name": "Klee",
+    "element": "Pyro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "talents": [
+      10291,
+      10292,
+      10295
+    ]
+  },
+  "10000030": {
+    "name": "Zhongli",
+    "element": "Geo",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "talents": [
+      10301,
+      10302,
+      10303
+    ]
+  },
+  "10000031": {
+    "name": "Fischl",
+    "element": "Electro",
+    "weapon": "Bow",
+    "rarity": 4,
+    "talents": [
+      10311,
+      10312,
+      10313
+    ]
+  },
+  "10000032": {
+    "name": "Bennett",
+    "element": "Pyro",
+    "weapon": "Sword",
+    "rarity": 4,
+    "talents": [
+      10321,
+      10322,
+      10323
+    ]
+  },
+  "10000033": {
+    "name": "Tartaglia",
+    "element": "Hydro",
+    "weapon": "Bow",
+    "rarity": 5,
+    "talents": [
+      10331,
+      10332,
+      10333
+    ]
+  },
+  "10000034": {
+    "name": "Noelle",
+    "element": "Geo",
+    "weapon": "Claymore",
+    "rarity": 4,
+    "talents": [
+      10341,
+      10342,
+      10343
+    ]
+  },
+  "10000035": {
+    "name": "Qiqi",
+    "element": "Cryo",
+    "weapon": "Sword",
+    "rarity": 5,
+    "talents": [
+      10351,
+      10352,
+      10353
+    ]
+  },
+  "10000036": {
+    "name": "Chongyun",
+    "element": "Cryo",
+    "weapon": "Claymore",
+    "rarity": 4,
+    "talents": [
+      10401,
+      10402,
+      10403
+    ]
+  },
+  "10000037": {
+    "name": "Ganyu",
+    "element": "Cryo",
+    "weapon": "Bow",
+    "rarity": 5,
+    "talents": [
+      10371,
+      10372,
+      10373
+    ]
+  },
+  "10000038": {
+    "name": "Albedo",
+    "element": "Geo",
+    "weapon": "Sword",
+    "rarity": 5,
+    "talents": [
+      10386,
+      10387,
+      10388
+    ]
+  },
+  "10000039": {
+    "name": "Diona",
+    "element": "Cryo",
+    "weapon": "Bow",
+    "rarity": 4,
+    "talents": [
+      10391,
+      10392,
+      10395
+    ]
+  },
+  "10000041": {
+    "name": "Mona",
+    "element": "Hydro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "talents": [
+      10411,
+      10412,
+      10415
+    ]
+  },
+  "10000042": {
+    "name": "Keqing",
+    "element": "Electro",
+    "weapon": "Sword",
+    "rarity": 5,
+    "talents": [
+      10421,
+      10422,
+      10425
+    ]
+  },
+  "10000043": {
+    "name": "Sucrose",
+    "element": "Anemo",
+    "weapon": "Catalyst",
+    "rarity": 4,
+    "talents": [
+      10431,
+      10432,
+      10435
+    ]
+  },
+  "10000044": {
+    "name": "Xinyan",
+    "element": "Pyro",
+    "weapon": "Claymore",
+    "rarity": 4,
+    "talents": [
+      10441,
+      10442,
+      10443
+    ]
+  },
+  "10000045": {
+    "name": "Rosaria",
+    "element": "Cryo",
+    "weapon": "Polearm",
+    "rarity": 4,
+    "talents": [
+      10451,
+      10452,
+      10453
+    ]
+  },
+  "10000046": {
+    "name": "Hu Tao",
+    "element": "Pyro",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "talents": [
+      10461,
+      10462,
+      10463
+    ]
+  },
+  "10000047": {
+    "name": "Kaedehara Kazuha",
+    "element": "Anemo",
+    "weapon": "Sword",
+    "rarity": 5,
+    "talents": [
+      10471,
+      10472,
+      10475
+    ]
+  },
+  "10000048": {
+    "name": "Yanfei",
+    "element": "Pyro",
+    "weapon": "Catalyst",
+    "rarity": 4,
+    "talents": [
+      10481,
+      10482,
+      10485
+    ]
+  },
+  "10000049": {
+    "name": "Yoimiya",
+    "element": "Pyro",
+    "weapon": "Bow",
+    "rarity": 5,
+    "talents": [
+      10491,
+      10492,
+      10495
+    ]
+  },
+  "10000050": {
+    "name": "Thoma",
+    "element": "Pyro",
+    "weapon": "Polearm",
+    "rarity": 4,
+    "talents": [
+      10501,
+      10502,
+      10505
+    ]
+  },
+  "10000051": {
+    "name": "Eula",
+    "element": "Cryo",
+    "weapon": "Claymore",
+    "rarity": 5,
+    "talents": [
+      10511,
+      10512,
+      10515
+    ]
+  },
+  "10000052": {
+    "name": "Raiden Shogun",
+    "element": "Electro",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "talents": [
+      10521,
+      10522,
+      10525
+    ]
+  },
+  "10000053": {
+    "name": "Sayu",
+    "element": "Anemo",
+    "weapon": "Claymore",
+    "rarity": 4,
+    "talents": [
+      10531,
+      10532,
+      10535
+    ]
+  },
+  "10000054": {
+    "name": "Sangonomiya Kokomi",
+    "element": "Hydro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "talents": [
+      10541,
+      10542,
+      10545
+    ]
+  },
+  "10000055": {
+    "name": "Gorou",
+    "element": "Geo",
+    "weapon": "Bow",
+    "rarity": 4,
+    "talents": [
+      10551,
+      10552,
+      10555
+    ]
+  },
+  "10000056": {
+    "name": "Kujou Sara",
+    "element": "Electro",
+    "weapon": "Bow",
+    "rarity": 4,
+    "talents": [
+      10561,
+      10562,
+      10565
+    ]
+  },
+  "10000057": {
+    "name": "Arataki Itto",
+    "element": "Geo",
+    "weapon": "Claymore",
+    "rarity": 5,
+    "talents": [
+      10571,
+      10572,
+      10575
+    ]
+  },
+  "10000058": {
+    "name": "Yae Miko",
+    "element": "Electro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "talents": [
+      10581,
+      10582,
+      10585
+    ]
+  },
+  "10000059": {
+    "name": "Shikanoin Heizou",
+    "element": "Anemo",
+    "weapon": "Catalyst",
+    "rarity": 4,
+    "talents": [
+      10591,
+      10592,
+      10595
+    ]
+  },
+  "10000060": {
+    "name": "Yelan",
+    "element": "Hydro",
+    "weapon": "Bow",
+    "rarity": 5,
+    "talents": [
+      10606,
+      10607,
+      10610
+    ]
+  },
+  "10000061": {
+    "name": "Kirara",
+    "element": "Dendro",
+    "weapon": "Sword",
+    "rarity": 4,
+    "talents": [
+      10611,
+      10612,
+      10615
+    ]
+  },
+  "10000062": {
+    "name": "Aloy",
+    "element": "Cryo",
+    "weapon": "Bow",
+    "rarity": 5,
+    "talents": [
+      10621,
+      10622,
+      10625
+    ]
+  },
+  "10000063": {
+    "name": "Shenhe",
+    "element": "Cryo",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "talents": [
+      10631,
+      10632,
+      10635
+    ]
+  },
+  "10000064": {
+    "name": "Yun Jin",
+    "element": "Geo",
+    "weapon": "Polearm",
+    "rarity": 4,
+    "talents": [
+      10641,
+      10642,
+      10643
+    ]
+  },
+  "10000065": {
+    "name": "Kuki Shinobu",
+    "element": "Electro",
+    "weapon": "Sword",
+    "rarity": 4,
+    "talents": [
+      10651,
+      10652,
+      10655
+    ]
+  },
+  "10000066": {
+    "name": "Kamisato Ayato",
+    "element": "Hydro",
+    "weapon": "Sword",
+    "rarity": 5,
+    "talents": [
+      10661,
+      10662,
+      10665
+    ]
+  },
+  "10000067": {
+    "name": "Collei",
+    "element": "Dendro",
+    "weapon": "Bow",
+    "rarity": 4,
+    "talents": [
+      10671,
+      10672,
+      10675
+    ]
+  },
+  "10000068": {
+    "name": "Dori",
+    "element": "Electro",
+    "weapon": "Claymore",
+    "rarity": 4,
+    "talents": [
+      10681,
+      10682,
+      10685
+    ]
+  },
+  "10000069": {
+    "name": "Tighnari",
+    "element": "Dendro",
+    "weapon": "Bow",
+    "rarity": 5,
+    "talents": [
+      10691,
+      10692,
+      10695
+    ]
+  },
+  "10000070": {
+    "name": "Nilou",
+    "element": "Hydro",
+    "weapon": "Sword",
+    "rarity": 5,
+    "talents": [
+      10701,
+      10702,
+      10705
+    ]
+  },
+  "10000071": {
+    "name": "Cyno",
+    "element": "Electro",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "talents": [
+      10711,
+      10712,
+      10715
+    ]
+  },
+  "10000072": {
+    "name": "Candace",
+    "element": "Hydro",
+    "weapon": "Polearm",
+    "rarity": 4,
+    "talents": [
+      10721,
+      10722,
+      10725
+    ]
+  },
+  "10000073": {
+    "name": "Nahida",
+    "element": "Dendro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "talents": [
+      10731,
+      10732,
+      10735
+    ]
+  },
+  "10000074": {
+    "name": "Layla",
+    "element": "Cryo",
+    "weapon": "Sword",
+    "rarity": 4,
+    "talents": [
+      10741,
+      10742,
+      10745
+    ]
+  },
+  "10000075": {
+    "name": "Wanderer",
+    "element": "Anemo",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "talents": [
+      10751,
+      10752,
+      10755
+    ]
+  },
+  "10000076": {
+    "name": "Faruzan",
+    "element": "Anemo",
+    "weapon": "Bow",
+    "rarity": 4,
+    "talents": [
+      10761,
+      10762,
+      10765
+    ]
+  },
+  "10000077": {
+    "name": "Yaoyao",
+    "element": "Dendro",
+    "weapon": "Polearm",
+    "rarity": 4,
+    "talents": [
+      10771,
+      10772,
+      10775
+    ]
+  },
+  "10000078": {
+    "name": "Alhaitham",
+    "element": "Dendro",
+    "weapon": "Sword",
+    "rarity": 5,
+    "talents": [
+      10781,
+      10782,
+      10785
+    ]
+  },
+  "10000079": {
+    "name": "Dehya",
+    "element": "Pyro",
+    "weapon": "Claymore",
+    "rarity": 5,
+    "talents": [
+      10791,
+      10792,
+      10795
+    ]
+  },
+  "10000080": {
+    "name": "Mika",
+    "element": "Cryo",
+    "weapon": "Polearm",
+    "rarity": 4,
+    "talents": [
+      10801,
+      10802,
+      10805
+    ]
+  },
+  "10000081": {
+    "name": "Kaveh",
+    "element": "Dendro",
+    "weapon": "Claymore",
+    "rarity": 4,
+    "talents": [
+      10811,
+      10812,
+      10815
+    ]
+  },
+  "10000082": {
+    "name": "Baizhu",
+    "element": "Dendro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "talents": [
+      10821,
+      10822,
+      10825
+    ]
+  },
+  "10000083": {
+    "name": "Lynette",
+    "element": "Anemo",
+    "weapon": "Sword",
+    "rarity": 4,
+    "talents": [
+      10831,
+      10832,
+      10835
+    ]
+  },
+  "10000084": {
+    "name": "Lyney",
+    "element": "Pyro",
+    "weapon": "Bow",
+    "rarity": 5,
+    "talents": [
+      10841,
+      10842,
+      10845
+    ]
+  },
+  "10000085": {
+    "name": "Freminet",
+    "element": "Cryo",
+    "weapon": "Claymore",
+    "rarity": 4,
+    "talents": [
+      10851,
+      10852,
+      10855
+    ]
+  },
+  "10000086": {
+    "name": "Wriothesley",
+    "element": "Cryo",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "talents": [
+      10861,
+      10862,
+      10865
+    ]
+  },
+  "10000087": {
+    "name": "Neuvillette",
+    "element": "Hydro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "talents": [
+      10871,
+      10872,
+      10875
+    ]
+  },
+  "10000088": {
+    "name": "Charlotte",
+    "element": "Cryo",
+    "weapon": "Catalyst",
+    "rarity": 4,
+    "talents": [
+      10881,
+      10882,
+      10885
+    ]
+  },
+  "10000089": {
+    "name": "Furina",
+    "element": "Hydro",
+    "weapon": "Sword",
+    "rarity": 5,
+    "talents": [
+      10891,
+      10892,
+      10895
+    ]
+  },
+  "10000090": {
+    "name": "Chevreuse",
+    "element": "Pyro",
+    "weapon": "Polearm",
+    "rarity": 4,
+    "talents": [
+      10901,
+      10902,
+      10905
+    ]
+  },
+  "10000091": {
+    "name": "Navia",
+    "element": "Geo",
+    "weapon": "Claymore",
+    "rarity": 5,
+    "talents": [
+      10911,
+      10912,
+      10915
+    ]
+  },
+  "10000092": {
+    "name": "Gaming",
+    "element": "Pyro",
+    "weapon": "Claymore",
+    "rarity": 4,
+    "talents": [
+      10921,
+      10922,
+      10925
+    ]
+  },
+  "10000093": {
+    "name": "Xianyun",
+    "element": "Anemo",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "talents": [
+      10931,
+      10932,
+      10935
+    ]
+  },
+  "10000094": {
+    "name": "Chiori",
+    "element": "Geo",
+    "weapon": "Sword",
+    "rarity": 5,
+    "talents": [
+      10941,
+      10942,
+      10945
+    ]
+  },
+  "10000095": {
+    "name": "Sigewinne",
+    "element": "Hydro",
+    "weapon": "Bow",
+    "rarity": 5,
+    "talents": [
+      10951,
+      10952,
+      10955
+    ]
+  },
+  "10000096": {
+    "name": "Arlecchino",
+    "element": "Pyro",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "talents": [
+      10961,
+      10962,
+      10965
+    ]
+  },
+  "10000097": {
+    "name": "Sethos",
+    "element": "Electro",
+    "weapon": "Bow",
+    "rarity": 4,
+    "talents": [
+      10971,
+      10972,
+      10975
+    ]
+  },
+  "10000098": {
+    "name": "Clorinde",
+    "element": "Electro",
+    "weapon": "Sword",
+    "rarity": 5,
+    "talents": [
+      10981,
+      10982,
+      10985
+    ]
+  },
+  "10000099": {
+    "name": "Emilie",
+    "element": "Dendro",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "talents": [
+      10991,
+      10992,
+      10995
+    ]
+  },
+  "10000100": {
+    "name": "Kachina",
+    "element": "Geo",
+    "weapon": "Polearm",
+    "rarity": 4,
+    "talents": [
+      11001,
+      11002,
+      11005
+    ]
+  },
+  "10000101": {
+    "name": "Kinich",
+    "element": "Dendro",
+    "weapon": "Claymore",
+    "rarity": 5,
+    "talents": [
+      11011,
+      11012,
+      11015
+    ]
+  },
+  "10000102": {
+    "name": "Mualani",
+    "element": "Hydro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "talents": [
+      30000,
+      30002,
+      30007
+    ]
+  },
+  "10000103": {
+    "name": "Xilonen",
+    "element": "Geo",
+    "weapon": "Sword",
+    "rarity": 5,
+    "talents": [
+      11031,
+      11032,
+      11035
+    ]
+  },
+  "10000104": {
+    "name": "Chasca",
+    "element": "Anemo",
+    "weapon": "Bow",
+    "rarity": 5,
+    "talents": [
+      11041,
+      11042,
+      11045
+    ]
+  },
+  "10000105": {
+    "name": "Ororon",
+    "element": "Electro",
+    "weapon": "Bow",
+    "rarity": 4,
+    "talents": [
+      30501,
+      30502,
+      30505
+    ]
+  },
+  "10000106": {
+    "name": "Mavuika",
+    "element": "Pyro",
+    "weapon": "Claymore",
+    "rarity": 5,
+    "talents": [
+      11061,
+      11062,
+      11065
+    ]
+  },
+  "10000107": {
+    "name": "Citlali",
+    "element": "Cryo",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "talents": [
+      11071,
+      11072,
+      11075
+    ]
+  },
+  "10000108": {
+    "name": "Lan Yan",
+    "element": "Anemo",
+    "weapon": "Catalyst",
+    "rarity": 4,
+    "talents": [
+      11081,
+      11082,
+      11085
+    ]
+  },
+  "10000109": {
+    "name": "Yumemizuki Mizuki",
+    "element": "Anemo",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "talents": [
+      11091,
+      11092,
+      11095
+    ]
+  },
+  "10000110": {
+    "name": "Iansan",
+    "element": "Electro",
+    "weapon": "Polearm",
+    "rarity": 4,
+    "talents": [
+      11101,
+      11102,
+      11105
+    ]
+  },
+  "10000111": {
+    "name": "Varesa",
+    "element": "Electro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "talents": [
+      11111,
+      11112,
+      11115
+    ]
+  },
+  "10000112": {
+    "name": "Escoffier",
+    "element": "Cryo",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "talents": [
+      11121,
+      11122,
+      11125
+    ]
+  },
+  "10000113": {
+    "name": "Ifa",
+    "element": "Anemo",
+    "weapon": "Catalyst",
+    "rarity": 4,
+    "talents": [
+      11131,
+      11132,
+      11135
+    ]
+  },
+  "10000114": {
+    "name": "Skirk",
+    "element": "Cryo",
+    "weapon": "Sword",
+    "rarity": 5,
+    "talents": [
+      11141,
+      11142,
+      11145
+    ]
+  },
+  "10000115": {
+    "name": "Dahlia",
+    "element": "Hydro",
+    "weapon": "Sword",
+    "rarity": 4,
+    "talents": [
+      11151,
+      11152,
+      11155
+    ]
+  },
+  "10000116": {
+    "name": "Ineffa",
+    "element": "Electro",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "talents": [
+      11161,
+      11162,
+      11165
+    ]
+  },
+  "10000119": {
+    "name": "Lauma",
+    "element": "Dendro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "talents": [
+      11191,
+      11192,
+      11195
+    ]
+  },
+  "10000120": {
+    "name": "Flins",
+    "element": "Electro",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "talents": [
+      11201,
+      11202,
+      11205
+    ]
+  },
+  "10000121": {
+    "name": "Aino",
+    "element": "Hydro",
+    "weapon": "Claymore",
+    "rarity": 4,
+    "talents": [
+      11211,
+      11212,
+      11215
+    ]
+  },
+  "10000122": {
+    "name": "Nefer",
+    "element": "Dendro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "talents": [
+      11221,
+      11222,
+      11225
+    ]
+  },
+  "10000123": {
+    "name": "Durin",
+    "element": "Pyro",
+    "weapon": "Sword",
+    "rarity": 5,
+    "talents": [
+      11231,
+      11232,
+      11235
+    ]
+  },
+  "10000124": {
+    "name": "Jahoda",
+    "element": "Anemo",
+    "weapon": "Bow",
+    "rarity": 4,
+    "talents": [
+      11241,
+      11242,
+      11245
+    ]
+  },
+  "10000901": {
+    "name": "Mavuika (Trial)",
+    "element": "Pyro",
+    "weapon": "Claymore",
+    "rarity": 5,
+    "talents": [
+      10231,
+      10232,
+      10235
+    ]
+  },
+  "10000902": {
+    "name": "Hu Tao (Trial)",
+    "element": "Pyro",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "talents": [
+      10461,
+      10462,
+      10463
+    ]
+  },
+  "10000903": {
+    "name": "Ineffa",
+    "element": "Electro",
+    "weapon": "Polearm",
+    "rarity": 5,
+    "talents": [
+      11161,
+      11162,
+      11165
+    ]
+  },
+  "10000904": {
+    "name": "Columbina",
+    "element": "Pyro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "talents": [
+      10231,
+      10232,
+      10235
+    ]
+  },
+  "11000046": {
+    "name": "Pyro Archon (Test)",
+    "element": "Cryo",
+    "weapon": "Claymore",
+    "rarity": 4,
+    "talents": [
+      10073,
+      10074,
+      10075
+    ]
+  }
+}
