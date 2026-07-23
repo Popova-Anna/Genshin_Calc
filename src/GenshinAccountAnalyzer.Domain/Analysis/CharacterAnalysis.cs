@@ -13,6 +13,9 @@ public sealed record CharacterAnalysis
     /// <summary>Display name.</summary>
     public required string Name { get; init; }
 
+    /// <summary>The character's element.</summary>
+    public Enums.ElementType Element { get; init; } = Enums.ElementType.Unknown;
+
     /// <summary>Current level.</summary>
     public required int Level { get; init; }
 

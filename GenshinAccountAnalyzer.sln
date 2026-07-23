@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenshinAccountAnalyzer.Anal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenshinAccountAnalyzer.Calculator.Tests", "tests\GenshinAccountAnalyzer.Calculator.Tests\GenshinAccountAnalyzer.Calculator.Tests.csproj", "{1B6660D5-83C0-4990-8F5C-0BC2B4E11DBE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenshinAccountAnalyzer.Report.Tests", "tests\GenshinAccountAnalyzer.Report.Tests\GenshinAccountAnalyzer.Report.Tests.csproj", "{C19E2D0A-0F71-42F4-9602-630D58C9FC21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -171,6 +173,18 @@ Global
 		{1B6660D5-83C0-4990-8F5C-0BC2B4E11DBE}.Release|x64.Build.0 = Release|Any CPU
 		{1B6660D5-83C0-4990-8F5C-0BC2B4E11DBE}.Release|x86.ActiveCfg = Release|Any CPU
 		{1B6660D5-83C0-4990-8F5C-0BC2B4E11DBE}.Release|x86.Build.0 = Release|Any CPU
+		{C19E2D0A-0F71-42F4-9602-630D58C9FC21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C19E2D0A-0F71-42F4-9602-630D58C9FC21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C19E2D0A-0F71-42F4-9602-630D58C9FC21}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C19E2D0A-0F71-42F4-9602-630D58C9FC21}.Debug|x64.Build.0 = Debug|Any CPU
+		{C19E2D0A-0F71-42F4-9602-630D58C9FC21}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C19E2D0A-0F71-42F4-9602-630D58C9FC21}.Debug|x86.Build.0 = Debug|Any CPU
+		{C19E2D0A-0F71-42F4-9602-630D58C9FC21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C19E2D0A-0F71-42F4-9602-630D58C9FC21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C19E2D0A-0F71-42F4-9602-630D58C9FC21}.Release|x64.ActiveCfg = Release|Any CPU
+		{C19E2D0A-0F71-42F4-9602-630D58C9FC21}.Release|x64.Build.0 = Release|Any CPU
+		{C19E2D0A-0F71-42F4-9602-630D58C9FC21}.Release|x86.ActiveCfg = Release|Any CPU
+		{C19E2D0A-0F71-42F4-9602-630D58C9FC21}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -187,5 +201,6 @@ Global
 		{8E6088ED-B1FC-4A89-AC29-18B5DA55C7E2} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
 		{F67D2724-08FA-4F85-8E5F-BE1634ABD097} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
 		{1B6660D5-83C0-4990-8F5C-0BC2B4E11DBE} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
+		{C19E2D0A-0F71-42F4-9602-630D58C9FC21} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
 	EndGlobalSection
 EndGlobal

@@ -10,6 +10,7 @@
     <ProjectReference Include="..\GenshinAccountAnalyzer.Application\GenshinAccountAnalyzer.Application.csproj" />
     <ProjectReference Include="..\GenshinAccountAnalyzer.Infrastructure\GenshinAccountAnalyzer.Infrastructure.csproj" />
     <ProjectReference Include="..\GenshinAccountAnalyzer.Parser\GenshinAccountAnalyzer.Parser.csproj" />
+    <ProjectReference Include="..\GenshinAccountAnalyzer.Report\GenshinAccountAnalyzer.Report.csproj" />
   </ItemGroup>
 
 </Project>

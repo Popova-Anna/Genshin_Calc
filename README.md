@@ -111,6 +111,6 @@ The damage formulas are also exposed directly (`POST /api/damage/calculate` for 
 | 5 (done)  | Character Analyzer (strengths, weaknesses, prioritized recommendations, best weapon/artifacts) |
 | 6 (done)  | Team Analyzer (auto team-finding: resonance, reactions, roles, coherence, energy) |
 | 7 (done)  | Damage Calculator (scaling, amplifying/additive/transformative reactions, def/res, crit, buff stacking) |
-| 8         | Optimizer |
-| 9         | HTML Report |
+| 8 (done)  | HTML Report (self-contained styled site: home, characters, weapons, artifacts, teams, statistics, rating, recommendations, history) |
+| 9         | Optimizer |
 | 10        | Angular 20 SPA |

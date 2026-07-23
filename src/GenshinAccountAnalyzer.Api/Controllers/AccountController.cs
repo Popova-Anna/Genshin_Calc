@@ -1,4 +1,5 @@
 using GenshinAccountAnalyzer.Application.Accounts.Commands.AnalyzeAccount;
+using GenshinAccountAnalyzer.Application.Accounts.Commands.GenerateReport;
 using GenshinAccountAnalyzer.Application.Accounts.Commands.ImportAccount;
 using GenshinAccountAnalyzer.Domain.Analysis;
 using GenshinAccountAnalyzer.Domain.Enums;
@@ -63,5 +64,26 @@ public sealed class AccountController : ControllerBase
         AccountAnalysis analysis = await _sender.Send(
             new AnalyzeAccountCommand(Request.Body, source), cancellationToken);
         return Ok(analysis);
+    }
+
+    /// <summary>
+    /// Imports and analyzes a raw account export and returns a self-contained HTML report.
+    /// </summary>
+    /// <param name="source">The export source. Defaults to <see cref="ImportSource.Enka"/>.</param>
+    /// <param name="cancellationToken">Token used to cancel the request.</param>
+    /// <returns>An HTML document.</returns>
+    /// <response code="200">The report was generated.</response>
+    /// <response code="400">The content was invalid or could not be parsed.</response>
+    [HttpPost("report")]
+    [Consumes("application/json")]
+    [Produces("text/html")]
+    [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
+    public async Task<ContentResult> Report(
+        [FromQuery] ImportSource source = ImportSource.Enka,
+        CancellationToken cancellationToken = default)
+    {
+        string html = await _sender.Send(new GenerateReportCommand(Request.Body, source), cancellationToken);
+        return Content(html, "text/html");
     }
 }

@@ -58,6 +58,7 @@ public sealed class CharacterAnalyzer : ICharacterAnalyzer
         {
             CharacterId = character.Id,
             Name = character.Name,
+            Element = character.Element,
             Level = character.Level,
             MaxLevel = ProgressionConstants.MaxLevel,
             ConstellationLevel = character.ConstellationLevel,
