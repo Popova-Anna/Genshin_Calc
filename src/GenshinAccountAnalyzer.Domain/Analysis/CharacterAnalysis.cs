@@ -57,4 +57,19 @@ public sealed record CharacterAnalysis
 
     /// <summary>Weapon ranking: best-in-slot options and the equipped weapon's loss versus BiS.</summary>
     public WeaponAnalysis? Weapon { get; init; }
+
+    /// <summary>Positive highlights of the build.</summary>
+    public IReadOnlyList<string> Strengths { get; init; } = [];
+
+    /// <summary>Shortcomings of the build.</summary>
+    public IReadOnlyList<string> Weaknesses { get; init; } = [];
+
+    /// <summary>Actionable improvements, ordered most impactful first.</summary>
+    public IReadOnlyList<Recommendation> Recommendations { get; init; } = [];
+
+    /// <summary>Best-in-slot weapon suggestion, when a ranking is available.</summary>
+    public WeaponOption? BestWeapon { get; init; }
+
+    /// <summary>Artifact guidance (main stats, substats, current sets), when available.</summary>
+    public ArtifactRecommendation? BestArtifacts { get; init; }
 }

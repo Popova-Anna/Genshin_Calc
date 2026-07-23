@@ -13,7 +13,8 @@ public sealed class CharacterAnalyzerTests
         new CharacterAnalyzer(
             metadata ?? new FakeMetadata(),
             new ArtifactAnalyzer(),
-            new WeaponAnalyzer(new FakeWeaponCatalog()));
+            new WeaponAnalyzer(new FakeWeaponCatalog()),
+            new CharacterInsightAnalyzer());
 
     [Fact]
     public void Analyze_FullyBuiltCharacter_ScoresTopTiers()

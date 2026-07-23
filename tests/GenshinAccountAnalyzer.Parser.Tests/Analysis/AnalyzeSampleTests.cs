@@ -17,7 +17,8 @@ public sealed class AnalyzeSampleTests
         var metadata = EmbeddedGameMetadataProvider.CreateDefault();
         await using FileStream sample = SampleData.OpenEnkaSample();
         Account account = await new EnkaImporter(metadata).ImportAsync(sample, CancellationToken.None);
-        return (account, new CharacterAnalyzer(metadata, new ArtifactAnalyzer(), new WeaponAnalyzer(metadata)));
+        return (account, new CharacterAnalyzer(
+            metadata, new ArtifactAnalyzer(), new WeaponAnalyzer(metadata), new CharacterInsightAnalyzer()));
     }
 
     [Fact]
@@ -65,6 +66,21 @@ public sealed class AnalyzeSampleTests
         weapon.Recommendations.Should().NotBeEmpty();
         weapon.Recommendations[0].RelativeToBis.Should().BeApproximately(100d, 0.001);
         weapon.DpsLossVsBis.Should().BeInRange(0d, 100d);
+    }
+
+    [Fact]
+    public async Task Analyze_SampleKazuha_ProducesInsights()
+    {
+        (Account account, CharacterAnalyzer analyzer) = await ImportAsync();
+        Character kazuha = account.Characters.First(c => c.Id == SampleData.KazuhaAvatarId);
+
+        CharacterAnalysis analysis = analyzer.Analyze(kazuha);
+
+        analysis.Strengths.Should().NotBeEmpty();
+        analysis.BestArtifacts.Should().NotBeNull();
+        analysis.BestArtifacts!.MainStats[ArtifactSlot.Goblet].Should().Be(StatType.AnemoDamageBonus);
+        analysis.BestArtifacts.MainStats[ArtifactSlot.Flower].Should().Be(StatType.Hp);
+        analysis.BestWeapon.Should().NotBeNull();
     }
 
     [Fact]

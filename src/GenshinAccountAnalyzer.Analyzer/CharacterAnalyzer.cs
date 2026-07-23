@@ -18,19 +18,23 @@ public sealed class CharacterAnalyzer : ICharacterAnalyzer
     private readonly IGameMetadataProvider _metadata;
     private readonly IArtifactAnalyzer _artifactAnalyzer;
     private readonly IWeaponAnalyzer _weaponAnalyzer;
+    private readonly ICharacterInsightAnalyzer _insightAnalyzer;
 
     /// <summary>Initializes the analyzer.</summary>
     /// <param name="metadata">The game metadata provider, used to identify talents.</param>
     /// <param name="artifactAnalyzer">The per-artifact analyzer.</param>
     /// <param name="weaponAnalyzer">The weapon-ranking analyzer.</param>
+    /// <param name="insightAnalyzer">The qualitative insight analyzer.</param>
     public CharacterAnalyzer(
         IGameMetadataProvider metadata,
         IArtifactAnalyzer artifactAnalyzer,
-        IWeaponAnalyzer weaponAnalyzer)
+        IWeaponAnalyzer weaponAnalyzer,
+        ICharacterInsightAnalyzer insightAnalyzer)
     {
         _metadata = metadata ?? throw new ArgumentNullException(nameof(metadata));
         _artifactAnalyzer = artifactAnalyzer ?? throw new ArgumentNullException(nameof(artifactAnalyzer));
         _weaponAnalyzer = weaponAnalyzer ?? throw new ArgumentNullException(nameof(weaponAnalyzer));
+        _insightAnalyzer = insightAnalyzer ?? throw new ArgumentNullException(nameof(insightAnalyzer));
     }
 
     /// <inheritdoc />
@@ -50,7 +54,7 @@ public sealed class CharacterAnalyzer : ICharacterAnalyzer
         Rating artifactRating = RateArtifacts(character.Artifacts, artifactAnalyses);
         Rating buildRating = RateBuild(character, talentRating, weaponRating, artifactRating);
 
-        return new CharacterAnalysis
+        var analysis = new CharacterAnalysis
         {
             CharacterId = character.Id,
             Name = character.Name,
@@ -69,6 +73,17 @@ public sealed class CharacterAnalyzer : ICharacterAnalyzer
             Efficiency = ComputeEfficiency(character, talentLevels),
             Artifacts = artifactAnalyses,
             Weapon = _weaponAnalyzer.Analyze(character),
+        };
+
+        CharacterInsights insights = _insightAnalyzer.Analyze(character, analysis);
+
+        return analysis with
+        {
+            Strengths = insights.Strengths,
+            Weaknesses = insights.Weaknesses,
+            Recommendations = insights.Recommendations,
+            BestWeapon = insights.BestWeapon,
+            BestArtifacts = insights.BestArtifacts,
         };
     }
 
