@@ -31,4 +31,10 @@ public sealed record Artifact
 
     /// <summary>The sub (secondary) stats, up to four.</summary>
     public required IReadOnlyList<Stat> SubStats { get; init; }
+
+    /// <summary>
+    /// Total number of substat rolls this artifact has received (initial substats plus every
+    /// enhancement roll). Zero when the source does not report per-roll data.
+    /// </summary>
+    public int RollCount { get; init; }
 }

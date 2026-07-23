@@ -51,4 +51,7 @@ public sealed record CharacterAnalysis
 
     /// <summary>How "finished" the build is (level/talents/weapon/artifacts maxed), 0-100.</summary>
     public required double Efficiency { get; init; }
+
+    /// <summary>Per-artifact analysis (crit value, roll value, efficiency, dead rolls).</summary>
+    public IReadOnlyList<ArtifactAnalysis> Artifacts { get; init; } = [];
 }

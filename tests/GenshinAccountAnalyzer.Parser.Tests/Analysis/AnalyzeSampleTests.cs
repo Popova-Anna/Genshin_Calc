@@ -1,6 +1,7 @@
 using FluentAssertions;
 using GenshinAccountAnalyzer.Analyzer;
 using GenshinAccountAnalyzer.Domain.Analysis;
+using GenshinAccountAnalyzer.Domain.Enums;
 using GenshinAccountAnalyzer.Domain.Models;
 using GenshinAccountAnalyzer.Parser.Enka;
 using GenshinAccountAnalyzer.Parser.Metadata;
@@ -16,7 +17,7 @@ public sealed class AnalyzeSampleTests
         var metadata = EmbeddedGameMetadataProvider.CreateDefault();
         await using FileStream sample = SampleData.OpenEnkaSample();
         Account account = await new EnkaImporter(metadata).ImportAsync(sample, CancellationToken.None);
-        return (account, new CharacterAnalyzer(metadata));
+        return (account, new CharacterAnalyzer(metadata, new ArtifactAnalyzer()));
     }
 
     [Fact]
@@ -32,6 +33,21 @@ public sealed class AnalyzeSampleTests
         analysis.TalentRating.Tier.Should().Be(RatingTier.SS);
         analysis.Efficiency.Should().BeApproximately(100d, 0.5, "the character is level 90 with maxed talents, weapon and +20 artifacts");
         analysis.OverallScore.Should().BeGreaterThan(70d);
+    }
+
+    [Fact]
+    public async Task Analyze_SampleKazuha_IncludesArtifactAnalyses()
+    {
+        (Account account, CharacterAnalyzer analyzer) = await ImportAsync();
+        Character kazuha = account.Characters.First(c => c.Id == SampleData.KazuhaAvatarId);
+
+        CharacterAnalysis analysis = analyzer.Analyze(kazuha);
+
+        analysis.Artifacts.Should().HaveCount(5);
+        ArtifactAnalysis flower = analysis.Artifacts.Single(a => a.Slot == ArtifactSlot.Flower);
+        flower.RollCount.Should().Be(8);
+        flower.CritValue.Should().BeApproximately(21.8, 0.1);
+        flower.Efficiency.Should().BeInRange(70d, 100d);
     }
 
     [Fact]

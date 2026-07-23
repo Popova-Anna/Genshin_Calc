@@ -206,6 +206,7 @@ public sealed class EnkaImporter : IAccountImporter
             Level = Math.Max(0, reliquary.Level - ArtifactLevelOffset),
             MainStat = new Stat(mainType, mainValue),
             SubStats = subStats,
+            RollCount = reliquary.AppendPropIdList?.Count ?? 0,
         };
     }
 

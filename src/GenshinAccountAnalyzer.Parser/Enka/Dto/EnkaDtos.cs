@@ -131,6 +131,10 @@ internal sealed class EnkaReliquaryDto
 {
     [JsonPropertyName("level")]
     public int Level { get; set; }
+
+    /// <summary>One entry per substat roll (initial substats plus each enhancement roll).</summary>
+    [JsonPropertyName("appendPropIdList")]
+    public List<int>? AppendPropIdList { get; set; }
 }
 
 /// <summary>Dynamic weapon data (level, ascension, refinement affixes).</summary>

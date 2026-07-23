@@ -13,6 +13,7 @@ public static class DependencyInjection
     /// <returns>The same <paramref name="services"/> instance, for chaining.</returns>
     public static IServiceCollection AddAnalyzers(this IServiceCollection services)
     {
+        services.AddScoped<IArtifactAnalyzer, ArtifactAnalyzer>();
         services.AddScoped<ICharacterAnalyzer, CharacterAnalyzer>();
 
         return services;

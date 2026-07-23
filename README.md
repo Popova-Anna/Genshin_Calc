@@ -101,7 +101,7 @@ An Enka export can be produced with the included `Get-GenshinData.ps1 -Uid <uid>
 |-----------|-------|
 | 1 (done)  | Scaffolding, import pipeline, internal models, tests, import endpoint |
 | 2 (done)  | Character Analyzer (levels, constellations, talents, crit/ER/EM balance, ratings, efficiency) |
-| 3         | Artifact Analyzer (CV, roll value, efficiency, dead rolls) |
+| 3 (done)  | Artifact Analyzer (CV, roll value, efficiency, dead rolls, per-substat usefulness) |
 | 4         | Weapon Analyzer (BiS, DPS loss) |
 | 5         | Character Analyzer (strengths/weaknesses, upgrade priority) |
 | 6         | Team Analyzer (resonance, reactions, energy) |

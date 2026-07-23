@@ -16,12 +16,15 @@ public sealed class CharacterAnalyzer : ICharacterAnalyzer
     private const double PercentScale = 100d;
 
     private readonly IGameMetadataProvider _metadata;
+    private readonly IArtifactAnalyzer _artifactAnalyzer;
 
-    /// <summary>Initializes the analyzer with a metadata provider used to identify talents.</summary>
-    /// <param name="metadata">The game metadata provider.</param>
-    public CharacterAnalyzer(IGameMetadataProvider metadata)
+    /// <summary>Initializes the analyzer.</summary>
+    /// <param name="metadata">The game metadata provider, used to identify talents.</param>
+    /// <param name="artifactAnalyzer">The per-artifact analyzer.</param>
+    public CharacterAnalyzer(IGameMetadataProvider metadata, IArtifactAnalyzer artifactAnalyzer)
     {
         _metadata = metadata ?? throw new ArgumentNullException(nameof(metadata));
+        _artifactAnalyzer = artifactAnalyzer ?? throw new ArgumentNullException(nameof(artifactAnalyzer));
     }
 
     /// <inheritdoc />
@@ -32,9 +35,13 @@ public sealed class CharacterAnalyzer : ICharacterAnalyzer
         TalentLevels? talents = IdentifyTalents(character);
         IReadOnlyList<int> talentLevels = ResolveTalentLevels(character, talents);
 
+        List<ArtifactAnalysis> artifactAnalyses = character.Artifacts
+            .Select(artifact => _artifactAnalyzer.Analyze(artifact))
+            .ToList();
+
         Rating talentRating = RateTalents(talentLevels);
         Rating weaponRating = RateWeapon(character.Weapon);
-        Rating artifactRating = RateArtifacts(character.Artifacts);
+        Rating artifactRating = RateArtifacts(character.Artifacts, artifactAnalyses);
         Rating buildRating = RateBuild(character, talentRating, weaponRating, artifactRating);
 
         return new CharacterAnalysis
@@ -54,6 +61,7 @@ public sealed class CharacterAnalyzer : ICharacterAnalyzer
             EnergyRecharge = character.Stats[StatType.EnergyRecharge],
             ElementalMastery = character.Stats[StatType.ElementalMastery],
             Efficiency = ComputeEfficiency(character, talentLevels),
+            Artifacts = artifactAnalyses,
         };
     }
 
@@ -115,7 +123,9 @@ public sealed class CharacterAnalyzer : ICharacterAnalyzer
         return RatingScale.ToRating(score);
     }
 
-    private static Rating RateArtifacts(IReadOnlyList<Artifact> artifacts)
+    private static Rating RateArtifacts(
+        IReadOnlyList<Artifact> artifacts,
+        IReadOnlyList<ArtifactAnalysis> analyses)
     {
         if (artifacts.Count == 0)
         {
@@ -124,7 +134,7 @@ public sealed class CharacterAnalyzer : ICharacterAnalyzer
 
         double averageLevel = artifacts.Average(a => a.Level) / ProgressionConstants.MaxArtifactLevel;
         double averageRarity = artifacts.Average(a => a.Rarity) / ProgressionConstants.MaxRarity;
-        double critValue = artifacts.Sum(SubstatCritValue);
+        double critValue = analyses.Sum(a => a.CritValue);
         double critComponent = Math.Min(1d, critValue / ScoringWeights.Artifact.TargetCritValue);
 
         double score = (ScoringWeights.Artifact.Level * averageLevel
@@ -133,14 +143,6 @@ public sealed class CharacterAnalyzer : ICharacterAnalyzer
 
         return RatingScale.ToRating(score);
     }
-
-    private static double SubstatCritValue(Artifact artifact) =>
-        artifact.SubStats.Sum(sub => sub.Type switch
-        {
-            StatType.CritRate => sub.Value * PercentScale * CritConstants.CritValueRateWeight,
-            StatType.CritDamage => sub.Value * PercentScale,
-            _ => 0d,
-        });
 
     private static Rating RateBuild(
         Character character,
