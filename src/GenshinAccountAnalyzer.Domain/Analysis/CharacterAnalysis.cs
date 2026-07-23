@@ -54,4 +54,7 @@ public sealed record CharacterAnalysis
 
     /// <summary>Per-artifact analysis (crit value, roll value, efficiency, dead rolls).</summary>
     public IReadOnlyList<ArtifactAnalysis> Artifacts { get; init; } = [];
+
+    /// <summary>Weapon ranking: best-in-slot options and the equipped weapon's loss versus BiS.</summary>
+    public WeaponAnalysis? Weapon { get; init; }
 }

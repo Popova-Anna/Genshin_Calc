@@ -10,7 +10,10 @@ namespace GenshinAccountAnalyzer.Analyzer.Tests;
 public sealed class CharacterAnalyzerTests
 {
     private static ICharacterAnalyzer CreateAnalyzer(IGameMetadataProvider? metadata = null) =>
-        new CharacterAnalyzer(metadata ?? new FakeMetadata(), new ArtifactAnalyzer());
+        new CharacterAnalyzer(
+            metadata ?? new FakeMetadata(),
+            new ArtifactAnalyzer(),
+            new WeaponAnalyzer(new FakeWeaponCatalog()));
 
     [Fact]
     public void Analyze_FullyBuiltCharacter_ScoresTopTiers()

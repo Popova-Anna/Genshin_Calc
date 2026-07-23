@@ -1,1 +1,1802 @@
-{}
+{
+  "11301": {
+    "name": "Cool Steel",
+    "type": "Sword",
+    "rarity": 3,
+    "baseAttack": 401.29,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.3519
+  },
+  "11302": {
+    "name": "Harbinger of Dawn",
+    "type": "Sword",
+    "rarity": 3,
+    "baseAttack": 401.29,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.4686
+  },
+  "11303": {
+    "name": "Traveler's Handy Sword",
+    "type": "Sword",
+    "rarity": 3,
+    "baseAttack": 448.22,
+    "secondaryStat": "DefPercent",
+    "secondaryValue": 0.2928
+  },
+  "11304": {
+    "name": "Dark Iron Sword",
+    "type": "Sword",
+    "rarity": 3,
+    "baseAttack": 401.29,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 140.5764
+  },
+  "11305": {
+    "name": "Fillet Blade",
+    "type": "Sword",
+    "rarity": 3,
+    "baseAttack": 401.29,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.3519
+  },
+  "11306": {
+    "name": "Skyrider Sword",
+    "type": "Sword",
+    "rarity": 3,
+    "baseAttack": 354.38,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.5207
+  },
+  "11401": {
+    "name": "Favonius Sword",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 454.36,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.6125
+  },
+  "11402": {
+    "name": "The Flute",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.4135
+  },
+  "11403": {
+    "name": "Sacrificial Sword",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 454.36,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.6125
+  },
+  "11404": {
+    "name": "Royal Longsword",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.4135
+  },
+  "11405": {
+    "name": "Lion's Roar",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.4135
+  },
+  "11406": {
+    "name": "Prototype Rancour",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "PhysicalDamageBonus",
+    "secondaryValue": 0.3449
+  },
+  "11407": {
+    "name": "Iron Sting",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 165.384
+  },
+  "11408": {
+    "name": "Blackcliff Longsword",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.3675
+  },
+  "11409": {
+    "name": "The Black Sword",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.2756
+  },
+  "11410": {
+    "name": "The Alley Flash",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 620.03,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 55.1279
+  },
+  "11412": {
+    "name": "Sword of Descension",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 440.19,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.3519
+  },
+  "11413": {
+    "name": "Festering Desire",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.4594
+  },
+  "11414": {
+    "name": "Amenoma Kageuchi",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 454.36,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.5513
+  },
+  "11415": {
+    "name": "Cinnabar Spindle",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 454.36,
+    "secondaryStat": "DefPercent",
+    "secondaryValue": 0.6897
+  },
+  "11416": {
+    "name": "Kagotsurube Isshin",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.4135
+  },
+  "11417": {
+    "name": "Sapwood Blade",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.3063
+  },
+  "11418": {
+    "name": "Xiphos' Moonlight",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 165.384
+  },
+  "11419": {
+    "name": "Prized Isshin Blade",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.4135
+  },
+  "11422": {
+    "name": "Toukabou Shigure",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 165.384
+  },
+  "11424": {
+    "name": "Wolf-Fang",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.2756
+  },
+  "11425": {
+    "name": "Finale of the Deep",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.2756
+  },
+  "11426": {
+    "name": "Fleuve Cendre Ferryman",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.4594
+  },
+  "11427": {
+    "name": "The Dockhand's Assistant",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "HpPercent",
+    "secondaryValue": 0.4135
+  },
+  "11428": {
+    "name": "Sword of Narzissenkreuz",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.4135
+  },
+  "11430": {
+    "name": "Sturdy Bone",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.2756
+  },
+  "11431": {
+    "name": "Flute of Ezpitzal",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 454.36,
+    "secondaryStat": "DefPercent",
+    "secondaryValue": 0.6897
+  },
+  "11432": {
+    "name": "Calamity of Eshu",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.2756
+  },
+  "11433": {
+    "name": "Serenity's Call",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 454.36,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.6125
+  },
+  "11434": {
+    "name": "Moonweaver's Dawn",
+    "type": "Sword",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.2756
+  },
+  "11501": {
+    "name": "Aquila Favonia",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAttack": 674.33,
+    "secondaryStat": "PhysicalDamageBonus",
+    "secondaryValue": 0.4135
+  },
+  "11502": {
+    "name": "Skyward Blade",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.5513
+  },
+  "11503": {
+    "name": "Freedom-Sworn",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 198.4608
+  },
+  "11504": {
+    "name": "Summit Shaper",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.4962
+  },
+  "11505": {
+    "name": "Primordial Jade Cutter",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAttack": 541.83,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.441
+  },
+  "11509": {
+    "name": "Mistsplitter Reforged",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAttack": 674.33,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.441
+  },
+  "11510": {
+    "name": "Haran Geppaku Futsu",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.3308
+  },
+  "11511": {
+    "name": "Key of Khaj-Nisut",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAttack": 541.83,
+    "secondaryStat": "HpPercent",
+    "secondaryValue": 0.6615
+  },
+  "11512": {
+    "name": "Light of Foliar Incision",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAttack": 541.83,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.882
+  },
+  "11513": {
+    "name": "Splendor of Tranquil Waters",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAttack": 541.83,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.882
+  },
+  "11514": {
+    "name": "Uraku Misugiri",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAttack": 541.83,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.882
+  },
+  "11515": {
+    "name": "Absolution",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAttack": 674.33,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.441
+  },
+  "11516": {
+    "name": "Peak Patrol Song",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAttack": 541.83,
+    "secondaryStat": "DefPercent",
+    "secondaryValue": 0.8269
+  },
+  "11517": {
+    "name": "Azurelight",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAttack": 674.33,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.2205
+  },
+  "11518": {
+    "name": "Athame Artis",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.3308
+  },
+  "11519": {
+    "name": "Lightbearing Moonshard",
+    "type": "Sword",
+    "rarity": 5,
+    "baseAttack": 541.83,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.882
+  },
+  "12301": {
+    "name": "Ferrous Shadow",
+    "type": "Claymore",
+    "rarity": 3,
+    "baseAttack": 401.29,
+    "secondaryStat": "HpPercent",
+    "secondaryValue": 0.3519
+  },
+  "12302": {
+    "name": "Bloodtainted Greatsword",
+    "type": "Claymore",
+    "rarity": 3,
+    "baseAttack": 354.38,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 187.4352
+  },
+  "12303": {
+    "name": "White Iron Greatsword",
+    "type": "Claymore",
+    "rarity": 3,
+    "baseAttack": 401.29,
+    "secondaryStat": "DefPercent",
+    "secondaryValue": 0.4392
+  },
+  "12305": {
+    "name": "Debate Club",
+    "type": "Claymore",
+    "rarity": 3,
+    "baseAttack": 401.29,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.3519
+  },
+  "12306": {
+    "name": "Skyrider Greatsword",
+    "type": "Claymore",
+    "rarity": 3,
+    "baseAttack": 401.29,
+    "secondaryStat": "PhysicalDamageBonus",
+    "secondaryValue": 0.4392
+  },
+  "12401": {
+    "name": "Favonius Greatsword",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 454.36,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.6125
+  },
+  "12402": {
+    "name": "The Bell",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "HpPercent",
+    "secondaryValue": 0.4135
+  },
+  "12403": {
+    "name": "Sacrificial Greatsword",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.3063
+  },
+  "12404": {
+    "name": "Royal Greatsword",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.2756
+  },
+  "12405": {
+    "name": "Rainslasher",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 165.384
+  },
+  "12406": {
+    "name": "Prototype Archaic",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.2756
+  },
+  "12407": {
+    "name": "Whiteblind",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "DefPercent",
+    "secondaryValue": 0.5173
+  },
+  "12408": {
+    "name": "Blackcliff Slasher",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.5513
+  },
+  "12409": {
+    "name": "Serpent Spine",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.2756
+  },
+  "12410": {
+    "name": "Lithic Blade",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.4135
+  },
+  "12411": {
+    "name": "Snow-Tombed Starsilver",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "PhysicalDamageBonus",
+    "secondaryValue": 0.3449
+  },
+  "12412": {
+    "name": "Luxurious Sea-Lord",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 454.36,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.5513
+  },
+  "12414": {
+    "name": "Katsuragikiri Nagamasa",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.4594
+  },
+  "12415": {
+    "name": "Makhaira Aquamarine",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 165.384
+  },
+  "12416": {
+    "name": "Akuoumaru",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.4135
+  },
+  "12417": {
+    "name": "Forest Regalia",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.3063
+  },
+  "12418": {
+    "name": "Mailed Flower",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 110.256
+  },
+  "12424": {
+    "name": "Talking Stick",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.1838
+  },
+  "12425": {
+    "name": "Tidal Shadow",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.4135
+  },
+  "12426": {
+    "name": "\"Ultimate Overlord's Mega Magic Sword\"",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.3063
+  },
+  "12427": {
+    "name": "Portable Power Saw",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 454.36,
+    "secondaryStat": "HpPercent",
+    "secondaryValue": 0.5513
+  },
+  "12430": {
+    "name": "Fruitful Hook",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.2756
+  },
+  "12431": {
+    "name": "Earth Shaker",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.2756
+  },
+  "12432": {
+    "name": "Flame-Forged Insight",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 165.384
+  },
+  "12433": {
+    "name": "Master Key",
+    "type": "Claymore",
+    "rarity": 4,
+    "baseAttack": 454.36,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.6125
+  },
+  "12501": {
+    "name": "Skyward Pride",
+    "type": "Claymore",
+    "rarity": 5,
+    "baseAttack": 674.33,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.3675
+  },
+  "12502": {
+    "name": "Wolf's Gravestone",
+    "type": "Claymore",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.4962
+  },
+  "12503": {
+    "name": "Song of Broken Pines",
+    "type": "Claymore",
+    "rarity": 5,
+    "baseAttack": 740.58,
+    "secondaryStat": "PhysicalDamageBonus",
+    "secondaryValue": 0.2067
+  },
+  "12504": {
+    "name": "The Unforged",
+    "type": "Claymore",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.4962
+  },
+  "12510": {
+    "name": "Redhorn Stonethresher",
+    "type": "Claymore",
+    "rarity": 5,
+    "baseAttack": 541.83,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.882
+  },
+  "12511": {
+    "name": "Beacon of the Reed Sea",
+    "type": "Claymore",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.3308
+  },
+  "12512": {
+    "name": "Verdict",
+    "type": "Claymore",
+    "rarity": 5,
+    "baseAttack": 674.33,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.2205
+  },
+  "12513": {
+    "name": "Fang of the Mountain King",
+    "type": "Claymore",
+    "rarity": 5,
+    "baseAttack": 740.58,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.1103
+  },
+  "12514": {
+    "name": "A Thousand Blazing Suns",
+    "type": "Claymore",
+    "rarity": 5,
+    "baseAttack": 740.58,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.1103
+  },
+  "12515": {
+    "name": "Gest of the Mighty Wolf",
+    "type": "Claymore",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.3308
+  },
+  "12516": {
+    "name": "A Teaspoon of Transcendence",
+    "type": "Claymore",
+    "rarity": 5,
+    "baseAttack": 674.33,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.441
+  },
+  "13301": {
+    "name": "White Tassel",
+    "type": "Polearm",
+    "rarity": 3,
+    "baseAttack": 401.29,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.2343
+  },
+  "13302": {
+    "name": "Halberd",
+    "type": "Polearm",
+    "rarity": 3,
+    "baseAttack": 448.22,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.2346
+  },
+  "13303": {
+    "name": "Black Tassel",
+    "type": "Polearm",
+    "rarity": 3,
+    "baseAttack": 354.38,
+    "secondaryStat": "HpPercent",
+    "secondaryValue": 0.4692
+  },
+  "13401": {
+    "name": "Dragon's Bane",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAttack": 454.36,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 220.512
+  },
+  "13402": {
+    "name": "Prototype Starglitter",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.4594
+  },
+  "13403": {
+    "name": "Crescent Pike",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "PhysicalDamageBonus",
+    "secondaryValue": 0.3449
+  },
+  "13404": {
+    "name": "Blackcliff Pole",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.5513
+  },
+  "13405": {
+    "name": "Deathmatch",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAttack": 454.36,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.3675
+  },
+  "13406": {
+    "name": "Lithic Spear",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.2756
+  },
+  "13407": {
+    "name": "Favonius Lance",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.3063
+  },
+  "13408": {
+    "name": "Royal Spear",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.2756
+  },
+  "13409": {
+    "name": "Dragonspine Spear",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAttack": 454.36,
+    "secondaryStat": "PhysicalDamageBonus",
+    "secondaryValue": 0.6897
+  },
+  "13414": {
+    "name": "Kitain Cross Spear",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 110.256
+  },
+  "13415": {
+    "name": "\"The Catch\"",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.4594
+  },
+  "13416": {
+    "name": "Wavebreaker's Fin",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAttack": 620.03,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.1378
+  },
+  "13417": {
+    "name": "Moonpiercer",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 110.256
+  },
+  "13419": {
+    "name": "Missive Windspear",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.4135
+  },
+  "13424": {
+    "name": "Ballad of the Fjords",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.2756
+  },
+  "13425": {
+    "name": "Rightful Reward",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "HpPercent",
+    "secondaryValue": 0.2756
+  },
+  "13426": {
+    "name": "Dialogues of the Desert Sages",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "HpPercent",
+    "secondaryValue": 0.4135
+  },
+  "13427": {
+    "name": "Prospector's Drill",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.2756
+  },
+  "13430": {
+    "name": "Mountain-Bracing Bolt",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.3063
+  },
+  "13431": {
+    "name": "Footprint of the Rainbow",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "DefPercent",
+    "secondaryValue": 0.5173
+  },
+  "13432": {
+    "name": "Tamayuratei no Ohanashi",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.3063
+  },
+  "13433": {
+    "name": "Prospector's Shovel",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.4135
+  },
+  "13434": {
+    "name": "Sacrificer's Staff",
+    "type": "Polearm",
+    "rarity": 4,
+    "baseAttack": 620.03,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.0919
+  },
+  "13501": {
+    "name": "Staff of Homa",
+    "type": "Polearm",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.6615
+  },
+  "13502": {
+    "name": "Skyward Spine",
+    "type": "Polearm",
+    "rarity": 5,
+    "baseAttack": 674.33,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.3675
+  },
+  "13504": {
+    "name": "Vortex Vanquisher",
+    "type": "Polearm",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.4962
+  },
+  "13505": {
+    "name": "Primordial Jade Winged-Spear",
+    "type": "Polearm",
+    "rarity": 5,
+    "baseAttack": 674.33,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.2205
+  },
+  "13507": {
+    "name": "Calamity Queller",
+    "type": "Polearm",
+    "rarity": 5,
+    "baseAttack": 740.58,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.1654
+  },
+  "13509": {
+    "name": "Engulfing Lightning",
+    "type": "Polearm",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.5513
+  },
+  "13511": {
+    "name": "Staff of the Scarlet Sands",
+    "type": "Polearm",
+    "rarity": 5,
+    "baseAttack": 541.83,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.441
+  },
+  "13512": {
+    "name": "Crimson Moon's Semblance",
+    "type": "Polearm",
+    "rarity": 5,
+    "baseAttack": 674.33,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.2205
+  },
+  "13513": {
+    "name": "Lumidouce Elegy",
+    "type": "Polearm",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.3308
+  },
+  "13514": {
+    "name": "Symphonist of Scents",
+    "type": "Polearm",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.6615
+  },
+  "13515": {
+    "name": "Fractured Halo",
+    "type": "Polearm",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.6615
+  },
+  "13516": {
+    "name": "Bloodsoaked Ruins",
+    "type": "Polearm",
+    "rarity": 5,
+    "baseAttack": 674.33,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.2205
+  },
+  "13517": {
+    "name": "Disaster and Remorse",
+    "type": "Polearm",
+    "rarity": 5,
+    "baseAttack": 674.33,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.2205
+  },
+  "14301": {
+    "name": "Magic Guide",
+    "type": "Catalyst",
+    "rarity": 3,
+    "baseAttack": 354.38,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 187.4352
+  },
+  "14302": {
+    "name": "Thrilling Tales of Dragon Slayers",
+    "type": "Catalyst",
+    "rarity": 3,
+    "baseAttack": 401.29,
+    "secondaryStat": "HpPercent",
+    "secondaryValue": 0.3519
+  },
+  "14303": {
+    "name": "Otherworldly Story",
+    "type": "Catalyst",
+    "rarity": 3,
+    "baseAttack": 401.29,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.3905
+  },
+  "14304": {
+    "name": "Emerald Orb",
+    "type": "Catalyst",
+    "rarity": 3,
+    "baseAttack": 448.22,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 93.7176
+  },
+  "14305": {
+    "name": "Twin Nephrite",
+    "type": "Catalyst",
+    "rarity": 3,
+    "baseAttack": 448.22,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.1562
+  },
+  "14401": {
+    "name": "Favonius Codex",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.4594
+  },
+  "14402": {
+    "name": "The Widsith",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.5513
+  },
+  "14403": {
+    "name": "Sacrificial Fragments",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 454.36,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 220.512
+  },
+  "14404": {
+    "name": "Royal Grimoire",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.2756
+  },
+  "14405": {
+    "name": "Solar Pearl",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.2756
+  },
+  "14406": {
+    "name": "Prototype Amber",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "HpPercent",
+    "secondaryValue": 0.4135
+  },
+  "14407": {
+    "name": "Mappa Mare",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 110.256
+  },
+  "14408": {
+    "name": "Blackcliff Agate",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.5513
+  },
+  "14409": {
+    "name": "Eye of Perception",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 454.36,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.5513
+  },
+  "14410": {
+    "name": "Wine and Song",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.3063
+  },
+  "14412": {
+    "name": "Frostbearer",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.4135
+  },
+  "14413": {
+    "name": "Dodoco Tales",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 454.36,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.5513
+  },
+  "14414": {
+    "name": "Hakushin Ring",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.3063
+  },
+  "14415": {
+    "name": "Oathsworn Eye",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.2756
+  },
+  "14416": {
+    "name": "Wandering Evenstar",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 165.384
+  },
+  "14417": {
+    "name": "Fruit of Fulfillment",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.4594
+  },
+  "14424": {
+    "name": "Sacrificial Jade",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 454.36,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.3675
+  },
+  "14425": {
+    "name": "Flowing Purity",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.2756
+  },
+  "14426": {
+    "name": "Ballad of the Boundless Blue",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.3063
+  },
+  "14427": {
+    "name": "Ash-Graven Drinking Horn",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "HpPercent",
+    "secondaryValue": 0.4135
+  },
+  "14430": {
+    "name": "Waveriding Whirl",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 454.36,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.6125
+  },
+  "14431": {
+    "name": "Ring of Yaxche",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "HpPercent",
+    "secondaryValue": 0.4135
+  },
+  "14432": {
+    "name": "Etherlight Spindlelute",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.4594
+  },
+  "14433": {
+    "name": "Blackmarrow Lantern",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 454.36,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 220.512
+  },
+  "14434": {
+    "name": "Dawning Frost",
+    "type": "Catalyst",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.5513
+  },
+  "14501": {
+    "name": "Skyward Atlas",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAttack": 674.33,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.3308
+  },
+  "14502": {
+    "name": "Lost Prayer to the Sacred Winds",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.3308
+  },
+  "14504": {
+    "name": "Memory of Dust",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.4962
+  },
+  "14505": {
+    "name": "Jadefall's Splendor",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "HpPercent",
+    "secondaryValue": 0.4962
+  },
+  "14506": {
+    "name": "Everlasting Moonglow",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "HpPercent",
+    "secondaryValue": 0.4962
+  },
+  "14509": {
+    "name": "Kagura's Verity",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.6615
+  },
+  "14511": {
+    "name": "A Thousand Floating Dreams",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAttack": 541.83,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 264.6144
+  },
+  "14512": {
+    "name": "Tulaytullah's Remembrance",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAttack": 674.33,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.441
+  },
+  "14513": {
+    "name": "Cashflow Supervision",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAttack": 674.33,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.2205
+  },
+  "14514": {
+    "name": "Tome of the Eternal Flow",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAttack": 541.83,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.882
+  },
+  "14515": {
+    "name": "Crane's Echoing Call",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAttack": 740.58,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.1654
+  },
+  "14516": {
+    "name": "Surf's Up",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAttack": 541.83,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.882
+  },
+  "14517": {
+    "name": "Starcaller's Watch",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAttack": 541.83,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 264.6144
+  },
+  "14518": {
+    "name": "Sunny Morning Sleep-In",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAttack": 541.83,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 264.6144
+  },
+  "14519": {
+    "name": "Vivid Notions",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAttack": 674.33,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.441
+  },
+  "14520": {
+    "name": "Nightweaver's Looking Glass",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAttack": 541.83,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 264.6144
+  },
+  "14521": {
+    "name": "Reliquary of Truth",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAttack": 541.83,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.882
+  },
+  "14522": {
+    "name": "Nocturne's Curtain Call",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAttack": 541.83,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.882
+  },
+  "14523": {
+    "name": "Angelos' Heptades",
+    "type": "Catalyst",
+    "rarity": 5,
+    "baseAttack": 740.58,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.1654
+  },
+  "15301": {
+    "name": "Raven Bow",
+    "type": "Bow",
+    "rarity": 3,
+    "baseAttack": 448.22,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 93.7176
+  },
+  "15302": {
+    "name": "Sharpshooter's Oath",
+    "type": "Bow",
+    "rarity": 3,
+    "baseAttack": 401.29,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.4686
+  },
+  "15303": {
+    "name": "Recurve Bow",
+    "type": "Bow",
+    "rarity": 3,
+    "baseAttack": 354.38,
+    "secondaryStat": "HpPercent",
+    "secondaryValue": 0.4692
+  },
+  "15304": {
+    "name": "Slingshot",
+    "type": "Bow",
+    "rarity": 3,
+    "baseAttack": 354.38,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.3124
+  },
+  "15305": {
+    "name": "Messenger",
+    "type": "Bow",
+    "rarity": 3,
+    "baseAttack": 448.22,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.3124
+  },
+  "15401": {
+    "name": "Favonius Warbow",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 454.36,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.6125
+  },
+  "15402": {
+    "name": "The Stringless",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 165.384
+  },
+  "15403": {
+    "name": "Sacrificial Bow",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.3063
+  },
+  "15404": {
+    "name": "Royal Bow",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.4135
+  },
+  "15405": {
+    "name": "Rust",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.4135
+  },
+  "15406": {
+    "name": "Prototype Crescent",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.4135
+  },
+  "15407": {
+    "name": "Compound Bow",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 454.36,
+    "secondaryStat": "PhysicalDamageBonus",
+    "secondaryValue": 0.6897
+  },
+  "15408": {
+    "name": "Blackcliff Warbow",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.3675
+  },
+  "15409": {
+    "name": "The Viridescent Hunt",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.2756
+  },
+  "15410": {
+    "name": "Alley Hunter",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.2756
+  },
+  "15411": {
+    "name": "Fading Twilight",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.3063
+  },
+  "15412": {
+    "name": "Mitternachts Waltz",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "PhysicalDamageBonus",
+    "secondaryValue": 0.5173
+  },
+  "15413": {
+    "name": "Windblume Ode",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 165.384
+  },
+  "15414": {
+    "name": "Hamayumi",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 454.36,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.5513
+  },
+  "15415": {
+    "name": "Predator",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.4135
+  },
+  "15416": {
+    "name": "Mouun's Moon",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.2756
+  },
+  "15417": {
+    "name": "King's Squire",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 454.36,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.5513
+  },
+  "15418": {
+    "name": "End of the Line",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.4594
+  },
+  "15419": {
+    "name": "Ibis Piercer",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.2756
+  },
+  "15424": {
+    "name": "Scion of the Blazing Sun",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.1838
+  },
+  "15425": {
+    "name": "Song of Stillness",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.4135
+  },
+  "15426": {
+    "name": "Cloudforged",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "ElementalMastery",
+    "secondaryValue": 165.384
+  },
+  "15427": {
+    "name": "Range Gauge",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.2756
+  },
+  "15430": {
+    "name": "Flower-Wreathed Feathers",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.4135
+  },
+  "15431": {
+    "name": "Chain Breaker",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 564.78,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.2756
+  },
+  "15432": {
+    "name": "Sequence of Solitude",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "HpPercent",
+    "secondaryValue": 0.4135
+  },
+  "15433": {
+    "name": "Snare Hook",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 454.36,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.6125
+  },
+  "15434": {
+    "name": "Rainbow Serpent's Rain Bow",
+    "type": "Bow",
+    "rarity": 4,
+    "baseAttack": 509.61,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.4594
+  },
+  "15501": {
+    "name": "Skyward Harp",
+    "type": "Bow",
+    "rarity": 5,
+    "baseAttack": 674.33,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.2205
+  },
+  "15502": {
+    "name": "Amos' Bow",
+    "type": "Bow",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "AtkPercent",
+    "secondaryValue": 0.4962
+  },
+  "15503": {
+    "name": "Elegy for the End",
+    "type": "Bow",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "EnergyRecharge",
+    "secondaryValue": 0.5513
+  },
+  "15507": {
+    "name": "Polar Star",
+    "type": "Bow",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.3308
+  },
+  "15508": {
+    "name": "Aqua Simulacra",
+    "type": "Bow",
+    "rarity": 5,
+    "baseAttack": 541.83,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.882
+  },
+  "15509": {
+    "name": "Thundering Pulse",
+    "type": "Bow",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.6615
+  },
+  "15511": {
+    "name": "Hunter's Path",
+    "type": "Bow",
+    "rarity": 5,
+    "baseAttack": 541.83,
+    "secondaryStat": "CritRate",
+    "secondaryValue": 0.441
+  },
+  "15512": {
+    "name": "The First Great Magic",
+    "type": "Bow",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.6615
+  },
+  "15513": {
+    "name": "Silvershower Heartstrings",
+    "type": "Bow",
+    "rarity": 5,
+    "baseAttack": 541.83,
+    "secondaryStat": "HpPercent",
+    "secondaryValue": 0.6615
+  },
+  "15514": {
+    "name": "Astral Vulture's Crimson Plumage",
+    "type": "Bow",
+    "rarity": 5,
+    "baseAttack": 608.07,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.6615
+  },
+  "15515": {
+    "name": "The Daybreak Chronicles",
+    "type": "Bow",
+    "rarity": 5,
+    "baseAttack": 674.33,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.441
+  },
+  "15516": {
+    "name": "Golden Frostbound Oath",
+    "type": "Bow",
+    "rarity": 5,
+    "baseAttack": 541.83,
+    "secondaryStat": "CritDamage",
+    "secondaryValue": 0.882
+  }
+}

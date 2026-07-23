@@ -17,7 +17,7 @@ public sealed class AnalyzeSampleTests
         var metadata = EmbeddedGameMetadataProvider.CreateDefault();
         await using FileStream sample = SampleData.OpenEnkaSample();
         Account account = await new EnkaImporter(metadata).ImportAsync(sample, CancellationToken.None);
-        return (account, new CharacterAnalyzer(metadata, new ArtifactAnalyzer()));
+        return (account, new CharacterAnalyzer(metadata, new ArtifactAnalyzer(), new WeaponAnalyzer(metadata)));
     }
 
     [Fact]
@@ -48,6 +48,23 @@ public sealed class AnalyzeSampleTests
         flower.RollCount.Should().Be(8);
         flower.CritValue.Should().BeApproximately(21.8, 0.1);
         flower.Efficiency.Should().BeInRange(70d, 100d);
+    }
+
+    [Fact]
+    public async Task Analyze_SampleKazuha_RanksWeaponsAndResolvesName()
+    {
+        (Account account, CharacterAnalyzer analyzer) = await ImportAsync();
+        Character kazuha = account.Characters.First(c => c.Id == SampleData.KazuhaAvatarId);
+
+        // Weapon name is now resolved from the embedded catalog (no more placeholder).
+        kazuha.Weapon!.Name.Should().Be("Freedom-Sworn");
+
+        WeaponAnalysis weapon = analyzer.Analyze(kazuha).Weapon!;
+        weapon.WeaponType.Should().Be(WeaponType.Sword);
+        weapon.Equipped!.Value.Name.Should().Be("Freedom-Sworn");
+        weapon.Recommendations.Should().NotBeEmpty();
+        weapon.Recommendations[0].RelativeToBis.Should().BeApproximately(100d, 0.001);
+        weapon.DpsLossVsBis.Should().BeInRange(0d, 100d);
     }
 
     [Fact]

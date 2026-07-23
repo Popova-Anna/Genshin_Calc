@@ -17,14 +17,20 @@ public sealed class CharacterAnalyzer : ICharacterAnalyzer
 
     private readonly IGameMetadataProvider _metadata;
     private readonly IArtifactAnalyzer _artifactAnalyzer;
+    private readonly IWeaponAnalyzer _weaponAnalyzer;
 
     /// <summary>Initializes the analyzer.</summary>
     /// <param name="metadata">The game metadata provider, used to identify talents.</param>
     /// <param name="artifactAnalyzer">The per-artifact analyzer.</param>
-    public CharacterAnalyzer(IGameMetadataProvider metadata, IArtifactAnalyzer artifactAnalyzer)
+    /// <param name="weaponAnalyzer">The weapon-ranking analyzer.</param>
+    public CharacterAnalyzer(
+        IGameMetadataProvider metadata,
+        IArtifactAnalyzer artifactAnalyzer,
+        IWeaponAnalyzer weaponAnalyzer)
     {
         _metadata = metadata ?? throw new ArgumentNullException(nameof(metadata));
         _artifactAnalyzer = artifactAnalyzer ?? throw new ArgumentNullException(nameof(artifactAnalyzer));
+        _weaponAnalyzer = weaponAnalyzer ?? throw new ArgumentNullException(nameof(weaponAnalyzer));
     }
 
     /// <inheritdoc />
@@ -62,6 +68,7 @@ public sealed class CharacterAnalyzer : ICharacterAnalyzer
             ElementalMastery = character.Stats[StatType.ElementalMastery],
             Efficiency = ComputeEfficiency(character, talentLevels),
             Artifacts = artifactAnalyses,
+            Weapon = _weaponAnalyzer.Analyze(character),
         };
     }
 

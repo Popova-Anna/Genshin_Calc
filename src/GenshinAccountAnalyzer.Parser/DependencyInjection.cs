@@ -18,7 +18,10 @@ public static class DependencyInjection
     /// <returns>The same <paramref name="services"/> instance, for chaining.</returns>
     public static IServiceCollection AddParsers(this IServiceCollection services)
     {
-        services.AddSingleton<IGameMetadataProvider>(_ => EmbeddedGameMetadataProvider.CreateDefault());
+        // A single embedded provider backs both the metadata and weapon-catalog ports.
+        services.AddSingleton(_ => EmbeddedGameMetadataProvider.CreateDefault());
+        services.AddSingleton<IGameMetadataProvider>(sp => sp.GetRequiredService<EmbeddedGameMetadataProvider>());
+        services.AddSingleton<IWeaponCatalog>(sp => sp.GetRequiredService<EmbeddedGameMetadataProvider>());
         services.AddScoped<IAccountImporter, EnkaImporter>();
 
         return services;
