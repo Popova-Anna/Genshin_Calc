@@ -72,4 +72,7 @@ public sealed record CharacterAnalysis
 
     /// <summary>Artifact guidance (main stats, substats, current sets), when available.</summary>
     public ArtifactRecommendation? BestArtifacts { get; init; }
+
+    /// <summary>The best teams on the account that feature this character, highest synergy first.</summary>
+    public IReadOnlyList<TeamAnalysis> BestTeams { get; init; } = [];
 }

@@ -107,7 +107,7 @@ An Enka export can be produced with the included `Get-GenshinData.ps1 -Uid <uid>
 | 3 (done)  | Artifact Analyzer (CV, roll value, efficiency, dead rolls, per-substat usefulness) |
 | 4 (done)  | Weapon Analyzer (stat-based BiS ranking, 2nd/3rd options, DPS-loss proxy) |
 | 5 (done)  | Character Analyzer (strengths, weaknesses, prioritized recommendations, best weapon/artifacts) |
-| 6         | Team Analyzer (resonance, reactions, energy) |
+| 6 (done)  | Team Analyzer (auto team-finding: resonance, reactions, roles, coherence, energy) |
 | 7         | Damage Calculator (full formulas, reactions, snapshot) |
 | 8         | Optimizer |
 | 9         | HTML Report |

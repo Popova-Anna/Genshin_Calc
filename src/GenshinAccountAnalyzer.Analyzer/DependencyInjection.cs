@@ -16,6 +16,7 @@ public static class DependencyInjection
         services.AddScoped<IArtifactAnalyzer, ArtifactAnalyzer>();
         services.AddScoped<IWeaponAnalyzer, WeaponAnalyzer>();
         services.AddScoped<ICharacterInsightAnalyzer, CharacterInsightAnalyzer>();
+        services.AddScoped<ITeamAnalyzer, TeamAnalyzer>();
         services.AddScoped<ICharacterAnalyzer, CharacterAnalyzer>();
 
         return services;

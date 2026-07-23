@@ -84,6 +84,22 @@ public sealed class AnalyzeSampleTests
     }
 
     [Fact]
+    public async Task FindBestTeams_OnSampleRoster_ProducesRankedFullTeams()
+    {
+        (Account account, CharacterAnalyzer analyzer) = await ImportAsync();
+        Dictionary<int, double> buildScores = account.Characters
+            .ToDictionary(c => c.Id, c => analyzer.Analyze(c).OverallScore);
+
+        IReadOnlyList<TeamAnalysis> teams = new TeamAnalyzer().FindBestTeams(account.Characters, buildScores, 5);
+
+        teams.Should().HaveCount(5);
+        teams.Should().BeInDescendingOrder(t => t.Score);
+        teams[0].Members.Should().HaveCount(4);
+        teams[0].Members[0].Role.Should().Be("Carry");
+        teams[0].Reasons.Should().NotBeEmpty();
+    }
+
+    [Fact]
     public async Task Analyze_EveryCharacter_ProducesValidScores()
     {
         (Account account, CharacterAnalyzer analyzer) = await ImportAsync();
