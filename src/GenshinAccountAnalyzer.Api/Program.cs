@@ -2,6 +2,7 @@ using System.Text.Json.Serialization;
 using GenshinAccountAnalyzer.Analyzer;
 using GenshinAccountAnalyzer.Api.Middleware;
 using GenshinAccountAnalyzer.Application;
+using GenshinAccountAnalyzer.Calculator;
 using GenshinAccountAnalyzer.Infrastructure;
 using GenshinAccountAnalyzer.Parser;
 
@@ -12,6 +13,7 @@ builder.Services.AddApplication();
 builder.Services.AddInfrastructure();
 builder.Services.AddParsers();
 builder.Services.AddAnalyzers();
+builder.Services.AddCalculator();
 
 // Web/API services. Serialize enums as their string names for a readable, stable contract.
 builder.Services

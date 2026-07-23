@@ -98,6 +98,8 @@ curl -X POST "http://localhost:5028/api/account/analyze?source=Enka" \
 
 An Enka export can be produced with the included `Get-GenshinData.ps1 -Uid <uid>` script.
 
+The damage formulas are also exposed directly (`POST /api/damage/calculate` for a hit, `POST /api/damage/transformative` for reactions). All buffs — character/weapon/artifact passives, food and team buffs — are inputs to the calculator (stacked via `BuffAggregator`); wiring per-character auto-DPS on top needs talent/passive data and is a later layer.
+
 ## Roadmap
 
 | Iteration | Scope |
@@ -108,7 +110,7 @@ An Enka export can be produced with the included `Get-GenshinData.ps1 -Uid <uid>
 | 4 (done)  | Weapon Analyzer (stat-based BiS ranking, 2nd/3rd options, DPS-loss proxy) |
 | 5 (done)  | Character Analyzer (strengths, weaknesses, prioritized recommendations, best weapon/artifacts) |
 | 6 (done)  | Team Analyzer (auto team-finding: resonance, reactions, roles, coherence, energy) |
-| 7         | Damage Calculator (full formulas, reactions, snapshot) |
+| 7 (done)  | Damage Calculator (scaling, amplifying/additive/transformative reactions, def/res, crit, buff stacking) |
 | 8         | Optimizer |
 | 9         | HTML Report |
 | 10        | Angular 20 SPA |
