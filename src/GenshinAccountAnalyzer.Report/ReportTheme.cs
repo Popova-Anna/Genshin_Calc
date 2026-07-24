@@ -89,6 +89,10 @@ internal static class ReportTheme
         .member { display:flex; align-items:center; gap:8px; font-size:13px; } .role { margin-left:auto; color:var(--muted); font-size:12px; }
         .dot { width:10px; height:10px; border-radius:50%; flex:0 0 auto; }
         footer { color:var(--muted); font-size:12px; text-align:center; padding:26px 0 40px; }
+        .lang-en .ru { display:none; } .lang-ru .en { display:none; }
+        .langbtn { margin-left:auto; cursor:pointer; background:var(--card); color:var(--text); border:1px solid var(--line); border-radius:8px; padding:5px 12px; font-size:13px; }
+        .avatar { width:38px; height:38px; border-radius:10px; object-fit:cover; border:1px solid var(--line); background:#12152e; flex:0 0 auto; }
+        .chead { display:flex; align-items:center; gap:10px; }
         @media (max-width:520px){ .gauge{width:96px;height:96px} .hero-grid{gap:18px} }
         """;
 }

@@ -19,22 +19,26 @@ public sealed class CharacterAnalyzer : ICharacterAnalyzer
     private readonly IArtifactAnalyzer _artifactAnalyzer;
     private readonly IWeaponAnalyzer _weaponAnalyzer;
     private readonly ICharacterInsightAnalyzer _insightAnalyzer;
+    private readonly IBuildOptimizer _buildOptimizer;
 
     /// <summary>Initializes the analyzer.</summary>
     /// <param name="metadata">The game metadata provider, used to identify talents.</param>
     /// <param name="artifactAnalyzer">The per-artifact analyzer.</param>
     /// <param name="weaponAnalyzer">The weapon-ranking analyzer.</param>
     /// <param name="insightAnalyzer">The qualitative insight analyzer.</param>
+    /// <param name="buildOptimizer">The build optimiser.</param>
     public CharacterAnalyzer(
         IGameMetadataProvider metadata,
         IArtifactAnalyzer artifactAnalyzer,
         IWeaponAnalyzer weaponAnalyzer,
-        ICharacterInsightAnalyzer insightAnalyzer)
+        ICharacterInsightAnalyzer insightAnalyzer,
+        IBuildOptimizer buildOptimizer)
     {
         _metadata = metadata ?? throw new ArgumentNullException(nameof(metadata));
         _artifactAnalyzer = artifactAnalyzer ?? throw new ArgumentNullException(nameof(artifactAnalyzer));
         _weaponAnalyzer = weaponAnalyzer ?? throw new ArgumentNullException(nameof(weaponAnalyzer));
         _insightAnalyzer = insightAnalyzer ?? throw new ArgumentNullException(nameof(insightAnalyzer));
+        _buildOptimizer = buildOptimizer ?? throw new ArgumentNullException(nameof(buildOptimizer));
     }
 
     /// <inheritdoc />
@@ -58,6 +62,8 @@ public sealed class CharacterAnalyzer : ICharacterAnalyzer
         {
             CharacterId = character.Id,
             Name = character.Name,
+            NameRu = character.NameRu,
+            IconUrl = character.IconUrl,
             Element = character.Element,
             Level = character.Level,
             MaxLevel = ProgressionConstants.MaxLevel,
@@ -78,7 +84,7 @@ public sealed class CharacterAnalyzer : ICharacterAnalyzer
 
         CharacterInsights insights = _insightAnalyzer.Analyze(character, analysis);
 
-        return analysis with
+        CharacterAnalysis withInsights = analysis with
         {
             Strengths = insights.Strengths,
             Weaknesses = insights.Weaknesses,
@@ -86,6 +92,8 @@ public sealed class CharacterAnalyzer : ICharacterAnalyzer
             BestWeapon = insights.BestWeapon,
             BestArtifacts = insights.BestArtifacts,
         };
+
+        return withInsights with { Optimization = _buildOptimizer.Optimize(character, withInsights) };
     }
 
     private TalentLevels? IdentifyTalents(Character character)

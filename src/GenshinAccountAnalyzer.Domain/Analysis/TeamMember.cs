@@ -6,13 +6,15 @@ namespace GenshinAccountAnalyzer.Domain.Analysis;
 /// A character's place in a team: identity, element, build strength and inferred role.
 /// </summary>
 /// <param name="CharacterId">The in-game character (avatar) identifier.</param>
-/// <param name="Name">Display name.</param>
+/// <param name="Name">English display name.</param>
+/// <param name="NameRu">Russian display name, when available.</param>
 /// <param name="Element">The character's element.</param>
 /// <param name="BuildScore">The character's overall build score.</param>
 /// <param name="Role">Role inferred from build strength within the team (e.g. "Carry", "Support").</param>
 public readonly record struct TeamMember(
     int CharacterId,
     string Name,
+    string? NameRu,
     ElementType Element,
     double BuildScore,
     string Role);

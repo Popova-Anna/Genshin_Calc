@@ -112,5 +112,9 @@ The damage formulas are also exposed directly (`POST /api/damage/calculate` for 
 | 6 (done)  | Team Analyzer (auto team-finding: resonance, reactions, roles, coherence, energy) |
 | 7 (done)  | Damage Calculator (scaling, amplifying/additive/transformative reactions, def/res, crit, buff stacking) |
 | 8 (done)  | HTML Report (self-contained styled site: home, characters, weapons, artifacts, teams, statistics, rating, recommendations, history) |
-| 9         | Optimizer |
+| 9 (done)  | Optimizer (per-slot main-stat targets, best weapon, optimisation score) |
 | 10        | Angular 20 SPA |
+
+Character metadata (names EN/RU, element, weapon, rarity, icon) is generated from **genshin-db**
+(`node tools/generate-characters.js`); it stays current with new characters. The HTML report is
+**bilingual (English/Russian)** with an in-page toggle.

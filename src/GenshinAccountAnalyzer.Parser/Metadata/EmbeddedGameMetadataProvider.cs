@@ -103,15 +103,25 @@ public sealed class EmbeddedGameMetadataProvider : IGameMetadataProvider, IWeapo
         return JsonSerializer.Deserialize<T>(stream, ResourceOptions);
     }
 
+    /// <summary>Base URL for character icons (Enka.Network hosts them by icon name).</summary>
+    private const string IconBaseUrl = "https://enka.network/ui/";
+
     private sealed record CharacterMetadataDto(
-        string Name,
+        string NameEn,
+        string? NameRu,
         ElementType Element,
         WeaponType Weapon,
         int Rarity,
+        string? Icon,
         IReadOnlyList<int>? Talents)
     {
         public CharacterMetadata ToMetadata() =>
-            new(Name, Element, Weapon, Rarity) { TalentSkillIds = Talents ?? [] };
+            new(NameEn, Element, Weapon, Rarity)
+            {
+                NameRu = string.IsNullOrEmpty(NameRu) ? NameEn : NameRu,
+                IconUrl = string.IsNullOrEmpty(Icon) ? string.Empty : $"{IconBaseUrl}{Icon}.png",
+                TalentSkillIds = Talents ?? [],
+            };
     }
 
     private sealed record WeaponInfoDto(

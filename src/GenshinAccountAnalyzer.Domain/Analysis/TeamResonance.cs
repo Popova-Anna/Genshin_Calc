@@ -1,3 +1,4 @@
+using GenshinAccountAnalyzer.Domain.Common;
 using GenshinAccountAnalyzer.Domain.Enums;
 
 namespace GenshinAccountAnalyzer.Domain.Analysis;
@@ -6,6 +7,6 @@ namespace GenshinAccountAnalyzer.Domain.Analysis;
 /// An active elemental resonance in a team (two or more characters of the same element).
 /// </summary>
 /// <param name="Element">The resonating element.</param>
-/// <param name="Name">The resonance name (e.g. "Fervent Flames").</param>
-/// <param name="Effect">A short description of the resonance effect.</param>
-public readonly record struct TeamResonance(ElementType Element, string Name, string Effect);
+/// <param name="Name">The localized resonance name (e.g. "Fervent Flames").</param>
+/// <param name="Effect">A short localized description of the resonance effect.</param>
+public readonly record struct TeamResonance(ElementType Element, LocalizedText Name, LocalizedText Effect);

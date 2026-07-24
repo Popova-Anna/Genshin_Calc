@@ -2,6 +2,7 @@ using System.Globalization;
 using GenshinAccountAnalyzer.Analyzer.Configuration;
 using GenshinAccountAnalyzer.Application.Abstractions;
 using GenshinAccountAnalyzer.Domain.Analysis;
+using GenshinAccountAnalyzer.Domain.Common;
 using GenshinAccountAnalyzer.Domain.Enums;
 using GenshinAccountAnalyzer.Domain.Models;
 
@@ -9,8 +10,8 @@ namespace GenshinAccountAnalyzer.Analyzer;
 
 /// <summary>
 /// Default <see cref="ICharacterInsightAnalyzer"/>: applies threshold-based rules to a character's
-/// computed analysis to produce strengths, weaknesses, prioritized recommendations and gear guidance.
-/// All thresholds live in <see cref="InsightThresholds"/>.
+/// computed analysis to produce bilingual (English/Russian) strengths, weaknesses, prioritized
+/// recommendations and gear guidance. All thresholds live in <see cref="InsightThresholds"/>.
 /// </summary>
 public sealed class CharacterInsightAnalyzer : ICharacterInsightAnalyzer
 {
@@ -36,18 +37,22 @@ public sealed class CharacterInsightAnalyzer : ICharacterInsightAnalyzer
         };
     }
 
-    private static List<string> BuildStrengths(CharacterAnalysis m)
+    private static List<LocalizedText> BuildStrengths(CharacterAnalysis m)
     {
-        var strengths = new List<string>();
+        var strengths = new List<LocalizedText>();
 
         if (m.BuildRating.Score >= InsightThresholds.StrongBuildScore)
         {
-            strengths.Add(Inv($"Strong overall build (score {m.BuildRating.Score:F0}, tier {m.BuildRating.Tier})"));
+            strengths.Add(L(
+                $"Strong overall build (score {F(m.BuildRating.Score, 0)}, tier {m.BuildRating.Tier})",
+                $"Крепкий билд (счёт {F(m.BuildRating.Score, 0)}, тир {m.BuildRating.Tier})"));
         }
 
         if (m.Efficiency >= InsightThresholds.HighEfficiency)
         {
-            strengths.Add("Fully invested (level, talents, weapon and artifacts near max)");
+            strengths.Add(L(
+                "Fully invested (level, talents, weapon and artifacts near max)",
+                "Полностью прокачан (уровень, таланты, оружие и артефакты почти на максимуме)"));
         }
 
         if (m.Talents is { } t
@@ -55,73 +60,94 @@ public sealed class CharacterInsightAnalyzer : ICharacterInsightAnalyzer
             && t.ElementalSkill >= InsightThresholds.MaxedTalentLevel
             && t.ElementalBurst >= InsightThresholds.MaxedTalentLevel)
         {
-            strengths.Add(Inv($"Maxed talents ({t.NormalAttack}/{t.ElementalSkill}/{t.ElementalBurst})"));
+            strengths.Add(L(
+                $"Maxed talents ({t.NormalAttack}/{t.ElementalSkill}/{t.ElementalBurst})",
+                $"Максимальные таланты ({t.NormalAttack}/{t.ElementalSkill}/{t.ElementalBurst})"));
         }
 
         if (IsCritInvested(m) && m.CritBalance.IsBalanced)
         {
-            strengths.Add(Inv($"Excellent crit balance (CV {m.CritBalance.CritValue:F0}, ratio {m.CritBalance.Ratio:F1})"));
+            strengths.Add(L(
+                $"Excellent crit balance (CV {F(m.CritBalance.CritValue, 0)}, ratio {F(m.CritBalance.Ratio, 1)})",
+                $"Отличный баланс критов (CV {F(m.CritBalance.CritValue, 0)}, соотн. {F(m.CritBalance.Ratio, 1)})"));
         }
 
         if (m.Weapon is { } w && w.DpsLossVsBis <= InsightThresholds.NearBisDpsLoss)
         {
-            strengths.Add("Near-best-in-slot weapon");
+            strengths.Add(L("Near-best-in-slot weapon", "Оружие близко к лучшему (BiS)"));
         }
 
         double artifactEfficiency = AverageArtifactEfficiency(m);
         if (artifactEfficiency >= InsightThresholds.HighArtifactEfficiency)
         {
-            strengths.Add(Inv($"High-quality artifacts (avg roll efficiency {artifactEfficiency:F0}%)"));
+            strengths.Add(L(
+                $"High-quality artifacts (avg roll efficiency {F(artifactEfficiency, 0)}%)",
+                $"Качественные артефакты (средняя эффективность роллов {F(artifactEfficiency, 0)}%)"));
         }
 
         return strengths;
     }
 
-    private static List<string> BuildWeaknesses(Character character, CharacterAnalysis m)
+    private static List<LocalizedText> BuildWeaknesses(Character character, CharacterAnalysis m)
     {
-        var weaknesses = new List<string>();
+        var weaknesses = new List<LocalizedText>();
 
         if (m.Level < m.MaxLevel)
         {
-            weaknesses.Add(Inv($"Below max level ({m.Level}/{m.MaxLevel})"));
+            weaknesses.Add(L(
+                $"Below max level ({m.Level}/{m.MaxLevel})",
+                $"Не максимальный уровень ({m.Level}/{m.MaxLevel})"));
         }
 
         if (m.Talents is { } t && IsBelowTargetTalents(t))
         {
-            weaknesses.Add(Inv($"Talents under-leveled ({t.NormalAttack}/{t.ElementalSkill}/{t.ElementalBurst})"));
+            weaknesses.Add(L(
+                $"Talents under-leveled ({t.NormalAttack}/{t.ElementalSkill}/{t.ElementalBurst})",
+                $"Таланты недокачаны ({t.NormalAttack}/{t.ElementalSkill}/{t.ElementalBurst})"));
         }
 
         if (m.Weapon is { } w && w.DpsLossVsBis >= InsightThresholds.HighDpsLoss)
         {
-            weaknesses.Add(Inv($"Weapon well below best-in-slot ({w.DpsLossVsBis:F0}% loss)"));
+            weaknesses.Add(L(
+                $"Weapon well below best-in-slot ({F(w.DpsLossVsBis, 0)}% loss)",
+                $"Оружие сильно ниже BiS (потеря {F(w.DpsLossVsBis, 0)}%)"));
         }
 
         double deadRolls = TotalDeadRolls(m);
         if (deadRolls >= InsightThresholds.DeadRollWarnThreshold)
         {
-            weaknesses.Add(Inv($"Wasted artifact rolls (~{deadRolls:F1} in useless substats)"));
+            weaknesses.Add(L(
+                $"Wasted artifact rolls (~{F(deadRolls, 1)} in useless substats)",
+                $"Потерянные роллы артефактов (~{F(deadRolls, 1)} в бесполезных сабстатах)"));
         }
 
         double artifactEfficiency = AverageArtifactEfficiency(m);
         if (m.Artifacts.Count > 0 && artifactEfficiency < InsightThresholds.LowArtifactEfficiency)
         {
-            weaknesses.Add(Inv($"Low artifact roll quality ({artifactEfficiency:F0}% avg efficiency)"));
+            weaknesses.Add(L(
+                $"Low artifact roll quality ({F(artifactEfficiency, 0)}% avg efficiency)",
+                $"Низкое качество роллов артефактов (средняя эффективность {F(artifactEfficiency, 0)}%)"));
         }
 
         if (m.EnergyRecharge < InsightThresholds.MinEnergyRecharge)
         {
-            weaknesses.Add(Inv($"Low Energy Recharge ({m.EnergyRecharge * PercentScale:F0}%)"));
+            weaknesses.Add(L(
+                $"Low Energy Recharge ({F(m.EnergyRecharge * PercentScale, 0)}%)",
+                $"Низкое восстановление энергии ({F(m.EnergyRecharge * PercentScale, 0)}%)"));
         }
 
         if (IsCritInvested(m) && !m.CritBalance.IsBalanced)
         {
-            weaknesses.Add(Inv(
-                $"Crit ratio off ({m.CritBalance.CritRate:F0} : {m.CritBalance.CritDamage:F0}); aim for CD ≈ 2× CR"));
+            weaknesses.Add(L(
+                $"Crit ratio off ({F(m.CritBalance.CritRate, 0)} : {F(m.CritBalance.CritDamage, 0)}); aim for CD ≈ 2× CR",
+                $"Дисбаланс критов ({F(m.CritBalance.CritRate, 0)} : {F(m.CritBalance.CritDamage, 0)}); цель — крит.урон ≈ 2× крит.шанс"));
         }
 
         if (HasSuboptimalGoblet(character, out StatType gobletMain))
         {
-            weaknesses.Add(Inv($"Goblet main stat may be suboptimal (has {gobletMain})"));
+            weaknesses.Add(L(
+                $"Goblet main stat may be suboptimal (has {gobletMain})",
+                $"Основной стат кубка не оптимален ({gobletMain})"));
         }
 
         return weaknesses;
@@ -136,74 +162,78 @@ public sealed class CharacterInsightAnalyzer : ICharacterInsightAnalyzer
 
         if (m.Level < m.MaxLevel)
         {
-            recommendations.Add(new Recommendation(
-                "level",
-                "Raise character level",
-                Inv($"Level {m.Level} → {m.MaxLevel} to unlock ascension stats."),
-                m.Level < m.MaxLevel - ProgressionConstants.MaxLevel / 10 ? RecommendationPriority.High : RecommendationPriority.Medium));
+            RecommendationPriority priority = m.Level < m.MaxLevel - ProgressionConstants.MaxLevel / 10
+                ? RecommendationPriority.High
+                : RecommendationPriority.Medium;
+            recommendations.Add(new Recommendation("level",
+                L("Raise character level", "Поднять уровень персонажа"),
+                L($"Level {m.Level} → {m.MaxLevel} to unlock ascension stats.",
+                  $"Уровень {m.Level} → {m.MaxLevel} откроет статы возвышения."),
+                priority));
         }
 
         if (m.Weapon is { } w && w.DpsLossVsBis >= InsightThresholds.HighDpsLoss && bestWeapon is { } bis)
         {
-            recommendations.Add(new Recommendation(
-                "weapon",
-                "Upgrade weapon",
-                Inv($"Equipped weapon is {w.DpsLossVsBis:F0}% below best-in-slot; consider {bis.Name}."),
+            recommendations.Add(new Recommendation("weapon",
+                L("Upgrade weapon", "Улучшить оружие"),
+                L($"Equipped weapon is {F(w.DpsLossVsBis, 0)}% below best-in-slot; consider {bis.Name}.",
+                  $"Оружие на {F(w.DpsLossVsBis, 0)}% ниже BiS; рассмотрите {bis.Name}."),
                 RecommendationPriority.High));
         }
 
         if (HasSuboptimalGoblet(character, out _))
         {
             StatType recommended = ElementDamageBonus.ForElement(character.Element);
-            recommendations.Add(new Recommendation(
-                "artifacts",
-                "Fix goblet main stat",
-                Inv($"Use a {recommended} goblet for this character's element."),
+            recommendations.Add(new Recommendation("artifacts",
+                L("Fix goblet main stat", "Исправить основной стат кубка"),
+                L($"Use a {recommended} goblet for this character's element.",
+                  $"Используйте кубок «{recommended}» под стихию персонажа."),
                 RecommendationPriority.High));
         }
 
         if (m.Talents is { } t && IsBelowTargetTalents(t))
         {
-            recommendations.Add(new Recommendation(
-                "talents",
-                "Level talents",
-                Inv($"Raise talents toward {ProgressionConstants.TargetTalentLevel}+ (currently {t.NormalAttack}/{t.ElementalSkill}/{t.ElementalBurst})."),
+            recommendations.Add(new Recommendation("talents",
+                L("Level talents", "Прокачать таланты"),
+                L($"Raise talents toward {ProgressionConstants.TargetTalentLevel}+ (currently {t.NormalAttack}/{t.ElementalSkill}/{t.ElementalBurst}).",
+                  $"Поднимите таланты до {ProgressionConstants.TargetTalentLevel}+ (сейчас {t.NormalAttack}/{t.ElementalSkill}/{t.ElementalBurst})."),
                 RecommendationPriority.Medium));
         }
 
         if (m.EnergyRecharge < InsightThresholds.MinEnergyRecharge)
         {
-            recommendations.Add(new Recommendation(
-                "energy",
-                "Increase Energy Recharge",
-                Inv($"ER is {m.EnergyRecharge * PercentScale:F0}%; add ER from sands, substats or weapon to reliably burst."),
+            recommendations.Add(new Recommendation("energy",
+                L("Increase Energy Recharge", "Повысить восстановление энергии"),
+                L($"ER is {F(m.EnergyRecharge * PercentScale, 0)}%; add ER from sands, substats or weapon to reliably burst.",
+                  $"ВЭ {F(m.EnergyRecharge * PercentScale, 0)}%; добавьте ВЭ через часы, сабстаты или оружие для стабильного взрыва."),
                 RecommendationPriority.Medium));
         }
 
-        if (AverageArtifactEfficiency(m) is var eff and > 0 && eff < InsightThresholds.LowArtifactEfficiency)
+        double eff = AverageArtifactEfficiency(m);
+        if (eff > 0 && eff < InsightThresholds.LowArtifactEfficiency)
         {
-            recommendations.Add(new Recommendation(
-                "artifacts",
-                "Farm higher-quality artifacts",
-                Inv($"Average roll efficiency is {eff:F0}%; better substats will raise damage."),
+            recommendations.Add(new Recommendation("artifacts",
+                L("Farm higher-quality artifacts", "Фармить более качественные артефакты"),
+                L($"Average roll efficiency is {F(eff, 0)}%; better substats will raise damage.",
+                  $"Средняя эффективность роллов {F(eff, 0)}%; лучшие сабстаты повысят урон."),
                 RecommendationPriority.Medium));
         }
 
         if (IsCritInvested(m) && !m.CritBalance.IsBalanced)
         {
-            recommendations.Add(new Recommendation(
-                "crit",
-                "Rebalance crit",
-                "Adjust artifacts/weapon so CRIT DMG is roughly twice CRIT Rate.",
+            recommendations.Add(new Recommendation("crit",
+                L("Rebalance crit", "Сбалансировать криты"),
+                L("Adjust artifacts/weapon so CRIT DMG is roughly twice CRIT Rate.",
+                  "Настройте артефакты/оружие так, чтобы крит.урон был примерно вдвое больше крит.шанса."),
                 RecommendationPriority.Medium));
         }
 
         if (TotalDeadRolls(m) >= InsightThresholds.DeadRollWarnThreshold)
         {
-            recommendations.Add(new Recommendation(
-                "artifacts",
-                "Replace artifacts with dead rolls",
-                "Several rolls went into useless substats; replacing those pieces improves efficiency.",
+            recommendations.Add(new Recommendation("artifacts",
+                L("Replace artifacts with dead rolls", "Заменить артефакты с мёртвыми роллами"),
+                L("Several rolls went into useless substats; replacing those pieces improves efficiency.",
+                  "Несколько роллов ушли в бесполезные сабстаты; замена этих предметов повысит эффективность."),
                 RecommendationPriority.Low));
         }
 
@@ -275,7 +305,6 @@ public sealed class CharacterInsightAnalyzer : ICharacterInsightAnalyzer
 
         gobletMain = goblet.MainStat.Type;
 
-        // Off-element damage goblets and defensive main stats are clearly suboptimal; ATK%/EM are tolerated.
         bool wrongElementBonus = IsDamageBonus(gobletMain) && gobletMain != recommended;
         bool defensiveMain = gobletMain is StatType.HpPercent or StatType.DefPercent;
         return wrongElementBonus || defensiveMain;
@@ -286,5 +315,11 @@ public sealed class CharacterInsightAnalyzer : ICharacterInsightAnalyzer
         or StatType.DendroDamageBonus or StatType.ElectroDamageBonus or StatType.AnemoDamageBonus
         or StatType.CryoDamageBonus or StatType.GeoDamageBonus;
 
-    private static string Inv(FormattableString text) => text.ToString(CultureInfo.InvariantCulture);
+    private static LocalizedText L(FormattableString en, FormattableString ru) =>
+        new(en.ToString(CultureInfo.InvariantCulture), ru.ToString(CultureInfo.InvariantCulture));
+
+    private static LocalizedText L(string en, string ru) => new(en, ru);
+
+    private static string F(double value, int digits) =>
+        value.ToString("F" + digits.ToString(CultureInfo.InvariantCulture), CultureInfo.InvariantCulture);
 }

@@ -124,6 +124,8 @@ public sealed class EnkaImporter : IAccountImporter
         {
             Id = avatar.AvatarId,
             Name = metadata?.Name ?? $"Character {avatar.AvatarId}",
+            NameRu = metadata is { NameRu.Length: > 0 } ? metadata.NameRu : null,
+            IconUrl = metadata is { IconUrl.Length: > 0 } ? metadata.IconUrl : null,
             Element = metadata?.Element ?? ElementType.Unknown,
             WeaponType = weaponType,
             Rarity = metadata?.Rarity ?? 0,

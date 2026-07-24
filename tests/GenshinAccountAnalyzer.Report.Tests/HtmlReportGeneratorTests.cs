@@ -1,5 +1,6 @@
 using FluentAssertions;
 using GenshinAccountAnalyzer.Domain.Analysis;
+using GenshinAccountAnalyzer.Domain.Common;
 using GenshinAccountAnalyzer.Domain.Enums;
 using GenshinAccountAnalyzer.Report;
 
@@ -24,9 +25,15 @@ public sealed class HtmlReportGeneratorTests
         EnergyRecharge = 1.2,
         ElementalMastery = 100,
         Efficiency = 95,
-        Strengths = ["Strong overall build"],
-        Weaknesses = ["Weapon well below best-in-slot"],
-        Recommendations = [new Recommendation("weapon", "Upgrade weapon", "Consider Mistsplitter.", RecommendationPriority.High)],
+        Strengths = [new LocalizedText("Strong overall build", "Крепкий билд")],
+        Weaknesses = [new LocalizedText("Weapon well below best-in-slot", "Оружие ниже BiS")],
+        Recommendations =
+        [
+            new Recommendation("weapon",
+                new LocalizedText("Upgrade weapon", "Улучшить оружие"),
+                new LocalizedText("Consider Mistsplitter.", "Рассмотрите Mistsplitter."),
+                RecommendationPriority.High),
+        ],
     };
 
     private static AccountAnalysis Account(params CharacterAnalysis[] characters) => new()
@@ -38,11 +45,11 @@ public sealed class HtmlReportGeneratorTests
         [
             new TeamAnalysis
             {
-                Members = [new TeamMember(1, characters.FirstOrDefault()?.Name ?? "X", ElementType.Pyro, 85, "Carry")],
+                Members = [new TeamMember(1, characters.FirstOrDefault()?.Name ?? "X", "Икс", ElementType.Pyro, 85, "Carry")],
                 Score = 88,
-                ReactionCore = "Vaporize",
-                Resonances = [new TeamResonance(ElementType.Pyro, "Fervent Flames", "+25% ATK")],
-                Reasons = ["Reaction core: Vaporize"],
+                ReactionCore = new LocalizedText("Vaporize", "Пар"),
+                Resonances = [new TeamResonance(ElementType.Pyro, new LocalizedText("Fervent Flames", "Пылающее пламя"), new LocalizedText("+25% ATK", "+25% АТК"))],
+                Reasons = [new LocalizedText("Reaction core: Vaporize", "Ядро реакции: Пар")],
             },
         ],
     };

@@ -18,7 +18,8 @@ public sealed class AnalyzeSampleTests
         await using FileStream sample = SampleData.OpenEnkaSample();
         Account account = await new EnkaImporter(metadata).ImportAsync(sample, CancellationToken.None);
         return (account, new CharacterAnalyzer(
-            metadata, new ArtifactAnalyzer(), new WeaponAnalyzer(metadata), new CharacterInsightAnalyzer()));
+            metadata, new ArtifactAnalyzer(), new WeaponAnalyzer(metadata),
+            new CharacterInsightAnalyzer(), new BuildOptimizer()));
     }
 
     [Fact]

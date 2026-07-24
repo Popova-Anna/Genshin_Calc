@@ -1,3 +1,5 @@
+using GenshinAccountAnalyzer.Domain.Common;
+
 namespace GenshinAccountAnalyzer.Domain.Analysis;
 
 /// <summary>
@@ -7,10 +9,10 @@ namespace GenshinAccountAnalyzer.Domain.Analysis;
 public sealed record CharacterInsights
 {
     /// <summary>Positive highlights of the build.</summary>
-    public required IReadOnlyList<string> Strengths { get; init; }
+    public required IReadOnlyList<LocalizedText> Strengths { get; init; }
 
     /// <summary>Shortcomings of the build.</summary>
-    public required IReadOnlyList<string> Weaknesses { get; init; }
+    public required IReadOnlyList<LocalizedText> Weaknesses { get; init; }
 
     /// <summary>Actionable improvements, ordered most impactful first.</summary>
     public required IReadOnlyList<Recommendation> Recommendations { get; init; }

@@ -1,6 +1,7 @@
 using GenshinAccountAnalyzer.Analyzer.Configuration;
 using GenshinAccountAnalyzer.Application.Abstractions;
 using GenshinAccountAnalyzer.Domain.Analysis;
+using GenshinAccountAnalyzer.Domain.Common;
 using GenshinAccountAnalyzer.Domain.Enums;
 using GenshinAccountAnalyzer.Domain.Models;
 
@@ -41,7 +42,7 @@ public sealed class TeamAnalyzer : ITeamAnalyzer
         List<ElementType> elements = members.Select(m => m.Element).ToList();
         List<ElementType> distinct = elements.Distinct().ToList();
 
-        (string coreName, double reactionScore) = ReactionData.DetectCore(distinct);
+        (LocalizedText coreName, double reactionScore) = ReactionData.DetectCore(distinct);
         (List<TeamResonance> resonances, double resonanceScore) = DetectResonances(elements);
         double powerScore = PowerScore(members, buildScores);
         double coherence = Coherence(distinct.Count);
@@ -116,6 +117,7 @@ public sealed class TeamAnalyzer : ITeamAnalyzer
             .Select((m, index) => new TeamMember(
                 m.Id,
                 m.Name,
+                m.NameRu,
                 m.Element,
                 buildScores.TryGetValue(m.Id, out double score) ? score : 0d,
                 index < TeamScoreWeights.RolesByStrength.Count
@@ -124,22 +126,28 @@ public sealed class TeamAnalyzer : ITeamAnalyzer
             .ToList();
     }
 
-    private static List<string> BuildReasons(
-        string coreName,
+    private static List<LocalizedText> BuildReasons(
+        LocalizedText coreName,
         IReadOnlyList<TeamResonance> resonances,
         IReadOnlyList<ElementType> elements)
     {
-        var reasons = new List<string> { $"Reaction core: {coreName}" };
+        var reasons = new List<LocalizedText>
+        {
+            new($"Reaction core: {coreName.En}", $"Ядро реакции: {coreName.Ru}"),
+        };
 
         foreach (TeamResonance resonance in resonances)
         {
-            reasons.Add($"{resonance.Name} resonance ({resonance.Effect})");
+            reasons.Add(new LocalizedText(
+                $"{resonance.Name.En} resonance ({resonance.Effect.En})",
+                $"Резонанс «{resonance.Name.Ru}» ({resonance.Effect.Ru})"));
         }
 
         int electroCount = elements.Count(e => e == ElementType.Electro);
         reasons.Add(electroCount >= ResonanceData.MinCharactersForResonance
-            ? "Electro resonance supports energy generation"
-            : "Ensure sufficient Energy Recharge to keep bursts online");
+            ? new LocalizedText("Electro resonance supports energy generation", "Электро-резонанс помогает с энергией")
+            : new LocalizedText("Ensure sufficient Energy Recharge to keep bursts online",
+                "Обеспечьте достаточное восстановление энергии для взрывов"));
 
         return reasons;
     }

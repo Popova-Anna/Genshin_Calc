@@ -14,7 +14,8 @@ public sealed class CharacterAnalyzerTests
             metadata ?? new FakeMetadata(),
             new ArtifactAnalyzer(),
             new WeaponAnalyzer(new FakeWeaponCatalog()),
-            new CharacterInsightAnalyzer());
+            new CharacterInsightAnalyzer(),
+            new BuildOptimizer());
 
     [Fact]
     public void Analyze_FullyBuiltCharacter_ScoresTopTiers()

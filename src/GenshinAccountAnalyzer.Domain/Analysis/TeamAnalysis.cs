@@ -1,3 +1,5 @@
+using GenshinAccountAnalyzer.Domain.Common;
+
 namespace GenshinAccountAnalyzer.Domain.Analysis;
 
 /// <summary>
@@ -12,12 +14,12 @@ public sealed record TeamAnalysis
     /// <summary>Overall synergy score, 0-100.</summary>
     public required double Score { get; init; }
 
-    /// <summary>The dominant reaction or cohesion core (e.g. "Vaporize", "Mono Pyro", "Aggravate").</summary>
-    public required string ReactionCore { get; init; }
+    /// <summary>The dominant, localized reaction or cohesion core (e.g. "Vaporize", "Mono Pyro").</summary>
+    public required LocalizedText ReactionCore { get; init; }
 
     /// <summary>Active elemental resonances.</summary>
     public required IReadOnlyList<TeamResonance> Resonances { get; init; }
 
-    /// <summary>Human-readable notes explaining the team's synergy and energy considerations.</summary>
-    public required IReadOnlyList<string> Reasons { get; init; }
+    /// <summary>Localized notes explaining the team's synergy and energy considerations.</summary>
+    public required IReadOnlyList<LocalizedText> Reasons { get; init; }
 }

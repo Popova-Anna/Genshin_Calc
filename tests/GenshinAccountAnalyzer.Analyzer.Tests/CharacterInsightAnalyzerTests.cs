@@ -78,9 +78,9 @@ public sealed class CharacterInsightAnalyzerTests
 
         CharacterInsights insights = Analyzer.Analyze(character, metrics);
 
-        insights.Strengths.Should().Contain(s => s.Contains("Strong overall build"));
-        insights.Strengths.Should().Contain(s => s.Contains("Maxed talents"));
-        insights.Strengths.Should().Contain("Near-best-in-slot weapon");
+        insights.Strengths.Should().Contain(s => s.En.Contains("Strong overall build"));
+        insights.Strengths.Should().Contain(s => s.En.Contains("Maxed talents"));
+        insights.Strengths.Should().Contain(s => s.En == "Near-best-in-slot weapon");
         insights.BestWeapon!.Value.Name.Should().Be("Best Weapon");
     }
 
@@ -92,10 +92,11 @@ public sealed class CharacterInsightAnalyzerTests
 
         CharacterInsights insights = Analyzer.Analyze(character, metrics);
 
-        insights.Weaknesses.Should().Contain(w => w.Contains("below best-in-slot"));
+        insights.Weaknesses.Should().Contain(w => w.En.Contains("below best-in-slot"));
         Recommendation upgrade = insights.Recommendations.First(r => r.Category == "weapon");
         upgrade.Priority.Should().Be(RecommendationPriority.High);
-        upgrade.Detail.Should().Contain("Mistsplitter Reforged");
+        upgrade.Detail.En.Should().Contain("Mistsplitter Reforged");
+        upgrade.Detail.Ru.Should().Contain("Mistsplitter Reforged");
     }
 
     [Fact]
@@ -105,7 +106,7 @@ public sealed class CharacterInsightAnalyzerTests
 
         CharacterInsights insights = Analyzer.Analyze(Build.Character(), metrics);
 
-        insights.Weaknesses.Should().Contain(w => w.Contains("Low Energy Recharge"));
+        insights.Weaknesses.Should().Contain(w => w.En.Contains("Low Energy Recharge"));
         insights.Recommendations.Should().Contain(r => r.Category == "energy");
     }
 
@@ -117,7 +118,7 @@ public sealed class CharacterInsightAnalyzerTests
 
         CharacterInsights insights = Analyzer.Analyze(Build.Character(), metrics);
 
-        insights.Weaknesses.Should().Contain(w => w.Contains("Crit ratio off"));
+        insights.Weaknesses.Should().Contain(w => w.En.Contains("Crit ratio off"));
         insights.Recommendations.Should().Contain(r => r.Category == "crit");
     }
 
@@ -130,7 +131,7 @@ public sealed class CharacterInsightAnalyzerTests
 
         CharacterInsights insights = Analyzer.Analyze(Build.Character(), metrics);
 
-        insights.Weaknesses.Should().NotContain(w => w.Contains("Crit ratio"));
+        insights.Weaknesses.Should().NotContain(w => w.En.Contains("Crit ratio"));
     }
 
     [Fact]
@@ -140,7 +141,7 @@ public sealed class CharacterInsightAnalyzerTests
 
         CharacterInsights insights = Analyzer.Analyze(Build.Character(), metrics);
 
-        insights.Weaknesses.Should().Contain(w => w.Contains("Wasted artifact rolls"));
+        insights.Weaknesses.Should().Contain(w => w.En.Contains("Wasted artifact rolls"));
     }
 
     [Fact]
@@ -150,8 +151,8 @@ public sealed class CharacterInsightAnalyzerTests
 
         CharacterInsights insights = Analyzer.Analyze(character, Metrics());
 
-        insights.Weaknesses.Should().Contain(w => w.Contains("Goblet main stat"));
-        insights.Recommendations.Should().Contain(r => r.Category == "artifacts" && r.Title.Contains("goblet"));
+        insights.Weaknesses.Should().Contain(w => w.En.Contains("Goblet main stat"));
+        insights.Recommendations.Should().Contain(r => r.Category == "artifacts" && r.Title.En.Contains("goblet"));
         insights.BestArtifacts.MainStats[ArtifactSlot.Goblet].Should().Be(StatType.PyroDamageBonus);
     }
 
@@ -162,7 +163,7 @@ public sealed class CharacterInsightAnalyzerTests
 
         CharacterInsights insights = Analyzer.Analyze(character, Metrics());
 
-        insights.Weaknesses.Should().NotContain(w => w.Contains("Goblet"));
+        insights.Weaknesses.Should().NotContain(w => w.En.Contains("Goblet"));
     }
 
     [Fact]
@@ -190,7 +191,7 @@ public sealed class CharacterInsightAnalyzerTests
     {
         CharacterInsights insights = Analyzer.Analyze(Build.Character(level: 70), Metrics(level: 70));
 
-        insights.Weaknesses.Should().Contain(w => w.Contains("Below max level"));
+        insights.Weaknesses.Should().Contain(w => w.En.Contains("Below max level"));
         insights.Recommendations.First(r => r.Category == "level").Priority.Should().Be(RecommendationPriority.High);
     }
 

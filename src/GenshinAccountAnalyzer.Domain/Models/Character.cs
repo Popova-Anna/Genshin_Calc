@@ -12,8 +12,14 @@ public sealed record Character
     /// <summary>The in-game character (avatar) identifier.</summary>
     public required int Id { get; init; }
 
-    /// <summary>Display name, or a generated placeholder when metadata is unavailable.</summary>
+    /// <summary>English display name, or a generated placeholder when metadata is unavailable.</summary>
     public required string Name { get; init; }
+
+    /// <summary>Russian display name, when available.</summary>
+    public string? NameRu { get; init; }
+
+    /// <summary>Absolute URL of the character's icon, when available.</summary>
+    public string? IconUrl { get; init; }
 
     /// <summary>The character's element (vision).</summary>
     public ElementType Element { get; init; } = ElementType.Unknown;

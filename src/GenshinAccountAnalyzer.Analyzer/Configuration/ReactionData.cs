@@ -1,10 +1,11 @@
+using GenshinAccountAnalyzer.Domain.Common;
 using GenshinAccountAnalyzer.Domain.Enums;
 
 namespace GenshinAccountAnalyzer.Analyzer.Configuration;
 
 /// <summary>
 /// Elemental reaction cores and their offensive value, plus enabler handling for Anemo (Swirl) and Geo
-/// (Crystallize). Used to identify and score the dominant reaction of a team.
+/// (Crystallize). Used to identify and score the dominant, localized reaction of a team.
 /// </summary>
 public static class ReactionData
 {
@@ -20,18 +21,18 @@ public static class ReactionData
     /// <summary>Fallback score for a team with no recognised reaction core.</summary>
     public const double MixedScore = 0.3d;
 
-    private static readonly IReadOnlyDictionary<(ElementType, ElementType), (string Name, double Score)> Reactions =
-        new Dictionary<(ElementType, ElementType), (string, double)>
+    private static readonly IReadOnlyDictionary<(ElementType, ElementType), (LocalizedText Name, double Score)> Reactions =
+        new Dictionary<(ElementType, ElementType), (LocalizedText, double)>
         {
-            [Key(ElementType.Pyro, ElementType.Hydro)] = ("Vaporize", 1.0d),
-            [Key(ElementType.Pyro, ElementType.Cryo)] = ("Melt", 1.0d),
-            [Key(ElementType.Electro, ElementType.Dendro)] = ("Aggravate / Quicken", 1.0d),
-            [Key(ElementType.Hydro, ElementType.Dendro)] = ("Bloom", 0.9d),
-            [Key(ElementType.Hydro, ElementType.Cryo)] = ("Freeze", 0.85d),
-            [Key(ElementType.Pyro, ElementType.Electro)] = ("Overload", 0.7d),
-            [Key(ElementType.Cryo, ElementType.Electro)] = ("Superconduct", 0.6d),
-            [Key(ElementType.Hydro, ElementType.Electro)] = ("Electro-Charged", 0.6d),
-            [Key(ElementType.Pyro, ElementType.Dendro)] = ("Burning", 0.5d),
+            [Key(ElementType.Pyro, ElementType.Hydro)] = (new("Vaporize", "Пар"), 1.0d),
+            [Key(ElementType.Pyro, ElementType.Cryo)] = (new("Melt", "Таяние"), 1.0d),
+            [Key(ElementType.Electro, ElementType.Dendro)] = (new("Aggravate / Quicken", "Обострение / Стимуляция"), 1.0d),
+            [Key(ElementType.Hydro, ElementType.Dendro)] = (new("Bloom", "Цветение"), 0.9d),
+            [Key(ElementType.Hydro, ElementType.Cryo)] = (new("Freeze", "Заморозка"), 0.85d),
+            [Key(ElementType.Pyro, ElementType.Electro)] = (new("Overload", "Перегрузка"), 0.7d),
+            [Key(ElementType.Cryo, ElementType.Electro)] = (new("Superconduct", "Сверхпроводник"), 0.6d),
+            [Key(ElementType.Hydro, ElementType.Electro)] = (new("Electro-Charged", "Заряжен"), 0.6d),
+            [Key(ElementType.Pyro, ElementType.Dendro)] = (new("Burning", "Горение"), 0.5d),
         };
 
     private static readonly HashSet<ElementType> Swirlable =
@@ -41,19 +42,19 @@ public static class ReactionData
         (int)a < (int)b ? (a, b) : (b, a);
 
     /// <summary>
-    /// Identifies the dominant reaction core of a set of distinct elements and its offensive value.
+    /// Identifies the dominant, localized reaction core of a set of distinct elements and its value.
     /// </summary>
     /// <param name="elements">The distinct elements present in the team.</param>
-    /// <returns>The core name and a 0-1 score.</returns>
-    public static (string Name, double Score) DetectCore(IReadOnlyCollection<ElementType> elements)
+    /// <returns>The localized core name and a 0-1 score.</returns>
+    public static (LocalizedText Name, double Score) DetectCore(IReadOnlyCollection<ElementType> elements)
     {
         if (elements.Count == 1)
         {
             ElementType only = elements.First();
-            return ($"Mono {only}", MonoElementScore);
+            return (new LocalizedText($"Mono {only}", $"Моно {only}"), MonoElementScore);
         }
 
-        string bestName = "Mixed";
+        LocalizedText bestName = new("Mixed", "Смешанная");
         double bestScore = 0d;
 
         foreach ((ElementType, ElementType) pair in Reactions.Keys)
@@ -67,14 +68,14 @@ public static class ReactionData
 
         if (elements.Contains(ElementType.Anemo) && elements.Any(Swirlable.Contains) && SwirlScore > bestScore)
         {
-            (bestName, bestScore) = ("Swirl", SwirlScore);
+            (bestName, bestScore) = (new LocalizedText("Swirl", "Рассеивание"), SwirlScore);
         }
 
         if (elements.Contains(ElementType.Geo) && elements.Count > 1 && CrystallizeScore > bestScore)
         {
-            (bestName, bestScore) = ("Crystallize", CrystallizeScore);
+            (bestName, bestScore) = (new LocalizedText("Crystallize", "Кристаллизация"), CrystallizeScore);
         }
 
-        return bestScore > 0d ? (bestName, bestScore) : ("Mixed", MixedScore);
+        return bestScore > 0d ? (bestName, bestScore) : (new LocalizedText("Mixed", "Смешанная"), MixedScore);
     }
 }

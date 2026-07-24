@@ -43,7 +43,8 @@ public sealed class TeamAnalyzerTests
         IReadOnlyList<TeamAnalysis> teams = Analyzer.FindBestTeams(roster, Scores(roster), 5);
 
         teams.Should().ContainSingle();
-        teams[0].ReactionCore.Should().Be("Vaporize");
+        teams[0].ReactionCore.En.Should().Be("Vaporize");
+        teams[0].ReactionCore.Ru.Should().Be("Пар");
     }
 
     [Fact]
@@ -59,7 +60,7 @@ public sealed class TeamAnalyzerTests
 
         TeamAnalysis team = Analyzer.FindBestTeams(roster, Scores(roster), 5)[0];
 
-        team.ReactionCore.Should().Be("Mono Pyro");
+        team.ReactionCore.En.Should().Be("Mono Pyro");
         team.Resonances.Should().ContainSingle(r => r.Element == ElementType.Pyro);
     }
 

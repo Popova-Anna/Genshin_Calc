@@ -27,12 +27,18 @@ public interface IGameMetadataProvider
 }
 
 /// <summary>Static metadata describing a character.</summary>
-/// <param name="Name">Localized display name.</param>
+/// <param name="Name">English display name.</param>
 /// <param name="Element">The character's element (vision).</param>
 /// <param name="Weapon">The weapon type the character wields.</param>
 /// <param name="Rarity">Rarity (star rating).</param>
 public sealed record CharacterMetadata(string Name, ElementType Element, WeaponType Weapon, int Rarity)
 {
+    /// <summary>Russian display name (falls back to the English name when unavailable).</summary>
+    public string NameRu { get; init; } = string.Empty;
+
+    /// <summary>Absolute URL of the character's icon, when available.</summary>
+    public string IconUrl { get; init; } = string.Empty;
+
     /// <summary>
     /// Skill ids of the three main upgradable talents (Normal Attack, Elemental Skill, Elemental Burst),
     /// matching the keys used in an export's skill-level map. Empty when unknown.

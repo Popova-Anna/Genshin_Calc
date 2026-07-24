@@ -1,9 +1,11 @@
 {
   "10000002": {
-    "name": "Kamisato Ayaka",
+    "nameEn": "Kamisato Ayaka",
+    "nameRu": "Аяка",
     "element": "Cryo",
     "weapon": "Sword",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Ayaka",
     "talents": [
       10024,
       10018,
@@ -11,54 +13,38 @@
     ]
   },
   "10000003": {
-    "name": "Jean",
+    "nameEn": "Jean",
+    "nameRu": "Джинн",
     "element": "Anemo",
     "weapon": "Sword",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Qin",
     "talents": [
       10031,
       10033,
       10034
     ]
   },
-  "10000005": {
-    "name": "Traveler",
-    "element": "Anemo",
-    "weapon": "Sword",
-    "rarity": 5,
-    "talents": [
-      100543,
-      10067,
-      10068
-    ]
-  },
   "10000006": {
-    "name": "Lisa",
+    "nameEn": "Lisa",
+    "nameRu": "Лиза",
     "element": "Electro",
     "weapon": "Catalyst",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Lisa",
     "talents": [
       10060,
       10061,
       10062
     ]
   },
-  "10000007": {
-    "name": "Traveler",
-    "element": "Anemo",
-    "weapon": "Sword",
-    "rarity": 5,
-    "talents": [
-      100553,
-      10067,
-      10068
-    ]
-  },
   "10000014": {
-    "name": "Barbara",
+    "nameEn": "Barbara",
+    "nameRu": "Барбара",
     "element": "Hydro",
     "weapon": "Catalyst",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Barbara",
     "talents": [
       10070,
       10071,
@@ -66,10 +52,12 @@
     ]
   },
   "10000015": {
-    "name": "Kaeya",
+    "nameEn": "Kaeya",
+    "nameRu": "Кэйа",
     "element": "Cryo",
     "weapon": "Sword",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Kaeya",
     "talents": [
       10073,
       10074,
@@ -77,10 +65,12 @@
     ]
   },
   "10000016": {
-    "name": "Diluc",
+    "nameEn": "Diluc",
+    "nameRu": "Дилюк",
     "element": "Pyro",
     "weapon": "Claymore",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Diluc",
     "talents": [
       10160,
       10161,
@@ -88,10 +78,12 @@
     ]
   },
   "10000020": {
-    "name": "Razor",
+    "nameEn": "Razor",
+    "nameRu": "Рэйзор",
     "element": "Electro",
     "weapon": "Claymore",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Razor",
     "talents": [
       10201,
       10202,
@@ -99,10 +91,12 @@
     ]
   },
   "10000021": {
-    "name": "Amber",
+    "nameEn": "Amber",
+    "nameRu": "Эмбер",
     "element": "Pyro",
     "weapon": "Bow",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Ambor",
     "talents": [
       10041,
       10032,
@@ -110,10 +104,12 @@
     ]
   },
   "10000022": {
-    "name": "Venti",
+    "nameEn": "Venti",
+    "nameRu": "Венти",
     "element": "Anemo",
     "weapon": "Bow",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Venti",
     "talents": [
       10221,
       10224,
@@ -121,10 +117,12 @@
     ]
   },
   "10000023": {
-    "name": "Xiangling",
+    "nameEn": "Xiangling",
+    "nameRu": "Сян Лин",
     "element": "Pyro",
     "weapon": "Polearm",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Xiangling",
     "talents": [
       10231,
       10232,
@@ -132,10 +130,12 @@
     ]
   },
   "10000024": {
-    "name": "Beidou",
+    "nameEn": "Beidou",
+    "nameRu": "Бэй Доу",
     "element": "Electro",
     "weapon": "Claymore",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Beidou",
     "talents": [
       10241,
       10242,
@@ -143,10 +143,12 @@
     ]
   },
   "10000025": {
-    "name": "Xingqiu",
+    "nameEn": "Xingqiu",
+    "nameRu": "Син Цю",
     "element": "Hydro",
     "weapon": "Sword",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Xingqiu",
     "talents": [
       10381,
       10382,
@@ -154,10 +156,12 @@
     ]
   },
   "10000026": {
-    "name": "Xiao",
+    "nameEn": "Xiao",
+    "nameRu": "Сяо",
     "element": "Anemo",
     "weapon": "Polearm",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Xiao",
     "talents": [
       10261,
       10262,
@@ -165,10 +169,12 @@
     ]
   },
   "10000027": {
-    "name": "Ningguang",
+    "nameEn": "Ningguang",
+    "nameRu": "Нин Гуан",
     "element": "Geo",
     "weapon": "Catalyst",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Ningguang",
     "talents": [
       10271,
       10272,
@@ -176,10 +182,12 @@
     ]
   },
   "10000029": {
-    "name": "Klee",
+    "nameEn": "Klee",
+    "nameRu": "Кли",
     "element": "Pyro",
     "weapon": "Catalyst",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Klee",
     "talents": [
       10291,
       10292,
@@ -187,10 +195,12 @@
     ]
   },
   "10000030": {
-    "name": "Zhongli",
+    "nameEn": "Zhongli",
+    "nameRu": "Чжун Ли",
     "element": "Geo",
     "weapon": "Polearm",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Zhongli",
     "talents": [
       10301,
       10302,
@@ -198,10 +208,12 @@
     ]
   },
   "10000031": {
-    "name": "Fischl",
+    "nameEn": "Fischl",
+    "nameRu": "Фишль",
     "element": "Electro",
     "weapon": "Bow",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Fischl",
     "talents": [
       10311,
       10312,
@@ -209,10 +221,12 @@
     ]
   },
   "10000032": {
-    "name": "Bennett",
+    "nameEn": "Bennett",
+    "nameRu": "Беннет",
     "element": "Pyro",
     "weapon": "Sword",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Bennett",
     "talents": [
       10321,
       10322,
@@ -220,10 +234,12 @@
     ]
   },
   "10000033": {
-    "name": "Tartaglia",
+    "nameEn": "Tartaglia",
+    "nameRu": "Тарталья",
     "element": "Hydro",
     "weapon": "Bow",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Tartaglia",
     "talents": [
       10331,
       10332,
@@ -231,10 +247,12 @@
     ]
   },
   "10000034": {
-    "name": "Noelle",
+    "nameEn": "Noelle",
+    "nameRu": "Ноэлль",
     "element": "Geo",
     "weapon": "Claymore",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Noel",
     "talents": [
       10341,
       10342,
@@ -242,10 +260,12 @@
     ]
   },
   "10000035": {
-    "name": "Qiqi",
+    "nameEn": "Qiqi",
+    "nameRu": "Ци Ци",
     "element": "Cryo",
     "weapon": "Sword",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Qiqi",
     "talents": [
       10351,
       10352,
@@ -253,10 +273,12 @@
     ]
   },
   "10000036": {
-    "name": "Chongyun",
+    "nameEn": "Chongyun",
+    "nameRu": "Чун Юнь",
     "element": "Cryo",
     "weapon": "Claymore",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Chongyun",
     "talents": [
       10401,
       10402,
@@ -264,10 +286,12 @@
     ]
   },
   "10000037": {
-    "name": "Ganyu",
+    "nameEn": "Ganyu",
+    "nameRu": "Гань Юй",
     "element": "Cryo",
     "weapon": "Bow",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Ganyu",
     "talents": [
       10371,
       10372,
@@ -275,10 +299,12 @@
     ]
   },
   "10000038": {
-    "name": "Albedo",
+    "nameEn": "Albedo",
+    "nameRu": "Альбедо",
     "element": "Geo",
     "weapon": "Sword",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Albedo",
     "talents": [
       10386,
       10387,
@@ -286,10 +312,12 @@
     ]
   },
   "10000039": {
-    "name": "Diona",
+    "nameEn": "Diona",
+    "nameRu": "Диона",
     "element": "Cryo",
     "weapon": "Bow",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Diona",
     "talents": [
       10391,
       10392,
@@ -297,10 +325,12 @@
     ]
   },
   "10000041": {
-    "name": "Mona",
+    "nameEn": "Mona",
+    "nameRu": "Мона",
     "element": "Hydro",
     "weapon": "Catalyst",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Mona",
     "talents": [
       10411,
       10412,
@@ -308,10 +338,12 @@
     ]
   },
   "10000042": {
-    "name": "Keqing",
+    "nameEn": "Keqing",
+    "nameRu": "Кэ Цин",
     "element": "Electro",
     "weapon": "Sword",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Keqing",
     "talents": [
       10421,
       10422,
@@ -319,10 +351,12 @@
     ]
   },
   "10000043": {
-    "name": "Sucrose",
+    "nameEn": "Sucrose",
+    "nameRu": "Сахароза",
     "element": "Anemo",
     "weapon": "Catalyst",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Sucrose",
     "talents": [
       10431,
       10432,
@@ -330,10 +364,12 @@
     ]
   },
   "10000044": {
-    "name": "Xinyan",
+    "nameEn": "Xinyan",
+    "nameRu": "Синь Янь",
     "element": "Pyro",
     "weapon": "Claymore",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Xinyan",
     "talents": [
       10441,
       10442,
@@ -341,10 +377,12 @@
     ]
   },
   "10000045": {
-    "name": "Rosaria",
+    "nameEn": "Rosaria",
+    "nameRu": "Розария",
     "element": "Cryo",
     "weapon": "Polearm",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Rosaria",
     "talents": [
       10451,
       10452,
@@ -352,10 +390,12 @@
     ]
   },
   "10000046": {
-    "name": "Hu Tao",
+    "nameEn": "Hu Tao",
+    "nameRu": "Ху Тао",
     "element": "Pyro",
     "weapon": "Polearm",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Hutao",
     "talents": [
       10461,
       10462,
@@ -363,10 +403,12 @@
     ]
   },
   "10000047": {
-    "name": "Kaedehara Kazuha",
+    "nameEn": "Kaedehara Kazuha",
+    "nameRu": "Кадзуха",
     "element": "Anemo",
     "weapon": "Sword",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Kazuha",
     "talents": [
       10471,
       10472,
@@ -374,10 +416,12 @@
     ]
   },
   "10000048": {
-    "name": "Yanfei",
+    "nameEn": "Yanfei",
+    "nameRu": "Янь Фэй",
     "element": "Pyro",
     "weapon": "Catalyst",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Feiyan",
     "talents": [
       10481,
       10482,
@@ -385,10 +429,12 @@
     ]
   },
   "10000049": {
-    "name": "Yoimiya",
+    "nameEn": "Yoimiya",
+    "nameRu": "Ёимия",
     "element": "Pyro",
     "weapon": "Bow",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Yoimiya",
     "talents": [
       10491,
       10492,
@@ -396,10 +442,12 @@
     ]
   },
   "10000050": {
-    "name": "Thoma",
+    "nameEn": "Thoma",
+    "nameRu": "Тома",
     "element": "Pyro",
     "weapon": "Polearm",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Tohma",
     "talents": [
       10501,
       10502,
@@ -407,10 +455,12 @@
     ]
   },
   "10000051": {
-    "name": "Eula",
+    "nameEn": "Eula",
+    "nameRu": "Эола",
     "element": "Cryo",
     "weapon": "Claymore",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Eula",
     "talents": [
       10511,
       10512,
@@ -418,10 +468,12 @@
     ]
   },
   "10000052": {
-    "name": "Raiden Shogun",
+    "nameEn": "Raiden Shogun",
+    "nameRu": "Райдэн",
     "element": "Electro",
     "weapon": "Polearm",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Shougun",
     "talents": [
       10521,
       10522,
@@ -429,10 +481,12 @@
     ]
   },
   "10000053": {
-    "name": "Sayu",
+    "nameEn": "Sayu",
+    "nameRu": "Саю",
     "element": "Anemo",
     "weapon": "Claymore",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Sayu",
     "talents": [
       10531,
       10532,
@@ -440,10 +494,12 @@
     ]
   },
   "10000054": {
-    "name": "Sangonomiya Kokomi",
+    "nameEn": "Sangonomiya Kokomi",
+    "nameRu": "Кокоми",
     "element": "Hydro",
     "weapon": "Catalyst",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Kokomi",
     "talents": [
       10541,
       10542,
@@ -451,10 +507,12 @@
     ]
   },
   "10000055": {
-    "name": "Gorou",
+    "nameEn": "Gorou",
+    "nameRu": "Горо",
     "element": "Geo",
     "weapon": "Bow",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Gorou",
     "talents": [
       10551,
       10552,
@@ -462,10 +520,12 @@
     ]
   },
   "10000056": {
-    "name": "Kujou Sara",
+    "nameEn": "Kujou Sara",
+    "nameRu": "Сара",
     "element": "Electro",
     "weapon": "Bow",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Sara",
     "talents": [
       10561,
       10562,
@@ -473,10 +533,12 @@
     ]
   },
   "10000057": {
-    "name": "Arataki Itto",
+    "nameEn": "Arataki Itto",
+    "nameRu": "Итто",
     "element": "Geo",
     "weapon": "Claymore",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Itto",
     "talents": [
       10571,
       10572,
@@ -484,10 +546,12 @@
     ]
   },
   "10000058": {
-    "name": "Yae Miko",
+    "nameEn": "Yae Miko",
+    "nameRu": "Яэ Мико",
     "element": "Electro",
     "weapon": "Catalyst",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Yae",
     "talents": [
       10581,
       10582,
@@ -495,10 +559,12 @@
     ]
   },
   "10000059": {
-    "name": "Shikanoin Heizou",
+    "nameEn": "Shikanoin Heizou",
+    "nameRu": "Хэйдзо",
     "element": "Anemo",
     "weapon": "Catalyst",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Heizo",
     "talents": [
       10591,
       10592,
@@ -506,10 +572,12 @@
     ]
   },
   "10000060": {
-    "name": "Yelan",
+    "nameEn": "Yelan",
+    "nameRu": "Е Лань",
     "element": "Hydro",
     "weapon": "Bow",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Yelan",
     "talents": [
       10606,
       10607,
@@ -517,10 +585,12 @@
     ]
   },
   "10000061": {
-    "name": "Kirara",
+    "nameEn": "Kirara",
+    "nameRu": "Кирара",
     "element": "Dendro",
     "weapon": "Sword",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Momoka",
     "talents": [
       10611,
       10612,
@@ -528,10 +598,12 @@
     ]
   },
   "10000062": {
-    "name": "Aloy",
+    "nameEn": "Aloy",
+    "nameRu": "Элой",
     "element": "Cryo",
     "weapon": "Bow",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Aloy",
     "talents": [
       10621,
       10622,
@@ -539,10 +611,12 @@
     ]
   },
   "10000063": {
-    "name": "Shenhe",
+    "nameEn": "Shenhe",
+    "nameRu": "Шэнь Хэ",
     "element": "Cryo",
     "weapon": "Polearm",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Shenhe",
     "talents": [
       10631,
       10632,
@@ -550,10 +624,12 @@
     ]
   },
   "10000064": {
-    "name": "Yun Jin",
+    "nameEn": "Yun Jin",
+    "nameRu": "Юнь Цзинь",
     "element": "Geo",
     "weapon": "Polearm",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Yunjin",
     "talents": [
       10641,
       10642,
@@ -561,10 +637,12 @@
     ]
   },
   "10000065": {
-    "name": "Kuki Shinobu",
+    "nameEn": "Kuki Shinobu",
+    "nameRu": "Синобу",
     "element": "Electro",
     "weapon": "Sword",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Shinobu",
     "talents": [
       10651,
       10652,
@@ -572,10 +650,12 @@
     ]
   },
   "10000066": {
-    "name": "Kamisato Ayato",
+    "nameEn": "Kamisato Ayato",
+    "nameRu": "Аято",
     "element": "Hydro",
     "weapon": "Sword",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Ayato",
     "talents": [
       10661,
       10662,
@@ -583,10 +663,12 @@
     ]
   },
   "10000067": {
-    "name": "Collei",
+    "nameEn": "Collei",
+    "nameRu": "Коллеи",
     "element": "Dendro",
     "weapon": "Bow",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Collei",
     "talents": [
       10671,
       10672,
@@ -594,10 +676,12 @@
     ]
   },
   "10000068": {
-    "name": "Dori",
+    "nameEn": "Dori",
+    "nameRu": "Дори",
     "element": "Electro",
     "weapon": "Claymore",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Dori",
     "talents": [
       10681,
       10682,
@@ -605,10 +689,12 @@
     ]
   },
   "10000069": {
-    "name": "Tighnari",
+    "nameEn": "Tighnari",
+    "nameRu": "Тигнари",
     "element": "Dendro",
     "weapon": "Bow",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Tighnari",
     "talents": [
       10691,
       10692,
@@ -616,10 +702,12 @@
     ]
   },
   "10000070": {
-    "name": "Nilou",
+    "nameEn": "Nilou",
+    "nameRu": "Нилу",
     "element": "Hydro",
     "weapon": "Sword",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Nilou",
     "talents": [
       10701,
       10702,
@@ -627,10 +715,12 @@
     ]
   },
   "10000071": {
-    "name": "Cyno",
+    "nameEn": "Cyno",
+    "nameRu": "Сайно",
     "element": "Electro",
     "weapon": "Polearm",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Cyno",
     "talents": [
       10711,
       10712,
@@ -638,10 +728,12 @@
     ]
   },
   "10000072": {
-    "name": "Candace",
+    "nameEn": "Candace",
+    "nameRu": "Кандакия",
     "element": "Hydro",
     "weapon": "Polearm",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Candace",
     "talents": [
       10721,
       10722,
@@ -649,10 +741,12 @@
     ]
   },
   "10000073": {
-    "name": "Nahida",
+    "nameEn": "Nahida",
+    "nameRu": "Нахида",
     "element": "Dendro",
     "weapon": "Catalyst",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Nahida",
     "talents": [
       10731,
       10732,
@@ -660,10 +754,12 @@
     ]
   },
   "10000074": {
-    "name": "Layla",
+    "nameEn": "Layla",
+    "nameRu": "Лайла",
     "element": "Cryo",
     "weapon": "Sword",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Layla",
     "talents": [
       10741,
       10742,
@@ -671,10 +767,12 @@
     ]
   },
   "10000075": {
-    "name": "Wanderer",
+    "nameEn": "Wanderer",
+    "nameRu": "Странник",
     "element": "Anemo",
     "weapon": "Catalyst",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Wanderer",
     "talents": [
       10751,
       10752,
@@ -682,10 +780,12 @@
     ]
   },
   "10000076": {
-    "name": "Faruzan",
+    "nameEn": "Faruzan",
+    "nameRu": "Фарузан",
     "element": "Anemo",
     "weapon": "Bow",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Faruzan",
     "talents": [
       10761,
       10762,
@@ -693,10 +793,12 @@
     ]
   },
   "10000077": {
-    "name": "Yaoyao",
+    "nameEn": "Yaoyao",
+    "nameRu": "Яо Яо",
     "element": "Dendro",
     "weapon": "Polearm",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Yaoyao",
     "talents": [
       10771,
       10772,
@@ -704,10 +806,12 @@
     ]
   },
   "10000078": {
-    "name": "Alhaitham",
+    "nameEn": "Alhaitham",
+    "nameRu": "Аль-Хайтам",
     "element": "Dendro",
     "weapon": "Sword",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Alhatham",
     "talents": [
       10781,
       10782,
@@ -715,10 +819,12 @@
     ]
   },
   "10000079": {
-    "name": "Dehya",
+    "nameEn": "Dehya",
+    "nameRu": "Дэхья",
     "element": "Pyro",
     "weapon": "Claymore",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Dehya",
     "talents": [
       10791,
       10792,
@@ -726,10 +832,12 @@
     ]
   },
   "10000080": {
-    "name": "Mika",
+    "nameEn": "Mika",
+    "nameRu": "Мика",
     "element": "Cryo",
     "weapon": "Polearm",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Mika",
     "talents": [
       10801,
       10802,
@@ -737,10 +845,12 @@
     ]
   },
   "10000081": {
-    "name": "Kaveh",
+    "nameEn": "Kaveh",
+    "nameRu": "Кавех",
     "element": "Dendro",
     "weapon": "Claymore",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Kaveh",
     "talents": [
       10811,
       10812,
@@ -748,10 +858,12 @@
     ]
   },
   "10000082": {
-    "name": "Baizhu",
+    "nameEn": "Baizhu",
+    "nameRu": "Бай Чжу",
     "element": "Dendro",
     "weapon": "Catalyst",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Baizhuer",
     "talents": [
       10821,
       10822,
@@ -759,10 +871,12 @@
     ]
   },
   "10000083": {
-    "name": "Lynette",
+    "nameEn": "Lynette",
+    "nameRu": "Линетт",
     "element": "Anemo",
     "weapon": "Sword",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Linette",
     "talents": [
       10831,
       10832,
@@ -770,10 +884,12 @@
     ]
   },
   "10000084": {
-    "name": "Lyney",
+    "nameEn": "Lyney",
+    "nameRu": "Лини",
     "element": "Pyro",
     "weapon": "Bow",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Liney",
     "talents": [
       10841,
       10842,
@@ -781,10 +897,12 @@
     ]
   },
   "10000085": {
-    "name": "Freminet",
+    "nameEn": "Freminet",
+    "nameRu": "Фремине",
     "element": "Cryo",
     "weapon": "Claymore",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Freminet",
     "talents": [
       10851,
       10852,
@@ -792,10 +910,12 @@
     ]
   },
   "10000086": {
-    "name": "Wriothesley",
+    "nameEn": "Wriothesley",
+    "nameRu": "Ризли",
     "element": "Cryo",
     "weapon": "Catalyst",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Wriothesley",
     "talents": [
       10861,
       10862,
@@ -803,10 +923,12 @@
     ]
   },
   "10000087": {
-    "name": "Neuvillette",
+    "nameEn": "Neuvillette",
+    "nameRu": "Нёвиллет",
     "element": "Hydro",
     "weapon": "Catalyst",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Neuvillette",
     "talents": [
       10871,
       10872,
@@ -814,10 +936,12 @@
     ]
   },
   "10000088": {
-    "name": "Charlotte",
+    "nameEn": "Charlotte",
+    "nameRu": "Шарлотта",
     "element": "Cryo",
     "weapon": "Catalyst",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Charlotte",
     "talents": [
       10881,
       10882,
@@ -825,10 +949,12 @@
     ]
   },
   "10000089": {
-    "name": "Furina",
+    "nameEn": "Furina",
+    "nameRu": "Фурина",
     "element": "Hydro",
     "weapon": "Sword",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Furina",
     "talents": [
       10891,
       10892,
@@ -836,10 +962,12 @@
     ]
   },
   "10000090": {
-    "name": "Chevreuse",
+    "nameEn": "Chevreuse",
+    "nameRu": "Шеврёз",
     "element": "Pyro",
     "weapon": "Polearm",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Chevreuse",
     "talents": [
       10901,
       10902,
@@ -847,10 +975,12 @@
     ]
   },
   "10000091": {
-    "name": "Navia",
+    "nameEn": "Navia",
+    "nameRu": "Навия",
     "element": "Geo",
     "weapon": "Claymore",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Navia",
     "talents": [
       10911,
       10912,
@@ -858,10 +988,12 @@
     ]
   },
   "10000092": {
-    "name": "Gaming",
+    "nameEn": "Gaming",
+    "nameRu": "Ка Мин",
     "element": "Pyro",
     "weapon": "Claymore",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Gaming",
     "talents": [
       10921,
       10922,
@@ -869,10 +1001,12 @@
     ]
   },
   "10000093": {
-    "name": "Xianyun",
+    "nameEn": "Xianyun",
+    "nameRu": "Сянь Юнь",
     "element": "Anemo",
     "weapon": "Catalyst",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Liuyun",
     "talents": [
       10931,
       10932,
@@ -880,10 +1014,12 @@
     ]
   },
   "10000094": {
-    "name": "Chiori",
+    "nameEn": "Chiori",
+    "nameRu": "Тиори",
     "element": "Geo",
     "weapon": "Sword",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Chiori",
     "talents": [
       10941,
       10942,
@@ -891,10 +1027,12 @@
     ]
   },
   "10000095": {
-    "name": "Sigewinne",
+    "nameEn": "Sigewinne",
+    "nameRu": "Сиджвин",
     "element": "Hydro",
     "weapon": "Bow",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Sigewinne",
     "talents": [
       10951,
       10952,
@@ -902,10 +1040,12 @@
     ]
   },
   "10000096": {
-    "name": "Arlecchino",
+    "nameEn": "Arlecchino",
+    "nameRu": "Арлекино",
     "element": "Pyro",
     "weapon": "Polearm",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Arlecchino",
     "talents": [
       10961,
       10962,
@@ -913,10 +1053,12 @@
     ]
   },
   "10000097": {
-    "name": "Sethos",
+    "nameEn": "Sethos",
+    "nameRu": "Сетос",
     "element": "Electro",
     "weapon": "Bow",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Sethos",
     "talents": [
       10971,
       10972,
@@ -924,10 +1066,12 @@
     ]
   },
   "10000098": {
-    "name": "Clorinde",
+    "nameEn": "Clorinde",
+    "nameRu": "Клоринда",
     "element": "Electro",
     "weapon": "Sword",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Clorinde",
     "talents": [
       10981,
       10982,
@@ -935,10 +1079,12 @@
     ]
   },
   "10000099": {
-    "name": "Emilie",
+    "nameEn": "Emilie",
+    "nameRu": "Эмилия",
     "element": "Dendro",
     "weapon": "Polearm",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Emilie",
     "talents": [
       10991,
       10992,
@@ -946,10 +1092,12 @@
     ]
   },
   "10000100": {
-    "name": "Kachina",
+    "nameEn": "Kachina",
+    "nameRu": "Качина",
     "element": "Geo",
     "weapon": "Polearm",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Kachina",
     "talents": [
       11001,
       11002,
@@ -957,10 +1105,12 @@
     ]
   },
   "10000101": {
-    "name": "Kinich",
+    "nameEn": "Kinich",
+    "nameRu": "Кинич",
     "element": "Dendro",
     "weapon": "Claymore",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Kinich",
     "talents": [
       11011,
       11012,
@@ -968,10 +1118,12 @@
     ]
   },
   "10000102": {
-    "name": "Mualani",
+    "nameEn": "Mualani",
+    "nameRu": "Муалани",
     "element": "Hydro",
     "weapon": "Catalyst",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Mualani",
     "talents": [
       30000,
       30002,
@@ -979,10 +1131,12 @@
     ]
   },
   "10000103": {
-    "name": "Xilonen",
+    "nameEn": "Xilonen",
+    "nameRu": "Шилонен",
     "element": "Geo",
     "weapon": "Sword",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Xilonen",
     "talents": [
       11031,
       11032,
@@ -990,10 +1144,12 @@
     ]
   },
   "10000104": {
-    "name": "Chasca",
+    "nameEn": "Chasca",
+    "nameRu": "Часка",
     "element": "Anemo",
     "weapon": "Bow",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Chasca",
     "talents": [
       11041,
       11042,
@@ -1001,10 +1157,12 @@
     ]
   },
   "10000105": {
-    "name": "Ororon",
+    "nameEn": "Ororon",
+    "nameRu": "Оророн",
     "element": "Electro",
     "weapon": "Bow",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Olorun",
     "talents": [
       30501,
       30502,
@@ -1012,10 +1170,12 @@
     ]
   },
   "10000106": {
-    "name": "Mavuika",
+    "nameEn": "Mavuika",
+    "nameRu": "Мавуика",
     "element": "Pyro",
     "weapon": "Claymore",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Mavuika",
     "talents": [
       11061,
       11062,
@@ -1023,10 +1183,12 @@
     ]
   },
   "10000107": {
-    "name": "Citlali",
+    "nameEn": "Citlali",
+    "nameRu": "Ситлали",
     "element": "Cryo",
     "weapon": "Catalyst",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Citlali",
     "talents": [
       11071,
       11072,
@@ -1034,10 +1196,12 @@
     ]
   },
   "10000108": {
-    "name": "Lan Yan",
+    "nameEn": "Lan Yan",
+    "nameRu": "Лань Янь",
     "element": "Anemo",
     "weapon": "Catalyst",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Lanyan",
     "talents": [
       11081,
       11082,
@@ -1045,10 +1209,12 @@
     ]
   },
   "10000109": {
-    "name": "Yumemizuki Mizuki",
+    "nameEn": "Yumemizuki Mizuki",
+    "nameRu": "Мидзуки",
     "element": "Anemo",
     "weapon": "Catalyst",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Mizuki",
     "talents": [
       11091,
       11092,
@@ -1056,10 +1222,12 @@
     ]
   },
   "10000110": {
-    "name": "Iansan",
+    "nameEn": "Iansan",
+    "nameRu": "Иансан",
     "element": "Electro",
     "weapon": "Polearm",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Iansan",
     "talents": [
       11101,
       11102,
@@ -1067,10 +1235,12 @@
     ]
   },
   "10000111": {
-    "name": "Varesa",
+    "nameEn": "Varesa",
+    "nameRu": "Вареса",
     "element": "Electro",
     "weapon": "Catalyst",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Varesa",
     "talents": [
       11111,
       11112,
@@ -1078,10 +1248,12 @@
     ]
   },
   "10000112": {
-    "name": "Escoffier",
+    "nameEn": "Escoffier",
+    "nameRu": "Эскофье",
     "element": "Cryo",
     "weapon": "Polearm",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Escoffier",
     "talents": [
       11121,
       11122,
@@ -1089,10 +1261,12 @@
     ]
   },
   "10000113": {
-    "name": "Ifa",
+    "nameEn": "Ifa",
+    "nameRu": "Ифа",
     "element": "Anemo",
     "weapon": "Catalyst",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Ifa",
     "talents": [
       11131,
       11132,
@@ -1100,10 +1274,12 @@
     ]
   },
   "10000114": {
-    "name": "Skirk",
+    "nameEn": "Skirk",
+    "nameRu": "Скирк",
     "element": "Cryo",
     "weapon": "Sword",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_SkirkNew",
     "talents": [
       11141,
       11142,
@@ -1111,10 +1287,12 @@
     ]
   },
   "10000115": {
-    "name": "Dahlia",
+    "nameEn": "Dahlia",
+    "nameRu": "Далия",
     "element": "Hydro",
     "weapon": "Sword",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Dahlia",
     "talents": [
       11151,
       11152,
@@ -1122,10 +1300,12 @@
     ]
   },
   "10000116": {
-    "name": "Ineffa",
+    "nameEn": "Ineffa",
+    "nameRu": "Инеффа",
     "element": "Electro",
     "weapon": "Polearm",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Ineffa",
     "talents": [
       11161,
       11162,
@@ -1133,10 +1313,12 @@
     ]
   },
   "10000119": {
-    "name": "Lauma",
+    "nameEn": "Lauma",
+    "nameRu": "Лаума",
     "element": "Dendro",
     "weapon": "Catalyst",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Lauma",
     "talents": [
       11191,
       11192,
@@ -1144,10 +1326,12 @@
     ]
   },
   "10000120": {
-    "name": "Flins",
+    "nameEn": "Flins",
+    "nameRu": "Флинс",
     "element": "Electro",
     "weapon": "Polearm",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Flins",
     "talents": [
       11201,
       11202,
@@ -1155,10 +1339,12 @@
     ]
   },
   "10000121": {
-    "name": "Aino",
+    "nameEn": "Aino",
+    "nameRu": "Айно",
     "element": "Hydro",
     "weapon": "Claymore",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Aino",
     "talents": [
       11211,
       11212,
@@ -1166,10 +1352,12 @@
     ]
   },
   "10000122": {
-    "name": "Nefer",
+    "nameEn": "Nefer",
+    "nameRu": "Нефер",
     "element": "Dendro",
     "weapon": "Catalyst",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Nefer",
     "talents": [
       11221,
       11222,
@@ -1177,10 +1365,12 @@
     ]
   },
   "10000123": {
-    "name": "Durin",
+    "nameEn": "Durin",
+    "nameRu": "Дурин",
     "element": "Pyro",
     "weapon": "Sword",
     "rarity": 5,
+    "icon": "UI_AvatarIcon_Durin",
     "talents": [
       11231,
       11232,
@@ -1188,69 +1378,97 @@
     ]
   },
   "10000124": {
-    "name": "Jahoda",
+    "nameEn": "Jahoda",
+    "nameRu": "Ягода",
     "element": "Anemo",
     "weapon": "Bow",
     "rarity": 4,
+    "icon": "UI_AvatarIcon_Jahoda",
     "talents": [
       11241,
       11242,
       11245
     ]
   },
-  "10000901": {
-    "name": "Mavuika (Trial)",
-    "element": "Pyro",
+  "10000125": {
+    "nameEn": "Columbina",
+    "nameRu": "Коломбина",
+    "element": "Hydro",
+    "weapon": "Catalyst",
+    "rarity": 5,
+    "icon": "UI_AvatarIcon_Columbina",
+    "talents": []
+  },
+  "10000126": {
+    "nameEn": "Zibai",
+    "nameRu": "Цзы Бай",
+    "element": "Geo",
+    "weapon": "Sword",
+    "rarity": 5,
+    "icon": "UI_AvatarIcon_Zibai",
+    "talents": []
+  },
+  "10000127": {
+    "nameEn": "Illuga",
+    "nameRu": "Иллуги",
+    "element": "Geo",
+    "weapon": "Polearm",
+    "rarity": 4,
+    "icon": "UI_AvatarIcon_Illuga",
+    "talents": []
+  },
+  "10000128": {
+    "nameEn": "Varka",
+    "nameRu": "Варка",
+    "element": "Anemo",
     "weapon": "Claymore",
     "rarity": 5,
-    "talents": [
-      10231,
-      10232,
-      10235
-    ]
+    "icon": "UI_AvatarIcon_Varka",
+    "talents": []
   },
-  "10000902": {
-    "name": "Hu Tao (Trial)",
-    "element": "Pyro",
+  "10000129": {
+    "nameEn": "Lohen",
+    "nameRu": "Лоэн",
+    "element": "Cryo",
     "weapon": "Polearm",
     "rarity": 5,
-    "talents": [
-      10461,
-      10462,
-      10463
-    ]
+    "icon": "UI_AvatarIcon_Lohen",
+    "talents": []
   },
-  "10000903": {
-    "name": "Ineffa",
-    "element": "Electro",
-    "weapon": "Polearm",
+  "10000130": {
+    "nameEn": "Linnea",
+    "nameRu": "Линнея",
+    "element": "Geo",
+    "weapon": "Bow",
     "rarity": 5,
-    "talents": [
-      11161,
-      11162,
-      11165
-    ]
+    "icon": "UI_AvatarIcon_Linnea",
+    "talents": []
   },
-  "10000904": {
-    "name": "Columbina",
+  "10000131": {
+    "nameEn": "Nicole",
+    "nameRu": "Николь",
     "element": "Pyro",
     "weapon": "Catalyst",
     "rarity": 5,
-    "talents": [
-      10231,
-      10232,
-      10235
-    ]
+    "icon": "UI_AvatarIcon_Nicole",
+    "talents": []
   },
-  "11000046": {
-    "name": "Pyro Archon (Test)",
+  "10000132": {
+    "nameEn": "Prune",
+    "nameRu": "Прюн",
+    "element": "Anemo",
+    "weapon": "Catalyst",
+    "rarity": 4,
+    "icon": "UI_AvatarIcon_Prune",
+    "talents": []
+  },
+  "10000133": {
+    "nameEn": "Sandrone",
+    "nameRu": "Сандроне",
     "element": "Cryo",
     "weapon": "Claymore",
-    "rarity": 4,
-    "talents": [
-      10073,
-      10074,
-      10075
-    ]
+    "rarity": 5,
+    "icon": "UI_AvatarIcon_MarionetteNew",
+    "talents": []
   }
 }

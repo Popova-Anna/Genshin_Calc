@@ -10,8 +10,14 @@ public sealed record CharacterAnalysis
     /// <summary>The in-game character (avatar) identifier.</summary>
     public required int CharacterId { get; init; }
 
-    /// <summary>Display name.</summary>
+    /// <summary>English display name.</summary>
     public required string Name { get; init; }
+
+    /// <summary>Russian display name, when available.</summary>
+    public string? NameRu { get; init; }
+
+    /// <summary>Absolute URL of the character's icon, when available.</summary>
+    public string? IconUrl { get; init; }
 
     /// <summary>The character's element.</summary>
     public Enums.ElementType Element { get; init; } = Enums.ElementType.Unknown;
@@ -62,10 +68,10 @@ public sealed record CharacterAnalysis
     public WeaponAnalysis? Weapon { get; init; }
 
     /// <summary>Positive highlights of the build.</summary>
-    public IReadOnlyList<string> Strengths { get; init; } = [];
+    public IReadOnlyList<Common.LocalizedText> Strengths { get; init; } = [];
 
     /// <summary>Shortcomings of the build.</summary>
-    public IReadOnlyList<string> Weaknesses { get; init; } = [];
+    public IReadOnlyList<Common.LocalizedText> Weaknesses { get; init; } = [];
 
     /// <summary>Actionable improvements, ordered most impactful first.</summary>
     public IReadOnlyList<Recommendation> Recommendations { get; init; } = [];
@@ -78,4 +84,7 @@ public sealed record CharacterAnalysis
 
     /// <summary>The best teams on the account that feature this character, highest synergy first.</summary>
     public IReadOnlyList<TeamAnalysis> BestTeams { get; init; } = [];
+
+    /// <summary>Optimal build target (recommended main stats per slot, best weapon) and current fit.</summary>
+    public BuildOptimization? Optimization { get; init; }
 }
