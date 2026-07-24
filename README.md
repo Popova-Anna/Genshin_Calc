@@ -1,11 +1,12 @@
 # Genshin Account Analyzer
 
-A .NET 8 application for importing and analyzing Genshin Impact accounts (Enka.Network exports today;
-HoYoLab / Akasha planned). Built on Clean Architecture with a source-agnostic import pipeline.
+A full-stack application for importing and analyzing Genshin Impact accounts (Enka.Network exports
+today; HoYoLab / Akasha planned): a .NET 8 Clean Architecture backend with a source-agnostic import
+pipeline, and an Angular 20 SPA on top.
 
-> Status: **Iteration 1** — solution scaffolding, source-independent JSON import, internal models,
-> unit tests and the `POST /api/account/import` endpoint. Later iterations add analyzers, the damage
-> calculator, the optimizer, HTML reports and an Angular UI (see the roadmap below).
+> Status: **all planned iterations complete** — import, character/artifact/weapon/team analysis, the
+> damage calculator, the build optimizer, a bilingual (EN/RU) self-contained HTML report, and an
+> Angular 20 SPA (dark/light theme, search/filter/sort, charts). See the roadmap below.
 
 ## Architecture
 
@@ -113,8 +114,47 @@ The damage formulas are also exposed directly (`POST /api/damage/calculate` for 
 | 7 (done)  | Damage Calculator (scaling, amplifying/additive/transformative reactions, def/res, crit, buff stacking) |
 | 8 (done)  | HTML Report (self-contained styled site: home, characters, weapons, artifacts, teams, statistics, rating, recommendations, history) |
 | 9 (done)  | Optimizer (per-slot main-stat targets, best weapon, optimisation score) |
-| 10        | Angular 20 SPA |
+| 10 (done) | Angular 20 SPA (dark/light theme, EN/RU toggle, search/filter/sort, character cards, ApexCharts) |
 
 Character metadata (names EN/RU, element, weapon, rarity, icon) is generated from **genshin-db**
-(`node tools/generate-characters.js`); it stays current with new characters. The HTML report is
-**bilingual (English/Russian)** with an in-page toggle.
+(`node tools/generate-characters.js`); it stays current with new characters. The HTML report and the
+Angular SPA are both **bilingual (English/Russian)** with an in-page toggle.
+
+## Web UI (Angular 20 SPA)
+
+`src/GenshinAccountAnalyzer.Web` is a standalone Angular 20 app (signals, `@if`/`@for` control flow,
+lazy-loaded routes) that consumes the API's `/api/account/analyze` endpoint. Bootstrap 5 provides
+layout/theming (dark/light via `data-bs-theme`, persisted in `localStorage`); ApexCharts (`ng-apexcharts`)
+renders the Statistics page.
+
+Run both the API and the SPA:
+
+```bash
+# Terminal 1
+dotnet run --project src/GenshinAccountAnalyzer.Api
+
+# Terminal 2
+cd src/GenshinAccountAnalyzer.Web
+npm install         # first time only
+npm start            # ng serve, http://localhost:4200
+```
+
+The dev server proxies nothing — it calls the API directly at `http://localhost:5028`
+(`src/environments/environment.development.ts`); the API's CORS policy allows `http://localhost:4200`
+by default (configurable via `Cors:AllowedOrigins` in `appsettings.json`). Open
+`http://localhost:4200`, drop an Enka.Network export JSON onto the import panel (or the `Choose file`
+button), and the SPA imports, analyzes and renders it — no manual `curl` needed.
+
+Pages: **Home** (overview), **Characters** (searchable/filterable/sortable cards with an expandable
+detail panel — weapon suggestions, recommendations, artifact optimisation, best teams), **Weapons**,
+**Artifacts**, **Teams**, **Statistics** (element/tier distribution, per-character build score charts),
+**Recommendations** (filterable by priority).
+
+Unit tests (Karma + Jasmine, standard Angular CLI tooling):
+
+```bash
+cd src/GenshinAccountAnalyzer.Web
+npm test              # interactive; or: npx ng test --watch=false --browsers=ChromeHeadless
+```
+
+Production build: `npx ng build` (output in `dist/GenshinAccountAnalyzer.Web`).

@@ -1,0 +1,51 @@
+<div class="row g-3">
+  <div class="col-12 col-lg-6">
+    <div class="gaa-card p-3">
+      <div class="fw-semibold mb-2">
+        {{ language.language() === 'ru' ? 'Распределение по стихиям' : 'Element distribution' }}
+      </div>
+      <apx-chart
+        [chart]="elementChart().chart!"
+        [series]="elementChart().series!"
+        [labels]="elementChart().labels || []"
+        [colors]="elementChart().colors || []"
+        [legend]="elementChart().legend!"
+        [dataLabels]="elementChart().dataLabels!"
+      />
+    </div>
+  </div>
+
+  <div class="col-12 col-lg-6">
+    <div class="gaa-card p-3">
+      <div class="fw-semibold mb-2">
+        {{ language.language() === 'ru' ? 'Распределение по тирам' : 'Build tier distribution' }}
+      </div>
+      <apx-chart
+        [chart]="tierChart().chart!"
+        [series]="tierChart().series!"
+        [xaxis]="tierChart().xaxis!"
+        [colors]="tierChart().colors || []"
+        [plotOptions]="tierChart().plotOptions!"
+        [legend]="tierChart().legend!"
+        [dataLabels]="tierChart().dataLabels!"
+      />
+    </div>
+  </div>
+
+  <div class="col-12">
+    <div class="gaa-card p-3">
+      <div class="fw-semibold mb-2">
+        {{ language.language() === 'ru' ? 'Счёт билда по персонажам' : 'Build score by character' }}
+      </div>
+      <apx-chart
+        [chart]="scoreChart().chart!"
+        [series]="scoreChart().series!"
+        [xaxis]="scoreChart().xaxis!"
+        [colors]="scoreChart().colors || []"
+        [plotOptions]="scoreChart().plotOptions!"
+        [legend]="scoreChart().legend!"
+        [dataLabels]="scoreChart().dataLabels!"
+      />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+@if (teams().length === 0) {
+  <p class="gaa-muted">
+    @if (language.language() === 'ru') { Команды не найдены. } @else { No teams found. }
+  </p>
+} @else {
+  <div class="row g-3">
+    @for (team of teams(); track $index) {
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="gaa-card p-3 h-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="fw-semibold">#{{ $index + 1 }} {{ pick(team.reactionCore) }}</span>
+            <span class="badge" style="background-color:#7c8cff">
+              {{ team.score | number: '1.0-0' }}
+            </span>
+          </div>
+
+          @if (team.resonances.length > 0) {
+            <div class="d-flex flex-wrap gap-1 mb-2">
+              @for (r of team.resonances; track r.element) {
+                <span class="badge text-bg-secondary bg-opacity-50 border">{{ pick(r.name) }}</span>
+              }
+            </div>
+          }
+
+          <div class="d-flex flex-column gap-1 mb-2">
+            @for (member of team.members; track member.characterId) {
+              <div class="d-flex align-items-center gap-2 small">
+                <span
+                  class="gaa-dot"
+                  [style.background-color]="elementColor(member.element)"
+                ></span>
+                <span>{{ language.pickName(member.name, member.nameRu) }}</span>
+                <span class="gaa-muted ms-auto">{{ roleLabel(member.role) }}</span>
+              </div>
+            }
+          </div>
+
+          <div class="gaa-muted small">
+            {{ reasonsText(team.reasons) }}
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+}

@@ -1,0 +1,30 @@
+<div class="gaa-card p-3">
+  <div class="table-responsive">
+    <table class="table align-middle mb-0">
+      <thead>
+        <tr class="gaa-muted">
+          <th>{{ language.language() === 'ru' ? 'Персонаж' : 'Character' }}</th>
+          <th>{{ language.language() === 'ru' ? 'Экипировано' : 'Equipped' }}</th>
+          <th>{{ language.language() === 'ru' ? 'Потеря DPS от BiS' : 'DPS loss vs BiS' }}</th>
+          <th>{{ language.language() === 'ru' ? 'Рекомендуемое BiS' : 'Suggested best-in-slot' }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (row of rows(); track row.characterId) {
+          <tr>
+            <td>{{ row.name }}</td>
+            <td>{{ row.equipped }}</td>
+            <td>{{ row.dpsLoss | number: '1.0-0' }}%</td>
+            <td>{{ row.bestInSlot }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  @if (rows().length === 0) {
+    <p class="gaa-muted mb-0 mt-2">
+      @if (language.language() === 'ru') { Нет данных. } @else { No data. }
+    </p>
+  }
+</div>

@@ -1,0 +1,11 @@
+.drop-zone {
+  border: 2px dashed var(--gaa-line);
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.drop-zone.drag-over {
+  border-color: var(--gaa-accent);
+  background-color: color-mix(in srgb, var(--gaa-accent) 8%, transparent);
+}

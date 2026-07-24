@@ -1,0 +1,151 @@
+<div class="gaa-card p-3 h-100 d-flex flex-column">
+  <div class="d-flex align-items-center gap-2 mb-2">
+    @if (character().iconUrl) {
+      <img class="gaa-avatar" [src]="character().iconUrl" alt="" loading="lazy" />
+    } @else {
+      <span class="gaa-dot" [style.background-color]="elementColor(character().element)"></span>
+    }
+    <div class="flex-grow-1 min-w-0">
+      <div class="fw-semibold text-truncate">{{ displayName() }}</div>
+      <div class="gaa-muted small">
+        {{ language.language() === 'ru' ? 'Ур.' : 'Lv' }} {{ character().level }} · C{{
+          character().constellationLevel
+        }}
+        · {{ character().element }}
+      </div>
+    </div>
+    <span
+      class="badge"
+      [style.background-color]="tierColor(character().buildRating.tier)"
+      style="color:#12152a"
+    >
+      {{ character().buildRating.tier }} {{ character().overallScore | number: '1.0-0' }}
+    </span>
+  </div>
+
+  @for (row of ratingRows(); track row.labelEn) {
+    <div class="d-flex justify-content-between small gaa-muted">
+      <span>{{ language.language() === 'ru' ? row.labelRu : row.labelEn }}</span>
+      <span>{{ row.rating.score | number: '1.0-0' }}</span>
+    </div>
+    <div class="gaa-bar mb-2">
+      <i
+        [style.width.%]="row.rating.score"
+        [style.background-color]="tierColor(row.rating.tier)"
+      ></i>
+    </div>
+  }
+
+  <div class="d-flex flex-wrap gap-1 mb-2">
+    <span class="badge text-bg-secondary bg-opacity-50 border">
+      CR/CD {{ character().critBalance.critRate | number: '1.0-0' }}/{{
+        character().critBalance.critDamage | number: '1.0-0'
+      }}
+    </span>
+    <span class="badge text-bg-secondary bg-opacity-50 border">
+      ER {{ character().energyRecharge * 100 | number: '1.0-0' }}%
+    </span>
+    <span class="badge text-bg-secondary bg-opacity-50 border">
+      EM {{ character().elementalMastery | number: '1.0-0' }}
+    </span>
+    <span class="badge text-bg-secondary bg-opacity-50 border">
+      CV {{ character().critBalance.critValue | number: '1.0-0' }}
+    </span>
+  </div>
+
+  <div class="d-flex flex-wrap gap-1 mb-3">
+    @for (s of character().strengths.slice(0, expanded() ? undefined : 2); track s.en) {
+      <span class="badge text-bg-success bg-opacity-25 border border-success-subtle text-body">
+        {{ pick(s) }}
+      </span>
+    }
+    @for (w of character().weaknesses.slice(0, expanded() ? undefined : 2); track w.en) {
+      <span class="badge text-bg-danger bg-opacity-25 border border-danger-subtle text-body">
+        {{ pick(w) }}
+      </span>
+    }
+  </div>
+
+  <button
+    type="button"
+    class="btn btn-sm btn-outline-secondary mt-auto"
+    (click)="toggleExpand.emit()"
+  >
+    @if (expanded()) {
+      {{ language.language() === 'ru' ? 'Свернуть' : 'Collapse' }}
+    } @else {
+      {{ language.language() === 'ru' ? 'Подробнее' : 'Details' }}
+    }
+  </button>
+
+  @if (expanded()) {
+    <hr class="my-3" />
+
+    @if (character().weapon; as weapon) {
+      <div class="mb-3">
+        <div class="fw-semibold small mb-1">
+          {{ language.language() === 'ru' ? 'Оружие' : 'Weapon' }}
+        </div>
+        <div class="small gaa-muted mb-1">
+          {{ weapon.equipped?.name ?? '—' }} ·
+          {{ language.language() === 'ru' ? 'потеря vs BiS' : 'loss vs BiS' }}
+          {{ weapon.dpsLossVsBis | number: '1.0-0' }}%
+        </div>
+        @if (weapon.recommendations.length > 0) {
+          <div class="small">
+            {{ language.language() === 'ru' ? 'Рекомендации:' : 'Suggestions:' }}
+            {{ weaponSuggestionNames(weapon) }}
+          </div>
+        }
+      </div>
+    }
+
+    @if (character().recommendations.length > 0) {
+      <div class="mb-3">
+        <div class="fw-semibold small mb-1">
+          {{ language.language() === 'ru' ? 'Рекомендации' : 'Recommendations' }}
+        </div>
+        @for (rec of character().recommendations; track rec.category + pick(rec.title)) {
+          <div class="d-flex gap-2 align-items-start small mb-1">
+            <span
+              class="badge"
+              [style.background-color]="priorityColor(rec.priority)"
+              style="color:#12152a; flex:0 0 auto;"
+            >
+              {{ language.priorityLabel(rec.priority) }}
+            </span>
+            <span>
+              <strong>{{ pick(rec.title) }}</strong> — {{ pick(rec.detail) }}
+            </span>
+          </div>
+        }
+      </div>
+    }
+
+    @if (character().optimization; as opt) {
+      <div class="mb-3">
+        <div class="fw-semibold small mb-1">
+          {{ language.language() === 'ru' ? 'Оптимизация артефактов' : 'Artifact optimisation' }}
+          ({{ opt.optimizationScore | number: '1.0-0' }}%)
+        </div>
+        @for (note of opt.notes; track note.en) {
+          <div class="small gaa-muted">{{ pick(note) }}</div>
+        }
+      </div>
+    }
+
+    @if (character().bestTeams.length > 0) {
+      <div>
+        <div class="fw-semibold small mb-1">
+          {{ language.language() === 'ru' ? 'Лучшие пачки' : 'Best teams' }}
+        </div>
+        @for (team of character().bestTeams; track $index) {
+          <div class="small gaa-muted">
+            {{ pick(team.reactionCore) }} ({{ team.score | number: '1.0-0' }}) —
+            {{ teamMemberNames(team) }}
+          </div>
+        }
+      </div>
+    }
+  }
+</div>

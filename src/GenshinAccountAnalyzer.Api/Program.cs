@@ -25,6 +25,21 @@ builder.Services
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Allows the Angular SPA (served from a different origin in development) to call this API.
+const string SpaCorsPolicy = "SpaClient";
+string[] allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>()
+    is { Length: > 0 } configured
+        ? configured
+        : ["http://localhost:4200"];
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(SpaCorsPolicy, policy => policy
+        .WithOrigins(allowedOrigins)
+        .AllowAnyHeader()
+        .AllowAnyMethod());
+});
+
 WebApplication app = builder.Build();
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
@@ -35,6 +50,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors(SpaCorsPolicy);
 app.UseHttpsRedirection();
 app.MapControllers();
 

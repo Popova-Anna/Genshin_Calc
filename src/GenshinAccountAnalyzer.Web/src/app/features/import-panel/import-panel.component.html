@@ -1,0 +1,48 @@
+<div
+  class="gaa-card drop-zone p-5 text-center"
+  [class.drag-over]="dragOver()"
+  (dragover)="onDragOver($event)"
+  (dragleave)="onDragLeave()"
+  (drop)="onDrop($event)"
+>
+  @if (loading()) {
+    <div class="spinner-border text-primary mb-3" role="status">
+      <span class="visually-hidden">Loading…</span>
+    </div>
+    <p class="gaa-muted mb-0">
+      @if (language.language() === 'ru') {
+        Импорт и анализ аккаунта…
+      } @else {
+        Importing and analyzing your account…
+      }
+    </p>
+  } @else {
+    <div class="fs-1 mb-2">📥</div>
+    <h2 class="h5 mb-2">
+      @if (language.language() === 'ru') {
+        Перетащите сюда экспорт Enka.Network
+      } @else {
+        Drop your Enka.Network export here
+      }
+    </h2>
+    <p class="gaa-muted mb-3">
+      @if (language.language() === 'ru') {
+        или выберите JSON-файл вручную
+      } @else {
+        or pick a JSON file manually
+      }
+    </p>
+    <label class="btn btn-primary">
+      @if (language.language() === 'ru') {
+        Выбрать файл
+      } @else {
+        Choose file
+      }
+      <input type="file" accept="application/json,.json" hidden (change)="onFileSelected($event)" />
+    </label>
+
+    @if (error(); as message) {
+      <div class="alert alert-danger mt-4 mb-0" role="alert">{{ message }}</div>
+    }
+  }
+</div>

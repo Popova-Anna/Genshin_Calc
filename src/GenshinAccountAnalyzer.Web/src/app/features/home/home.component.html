@@ -1,0 +1,109 @@
+@if (!store.hasData()) {
+  <div class="py-5">
+    <div class="text-center mb-4">
+      <h1 class="h3">
+        @if (language.language() === 'ru') {
+          Анализатор аккаунта Genshin Impact
+        } @else {
+          Genshin Account Analyzer
+        }
+      </h1>
+      <p class="gaa-muted">
+        @if (language.language() === 'ru') {
+          Импортируйте экспорт с Enka.Network, чтобы увидеть полный анализ билдов, оружия,
+          артефактов и команд.
+        } @else {
+          Import an Enka.Network export to see a full analysis of your builds, weapons, artifacts
+          and teams.
+        }
+      </p>
+    </div>
+    <app-import-panel />
+  </div>
+} @else {
+  <div class="row g-3 mb-4">
+    <div class="col-12 col-md-6 col-xl-3">
+      <div class="gaa-card p-3 h-100">
+        <div class="gaa-muted small">
+          @if (language.language() === 'ru') { Персонажи } @else { Characters }
+        </div>
+        <div class="fs-3 fw-semibold">{{ store.characters().length }}</div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-xl-3">
+      <div class="gaa-card p-3 h-100">
+        <div class="gaa-muted small">
+          @if (language.language() === 'ru') { Ср. счёт билда } @else { Avg build score }
+        </div>
+        <div class="fs-3 fw-semibold">
+          {{ store.analysis()?.averageBuildScore ?? 0 | number: '1.0-1' }}
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-xl-3">
+      <div class="gaa-card p-3 h-100">
+        <div class="gaa-muted small">
+          @if (language.language() === 'ru') { S-тир и выше } @else { S-tier or better }
+        </div>
+        <div class="fs-3 fw-semibold">{{ strongCount() }}</div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-xl-3">
+      <div class="gaa-card p-3 h-100">
+        <div class="gaa-muted small">
+          @if (language.language() === 'ru') { Счёт лучшей пачки } @else { Top team score }
+        </div>
+        <div class="fs-3 fw-semibold">{{ topTeam()?.score ?? 0 | number: '1.0-0' }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-3">
+    @if (topCharacter(); as top) {
+      <div class="col-12 col-lg-6">
+        <div class="gaa-card p-3 h-100">
+          <div class="gaa-muted small mb-1">
+            @if (language.language() === 'ru') { Топ-персонаж } @else { Top character }
+          </div>
+          <div class="d-flex align-items-center gap-2 mb-2">
+            @if (top.iconUrl) {
+              <img class="gaa-avatar" [src]="top.iconUrl" alt="" loading="lazy" />
+            }
+            <div class="fs-5 fw-semibold">
+              {{ language.pickName(top.name, top.nameRu) }}
+            </div>
+            <span
+              class="badge ms-auto"
+              [style.background-color]="tierColor(top.buildRating.tier)"
+              style="color:#12152a"
+            >
+              {{ top.buildRating.tier }} {{ top.overallScore | number: '1.0-0' }}
+            </span>
+          </div>
+          <a routerLink="/characters" class="btn btn-sm btn-outline-primary">
+            @if (language.language() === 'ru') { Все персонажи } @else { View all characters }
+          </a>
+        </div>
+      </div>
+    }
+
+    @if (topTeam(); as team) {
+      <div class="col-12 col-lg-6">
+        <div class="gaa-card p-3 h-100">
+          <div class="gaa-muted small mb-1">
+            @if (language.language() === 'ru') { Лучшая пачка } @else { Best team }
+          </div>
+          <div class="fs-5 fw-semibold mb-2">
+            {{ language.pick(team.reactionCore) }}
+          </div>
+          <div class="gaa-muted small mb-2">
+            {{ teamMemberNames(team) }}
+          </div>
+          <a routerLink="/teams" class="btn btn-sm btn-outline-primary">
+            @if (language.language() === 'ru') { Все пачки } @else { View all teams }
+          </a>
+        </div>
+      </div>
+    }
+  </div>
+}

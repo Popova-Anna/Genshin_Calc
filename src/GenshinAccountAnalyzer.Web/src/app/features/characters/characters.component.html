@@ -1,0 +1,53 @@
+<div class="row g-2 mb-3">
+  <div class="col-12 col-md-5">
+    <input
+      type="search"
+      class="form-control"
+      [placeholder]="language.language() === 'ru' ? 'Поиск по имени…' : 'Search by name…'"
+      [ngModel]="search()"
+      (ngModelChange)="search.set($event)"
+    />
+  </div>
+  <div class="col-6 col-md-3">
+    <select
+      class="form-select"
+      [ngModel]="elementFilter()"
+      (ngModelChange)="elementFilter.set($event)"
+    >
+      <option value="All">{{ language.language() === 'ru' ? 'Все стихии' : 'All elements' }}</option>
+      @for (el of elements; track el) {
+        <option [value]="el">{{ el }}</option>
+      }
+    </select>
+  </div>
+  <div class="col-6 col-md-4">
+    <select class="form-select" [ngModel]="sortKey()" (ngModelChange)="sortKey.set($event)">
+      <option value="score">{{ language.language() === 'ru' ? 'По счёту билда' : 'Sort: build score' }}</option>
+      <option value="level">{{ language.language() === 'ru' ? 'По уровню' : 'Sort: level' }}</option>
+      <option value="efficiency">{{ language.language() === 'ru' ? 'По эффективности' : 'Sort: efficiency' }}</option>
+      <option value="name">{{ language.language() === 'ru' ? 'По имени' : 'Sort: name' }}</option>
+    </select>
+  </div>
+</div>
+
+@if (filtered().length === 0) {
+  <p class="gaa-muted">
+    @if (language.language() === 'ru') {
+      Ничего не найдено.
+    } @else {
+      No characters match your filters.
+    }
+  </p>
+} @else {
+  <div class="row g-3">
+    @for (character of filtered(); track character.characterId) {
+      <div class="col-12 col-sm-6 col-xl-4 col-xxl-3">
+        <app-character-card
+          [character]="character"
+          [expanded]="isExpanded(character.characterId)"
+          (toggleExpand)="toggleExpand(character.characterId)"
+        />
+      </div>
+    }
+  </div>
+}

@@ -1,0 +1,79 @@
+@use "bootstrap/scss/bootstrap";
+
+:root,
+[data-bs-theme="dark"] {
+  --gaa-bg: #0d1020;
+  --gaa-bg2: #141834;
+  --gaa-card: #1a1f3d;
+  --gaa-line: #2a3157;
+  --gaa-text: #e8e9f5;
+  --gaa-muted: #9aa0c8;
+  --gaa-accent: #7c8cff;
+}
+
+[data-bs-theme="light"] {
+  --gaa-bg: #f4f5fb;
+  --gaa-bg2: #ffffff;
+  --gaa-card: #ffffff;
+  --gaa-line: #e1e4f0;
+  --gaa-text: #1a1f3d;
+  --gaa-muted: #626a91;
+  --gaa-accent: #4a5fd9;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--gaa-bg);
+  color: var(--gaa-text);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.gaa-card {
+  background-color: var(--gaa-card);
+  border: 1px solid var(--gaa-line);
+  border-radius: 0.9rem;
+}
+
+.gaa-muted {
+  color: var(--gaa-muted);
+}
+
+.gaa-bar {
+  height: 8px;
+  border-radius: 6px;
+  background-color: var(--gaa-line);
+  overflow: hidden;
+}
+
+.gaa-bar > i {
+  display: block;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.gaa-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  flex: 0 0 auto;
+}
+
+.gaa-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 0.7rem;
+  object-fit: cover;
+  border: 1px solid var(--gaa-line);
+  background-color: var(--gaa-bg2);
+  flex: 0 0 auto;
+}
+
+.navbar.gaa-nav {
+  background-color: var(--gaa-bg2);
+  border-bottom: 1px solid var(--gaa-line);
+}
