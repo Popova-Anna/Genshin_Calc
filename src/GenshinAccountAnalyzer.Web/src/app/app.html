@@ -4,31 +4,38 @@
       Genshin Account Analyzer
     </a>
 
-    @if (store.hasData()) {
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#gaaNav"
-        aria-controls="gaaNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#gaaNav"
+      aria-controls="gaaNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <div class="collapse navbar-collapse" id="gaaNav">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          @for (link of navLinks; track link.path) {
+    <div class="collapse navbar-collapse" id="gaaNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        @if (store.hasData()) {
+          @for (link of accountNavLinks; track link.path) {
             <li class="nav-item">
               <a class="nav-link" [routerLink]="link.path" routerLinkActive="active">
                 {{ language.language() === 'ru' ? link.ru : link.en }}
               </a>
             </li>
           }
-        </ul>
-      </div>
-    }
+        }
+        @for (link of toolNavLinks; track link.path) {
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="link.path" routerLinkActive="active">
+              {{ language.language() === 'ru' ? link.ru : link.en }}
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
 
     <div class="d-flex align-items-center gap-2">
       <button

@@ -1,0 +1,404 @@
+<div class="mb-4">
+  <h1 class="h4 mb-1">
+    @if (language.language() === 'ru') { Конструктор ротаций } @else { Rotation Builder }
+  </h1>
+  <p class="gaa-muted mb-0">
+    @if (language.language() === 'ru') {
+      Соберите последовательность хитов и реакций, чтобы увидеть минимум, максимум, ожидаемый урон и DPS.
+    } @else {
+      Chain hits and reaction procs to see the rotation's floor, maximum, expected damage and DPS.
+    }
+  </p>
+</div>
+
+<div class="row g-3 mb-4">
+  <div class="col-12 col-lg-6">
+    <div class="gaa-card p-3 h-100">
+      <div class="fw-semibold mb-3">
+        @if (language.language() === 'ru') { Ротация } @else { Rotation }
+      </div>
+      <div class="row g-2">
+        <div class="col-8">
+          <label class="form-label small gaa-muted">
+            @if (language.language() === 'ru') { Название } @else { Name }
+          </label>
+          <input class="form-control" [ngModel]="rotationName()" (ngModelChange)="rotationName.set($event)" />
+        </div>
+        <div class="col-4">
+          <label class="form-label small gaa-muted">
+            @if (language.language() === 'ru') { Длительность (с) } @else { Duration (s) }
+          </label>
+          <input
+            type="number"
+            class="form-control"
+            [ngModel]="durationSeconds()"
+            (ngModelChange)="durationSeconds.set($event)"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-lg-6">
+    <div class="gaa-card p-3 h-100">
+      <div class="fw-semibold mb-3">
+        @if (language.language() === 'ru') { Персонаж и МС (общие) } @else { Character & EM (shared) }
+      </div>
+      <div class="row g-2">
+        <div class="col-6">
+          <label class="form-label small gaa-muted">
+            @if (language.language() === 'ru') { Уровень персонажа } @else { Character level }
+          </label>
+          <input
+            type="number"
+            class="form-control"
+            [ngModel]="context().characterLevel"
+            (ngModelChange)="updateContext('characterLevel', $event)"
+          />
+        </div>
+        <div class="col-6">
+          <label class="form-label small gaa-muted">
+            @if (language.language() === 'ru') { Мастерство стихий } @else { Elemental Mastery }
+          </label>
+          <input
+            type="number"
+            class="form-control"
+            [ngModel]="context().elementalMastery"
+            (ngModelChange)="updateContext('elementalMastery', $event)"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <div class="gaa-card p-3">
+      <div class="fw-semibold mb-3">
+        @if (language.language() === 'ru') { Цель (общая для ротации) } @else { Target (shared for the rotation) }
+      </div>
+      <div class="row g-2">
+        <div class="col-6 col-md-2">
+          <label class="form-label small gaa-muted">
+            @if (language.language() === 'ru') { Уровень } @else { Level }
+          </label>
+          <input
+            type="number"
+            class="form-control"
+            [ngModel]="context().enemyLevel"
+            (ngModelChange)="updateContext('enemyLevel', $event)"
+          />
+        </div>
+        <div class="col-6 col-md-2">
+          <label class="form-label small gaa-muted">RES %</label>
+          <input
+            type="number"
+            class="form-control"
+            [ngModel]="context().enemyResistancePercent"
+            (ngModelChange)="updateContext('enemyResistancePercent', $event)"
+          />
+        </div>
+        <div class="col-6 col-md-2">
+          <label class="form-label small gaa-muted">
+            @if (language.language() === 'ru') { Ослабление RES % } @else { RES shred % }
+          </label>
+          <input
+            type="number"
+            class="form-control"
+            [ngModel]="context().enemyResistanceReductionPercent"
+            (ngModelChange)="updateContext('enemyResistanceReductionPercent', $event)"
+          />
+        </div>
+        <div class="col-6 col-md-2">
+          <label class="form-label small gaa-muted">
+            @if (language.language() === 'ru') { Ослабление DEF % } @else { DEF shred % }
+          </label>
+          <input
+            type="number"
+            class="form-control"
+            [ngModel]="context().enemyDefenseReductionPercent"
+            (ngModelChange)="updateContext('enemyDefenseReductionPercent', $event)"
+          />
+        </div>
+        <div class="col-6 col-md-2">
+          <label class="form-label small gaa-muted">
+            @if (language.language() === 'ru') { Игнор DEF % } @else { DEF ignore % }
+          </label>
+          <input
+            type="number"
+            class="form-control"
+            [ngModel]="context().enemyDefenseIgnorePercent"
+            (ngModelChange)="updateContext('enemyDefenseIgnorePercent', $event)"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="d-flex align-items-center gap-2 mb-3">
+  <div class="fw-semibold me-auto">
+    @if (language.language() === 'ru') { Шаги ротации } @else { Rotation steps }
+  </div>
+  <button type="button" class="btn btn-sm btn-outline-primary" (click)="addHitStep()">
+    + @if (language.language() === 'ru') { Хит } @else { Hit }
+  </button>
+  <button type="button" class="btn btn-sm btn-outline-primary" (click)="addTransformativeStep()">
+    + @if (language.language() === 'ru') { Реакция } @else { Reaction }
+  </button>
+</div>
+
+@if (steps().length === 0) {
+  <p class="gaa-muted">
+    @if (language.language() === 'ru') {
+      Добавьте хотя бы один хит или реакцию.
+    } @else {
+      Add at least one hit or reaction step.
+    }
+  </p>
+}
+
+<div class="d-flex flex-column gap-2 mb-4">
+  @for (step of steps(); track step.id; let i = $index; let first = $first; let last = $last) {
+    <div class="gaa-card p-3">
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <span class="badge text-bg-secondary bg-opacity-50 border">{{ i + 1 }}</span>
+        <input
+          class="form-control form-control-sm w-auto flex-grow-1"
+          style="max-width: 280px"
+          [ngModel]="step.name"
+          (ngModelChange)="step.name = $event"
+        />
+        <span class="badge" [class.text-bg-info]="step.kind === 'hit'" [class.text-bg-warning]="step.kind === 'transformative'">
+          @if (step.kind === 'hit') {
+            @if (language.language() === 'ru') { Хит } @else { Hit }
+          } @else {
+            @if (language.language() === 'ru') { Реакция } @else { Reaction }
+          }
+        </span>
+        <div class="ms-auto d-flex gap-1">
+          <button type="button" class="btn btn-sm btn-outline-secondary" [disabled]="first" (click)="moveStep(step.id, -1)">↑</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary" [disabled]="last" (click)="moveStep(step.id, 1)">↓</button>
+          <button type="button" class="btn btn-sm btn-outline-danger" (click)="removeStep(step.id)">✕</button>
+        </div>
+      </div>
+
+      @if (step.kind === 'hit') {
+        <div class="row g-2">
+          <div class="col-6 col-md-2">
+            <label class="form-label small gaa-muted">
+              @if (language.language() === 'ru') { Скейлинг } @else { Scaling }
+            </label>
+            <select
+              class="form-select form-select-sm"
+              [ngModel]="asHit(step).scaling"
+              (ngModelChange)="asHit(step).scaling = $event"
+            >
+              <option value="Atk">ATK</option>
+              <option value="Hp">HP</option>
+              <option value="Def">DEF</option>
+            </select>
+          </div>
+          <div class="col-6 col-md-2">
+            <label class="form-label small gaa-muted">
+              @if (language.language() === 'ru') { Множитель % } @else { Talent % }
+            </label>
+            <input
+              type="number"
+              class="form-control form-control-sm"
+              [ngModel]="asHit(step).talentMultiplierPercent"
+              (ngModelChange)="asHit(step).talentMultiplierPercent = $event"
+            />
+          </div>
+          <div class="col-6 col-md-2">
+            <label class="form-label small gaa-muted">
+              @if (language.language() === 'ru') { Значение стата } @else { Stat value }
+            </label>
+            <input
+              type="number"
+              class="form-control form-control-sm"
+              [ngModel]="asHit(step).scalingStatValue"
+              (ngModelChange)="asHit(step).scalingStatValue = $event"
+            />
+          </div>
+          <div class="col-6 col-md-2">
+            <label class="form-label small gaa-muted">
+              @if (language.language() === 'ru') { Бонус урона % } @else { DMG bonus % }
+            </label>
+            <input
+              type="number"
+              class="form-control form-control-sm"
+              [ngModel]="asHit(step).damageBonusPercent"
+              (ngModelChange)="asHit(step).damageBonusPercent = $event"
+            />
+          </div>
+          <div class="col-6 col-md-2">
+            <label class="form-label small gaa-muted">CRIT Rate %</label>
+            <input
+              type="number"
+              class="form-control form-control-sm"
+              [ngModel]="asHit(step).critRatePercent"
+              (ngModelChange)="asHit(step).critRatePercent = $event"
+            />
+          </div>
+          <div class="col-6 col-md-2">
+            <label class="form-label small gaa-muted">CRIT DMG %</label>
+            <input
+              type="number"
+              class="form-control form-control-sm"
+              [ngModel]="asHit(step).critDamagePercent"
+              (ngModelChange)="asHit(step).critDamagePercent = $event"
+            />
+          </div>
+          <div class="col-8 col-md-4">
+            <label class="form-label small gaa-muted">
+              @if (language.language() === 'ru') { Реакция хита } @else { Hit reaction }
+            </label>
+            <select
+              class="form-select form-select-sm"
+              [ngModel]="asHit(step).reactionKey"
+              (ngModelChange)="asHit(step).reactionKey = $event"
+            >
+              @for (option of hitReactionOptions; track option.key) {
+                <option [value]="option.key">
+                  {{ language.language() === 'ru' ? option.labelRu : option.labelEn }}
+                </option>
+              }
+            </select>
+          </div>
+          @if (asHit(step).reactionKey !== 'none') {
+            <div class="col-4 col-md-2">
+              <label class="form-label small gaa-muted">
+                @if (language.language() === 'ru') { Бонус реакции % } @else { Reaction bonus % }
+              </label>
+              <input
+                type="number"
+                class="form-control form-control-sm"
+                [ngModel]="asHit(step).reactionBonusPercent"
+                (ngModelChange)="asHit(step).reactionBonusPercent = $event"
+              />
+            </div>
+          }
+        </div>
+      } @else {
+        <div class="row g-2">
+          <div class="col-8 col-md-6">
+            <label class="form-label small gaa-muted">
+              @if (language.language() === 'ru') { Реакция } @else { Reaction }
+            </label>
+            <select
+              class="form-select form-select-sm"
+              [ngModel]="asTransformative(step).reaction"
+              (ngModelChange)="asTransformative(step).reaction = $event"
+            >
+              @for (reaction of transformativeReactions; track reaction) {
+                <option [value]="reaction">
+                  {{ language.language() === 'ru' ? transformativeLabels[reaction].ru : transformativeLabels[reaction].en }}
+                </option>
+              }
+            </select>
+          </div>
+          <div class="col-4 col-md-3">
+            <label class="form-label small gaa-muted">
+              @if (language.language() === 'ru') { Бонус реакции % } @else { Reaction bonus % }
+            </label>
+            <input
+              type="number"
+              class="form-control form-control-sm"
+              [ngModel]="asTransformative(step).reactionBonusPercent"
+              (ngModelChange)="asTransformative(step).reactionBonusPercent = $event"
+            />
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>
+
+<button type="button" class="btn btn-primary mb-4" [disabled]="steps().length === 0 || loading()" (click)="calculate()">
+  @if (loading()) {
+    @if (language.language() === 'ru') { Считаем… } @else { Calculating… }
+  } @else {
+    @if (language.language() === 'ru') { Рассчитать ротацию } @else { Calculate rotation }
+  }
+</button>
+
+@if (error(); as message) {
+  <div class="alert alert-danger">{{ message }}</div>
+}
+
+@if (result(); as r) {
+  <div class="row g-3 mb-3">
+    <div class="col-6 col-md-3">
+      <div class="gaa-card p-3">
+        <div class="gaa-muted small">
+          @if (language.language() === 'ru') { Минимум (без крита) } @else { Floor (no crits) }
+        </div>
+        <div class="fs-4 fw-semibold">{{ r.totalNonCritical | number: '1.0-0' }}</div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="gaa-card p-3">
+        <div class="gaa-muted small">
+          @if (language.language() === 'ru') { Ожидаемый урон } @else { Expected }
+        </div>
+        <div class="fs-4 fw-semibold">{{ r.totalAverage | number: '1.0-0' }}</div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="gaa-card p-3">
+        <div class="gaa-muted small">
+          @if (language.language() === 'ru') { Максимум (весь крит) } @else { Max (all crits) }
+        </div>
+        <div class="fs-4 fw-semibold">{{ r.totalCritical | number: '1.0-0' }}</div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="gaa-card p-3">
+        <div class="gaa-muted small">DPS</div>
+        <div class="fs-4 fw-semibold">{{ r.dps > 0 ? (r.dps | number: '1.0-0') : '—' }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gaa-card p-3 mb-3">
+    <div class="fw-semibold mb-2">
+      @if (language.language() === 'ru') { Урон по шагам (ожидаемый) } @else { Per-step damage (expected) }
+    </div>
+    <apx-chart
+      [chart]="chartOptions().chart!"
+      [series]="chartOptions().series!"
+      [xaxis]="chartOptions().xaxis!"
+      [colors]="chartOptions().colors || []"
+      [plotOptions]="chartOptions().plotOptions!"
+      [legend]="chartOptions().legend!"
+      [dataLabels]="chartOptions().dataLabels!"
+    />
+  </div>
+
+  <div class="gaa-card p-3">
+    <div class="table-responsive">
+      <table class="table align-middle mb-0">
+        <thead>
+          <tr class="gaa-muted">
+            <th>#</th>
+            <th>@if (language.language() === 'ru') { Шаг } @else { Step }</th>
+            <th>@if (language.language() === 'ru') { Без крита } @else { Non-crit }</th>
+            <th>@if (language.language() === 'ru') { Крит } @else { Crit }</th>
+            <th>@if (language.language() === 'ru') { Средний } @else { Average }</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (s of r.steps; track $index) {
+            <tr>
+              <td>{{ $index + 1 }}</td>
+              <td>{{ s.name }}</td>
+              <td>{{ s.damage.nonCritical | number: '1.0-0' }}</td>
+              <td>{{ s.damage.critical | number: '1.0-0' }}</td>
+              <td>{{ s.damage.average | number: '1.0-0' }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+}

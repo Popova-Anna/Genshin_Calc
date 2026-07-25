@@ -26,10 +26,13 @@ describe('App', () => {
     );
   });
 
-  it('hides the section nav links until an account is loaded', () => {
+  it('hides account-specific nav links until an account is loaded, but always shows tool links', () => {
     const fixture = TestBed.createComponent(App);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('#gaaNav')).toBeNull();
+    const links = [...compiled.querySelectorAll('#gaaNav a')].map((a) => a.getAttribute('href'));
+
+    expect(links).not.toContain('/characters');
+    expect(links).toContain('/rotation');
   });
 });

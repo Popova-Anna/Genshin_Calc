@@ -132,4 +132,50 @@ public sealed class DamageCalculatorTests
 
         damage.Should().BeApproximately(9588.69, 0.1);
     }
+
+    [Fact]
+    public void CalculateTransformative_LunarCharged_UsesHigherMultiplierAndLowerEmCoefficient()
+    {
+        // 3.0 * (1 + 6*200/2200) * 1446.8535 * 0.9 = 6037.33. Verified against the reference
+        // simulator's CalcLunarReactionDmg (base 3.0, EM numerator 6, vs 16 for standard reactions).
+        double damage = Calculator.CalculateTransformative(
+            TransformativeReaction.LunarCharged, 90, elementalMastery: 200, reactionBonus: 0, EnemyProfile.Standard90);
+
+        damage.Should().BeApproximately(6037.33, 0.1);
+    }
+
+    [Fact]
+    public void CalculateTransformative_LunarCrystallize_MatchesFormula()
+    {
+        // 1.6 * (1 + 6*200/2200) * 1446.8535 * 0.9 = 3219.91.
+        double damage = Calculator.CalculateTransformative(
+            TransformativeReaction.LunarCrystallize, 90, elementalMastery: 200, reactionBonus: 0, EnemyProfile.Standard90);
+
+        damage.Should().BeApproximately(3219.91, 0.1);
+    }
+
+    [Fact]
+    public void CalculateTransformative_Crystallize_IsAlwaysZero()
+    {
+        // Crystallize produces a shield, not damage; included in the enum for completeness only.
+        double damage = Calculator.CalculateTransformative(
+            TransformativeReaction.Crystallize, 90, elementalMastery: 999, reactionBonus: 1, EnemyProfile.Standard90);
+
+        damage.Should().Be(0d);
+    }
+
+    [Fact]
+    public void CalculateTransformative_LunarChargedVsStandardElectroCharged_HasDifferentEmScaling()
+    {
+        // At the same EM, Lunar-Charged's lower EM coefficient (6 vs 16) is a smaller relative boost,
+        // even though its base multiplier (3.0) is higher than Electro-Charged's (1.2).
+        double lunar = Calculator.CalculateTransformative(
+            TransformativeReaction.LunarCharged, 90, elementalMastery: 1000, reactionBonus: 0, EnemyProfile.Standard90);
+        double standard = Calculator.CalculateTransformative(
+            TransformativeReaction.ElectroCharged, 90, elementalMastery: 1000, reactionBonus: 0, EnemyProfile.Standard90);
+
+        // Base ratio (mult 3.0 / 1.2 = 2.5) shrinks once each reaction's own EM bonus is applied.
+        double baseMultiplierRatio = 3.0 / 1.2;
+        (lunar / standard).Should().BeLessThan(baseMultiplierRatio);
+    }
 }

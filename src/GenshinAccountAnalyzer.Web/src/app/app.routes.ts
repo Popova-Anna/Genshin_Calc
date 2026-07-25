@@ -49,5 +49,11 @@ export const routes: Routes = [
     canActivate: [hasDataGuard],
     title: 'Recommendations — Genshin Account Analyzer',
   },
+  {
+    path: 'rotation',
+    loadComponent: () =>
+      import('./features/rotation/rotation.component').then((m) => m.RotationComponent),
+    title: 'Rotation Builder — Genshin Account Analyzer',
+  },
   { path: '**', redirectTo: '' },
 ];

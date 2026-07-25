@@ -43,13 +43,69 @@ public sealed class DamageCalculator : IDamageCalculator
     {
         ArgumentNullException.ThrowIfNull(enemy);
 
-        double emBonus = ReactionConstants.TransformativeEmCoefficient * elementalMastery
+        double emBonus = ReactionConstants.TransformativeEmCoefficientFor(reaction) * elementalMastery
             / (elementalMastery + ReactionConstants.TransformativeEmBase);
 
         return ReactionConstants.TransformativeBase(reaction)
             * (1d + emBonus + reactionBonus)
             * ReactionLevelTable.ForLevel(characterLevel)
             * DamageFormula.ResistanceMultiplier(enemy.Resistance - enemy.ResistanceReduction);
+    }
+
+    /// <inheritdoc />
+    public RotationResult CalculateRotation(Rotation rotation)
+    {
+        ArgumentNullException.ThrowIfNull(rotation);
+
+        var steps = new List<RotationStepResult>(rotation.Steps.Count);
+        double totalNonCrit = 0d;
+        double totalCrit = 0d;
+        double totalAverage = 0d;
+
+        foreach (RotationStep step in rotation.Steps)
+        {
+            DamageResult result = EvaluateStep(step);
+            steps.Add(new RotationStepResult(step.Name, result));
+
+            totalNonCrit += result.NonCritical;
+            totalCrit += result.Critical;
+            totalAverage += result.Average;
+        }
+
+        double dps = rotation.DurationSeconds > 0d ? totalAverage / rotation.DurationSeconds : 0d;
+
+        return new RotationResult
+        {
+            Steps = steps,
+            TotalNonCritical = totalNonCrit,
+            TotalCritical = totalCrit,
+            TotalAverage = totalAverage,
+            Dps = dps,
+        };
+    }
+
+    private DamageResult EvaluateStep(RotationStep step)
+    {
+        if (step.Hit is { } hit)
+        {
+            return CalculateHit(hit);
+        }
+
+        if (step.Transformative is { } transformative)
+        {
+            // Transformative reactions never crit: the same value fills every bound.
+            double damage = CalculateTransformative(
+                transformative.Reaction,
+                transformative.CharacterLevel,
+                transformative.ElementalMastery,
+                transformative.ReactionBonus,
+                transformative.Enemy);
+            return new DamageResult(damage, damage, damage);
+        }
+
+        throw new ArgumentException(
+            $"Rotation step '{step.Name}' has neither {nameof(RotationStep.Hit)} nor {nameof(RotationStep.Transformative)} set.",
+            nameof(step));
     }
 
     private static double AmplifyingMultiplier(DamageInput input)

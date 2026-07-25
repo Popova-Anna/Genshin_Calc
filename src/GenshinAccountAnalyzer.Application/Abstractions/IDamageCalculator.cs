@@ -26,4 +26,13 @@ public interface IDamageCalculator
         double elementalMastery,
         double reactionBonus,
         EnemyProfile enemy);
+
+    /// <summary>
+    /// Evaluates an entire rotation (sequence of hits and/or transformative procs), returning per-step
+    /// results and totals — including the rotation's maximum (all-crit) and floor (no-crit) damage, and
+    /// its DPS when a duration was supplied.
+    /// </summary>
+    /// <param name="rotation">The rotation to evaluate.</param>
+    /// <returns>The rotation result.</returns>
+    RotationResult CalculateRotation(Rotation rotation);
 }

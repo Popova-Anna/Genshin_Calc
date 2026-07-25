@@ -99,7 +99,38 @@ curl -X POST "http://localhost:5028/api/account/analyze?source=Enka" \
 
 An Enka export can be produced with the included `Get-GenshinData.ps1 -Uid <uid>` script.
 
-The damage formulas are also exposed directly (`POST /api/damage/calculate` for a hit, `POST /api/damage/transformative` for reactions). All buffs — character/weapon/artifact passives, food and team buffs — are inputs to the calculator (stacked via `BuffAggregator`); wiring per-character auto-DPS on top needs talent/passive data and is a later layer.
+The damage formulas are also exposed directly:
+
+- `POST /api/damage/calculate` — a single hit.
+- `POST /api/damage/transformative` — a transformative reaction proc.
+- `POST /api/damage/rotation` — an ordered sequence of hits/procs (a combo/rotation), returning
+  per-step damage plus the rotation's floor (no crits), maximum (all crits), expected (CRIT-Rate
+  weighted) totals, and DPS when a duration is supplied.
+
+All buffs — character/weapon/artifact passives, food and team buffs — are inputs to the calculator
+(stacked via `BuffAggregator`); wiring per-character auto-DPS on top needs talent/passive data and is a
+later layer.
+
+### Reaction coverage
+
+Every damage-dealing reaction is modelled: amplifying (Vaporize, Melt), additive (Aggravate, Spread),
+and transformative (Overloaded, Superconduct, Electro-Charged, Swirl, Shatter, Burning, Bloom,
+Hyperbloom, Burgeon) — plus the **Lunar** variants, verified against a reference simulator's source:
+
+- **Lunar-Charged** and **Lunar-Crystallize** have their own base multiplier and a lower EM coefficient
+  (6 vs the standard 16) than their non-Lunar counterparts — both are separate `TransformativeReaction`
+  values.
+- **Lunar-Bloom** (and its Hyperbloom/Burgeon follow-ups) deals the *same* damage as regular
+  Bloom/Hyperbloom/Burgeon — verified the "Lunar" flag only changes which team-wide buff event fires,
+  not the hit itself — so no separate enum value was needed.
+- **Crystallize** is included in the enum for completeness but always resolves to `0`: it produces a
+  shield, not damage.
+
+Faction/character passives that key off reactions (e.g. a kit granting +EM when the wielder triggers
+Electro-Charged or Lunar-Charged) are **not** hardcoded into the engine — they're ordinary `Buff` inputs
+supplied by the caller, consistent with every other passive. Character-specific damage types that aren't
+standard elemental reactions (e.g. a kit with its own non-elemental damage category) are likewise left to
+a future character-passive data layer rather than special-cased in the generic calculator.
 
 ## Roadmap
 
@@ -148,7 +179,12 @@ button), and the SPA imports, analyzes and renders it — no manual `curl` neede
 Pages: **Home** (overview), **Characters** (searchable/filterable/sortable cards with an expandable
 detail panel — weapon suggestions, recommendations, artifact optimisation, best teams), **Weapons**,
 **Artifacts**, **Teams**, **Statistics** (element/tier distribution, per-character build score charts),
-**Recommendations** (filterable by priority).
+**Recommendations** (filterable by priority), and **Rotation Builder** (`/rotation`) — a standalone tool
+(no imported account required) that chains hits and reaction procs against a shared character/enemy
+context and calls `POST /api/damage/rotation`, showing the floor (no crits), maximum (all crits),
+expected (CRIT-Rate weighted) totals and DPS, plus a per-step chart. Its "hit reaction" picker only
+offers legal combinations (a hit can trigger at most one amplifying *or* additive reaction, matching how
+auras actually work) so the UI can't produce a request the formulas were never meant to see.
 
 Unit tests (Karma + Jasmine, standard Angular CLI tooling):
 

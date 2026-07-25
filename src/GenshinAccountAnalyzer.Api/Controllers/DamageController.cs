@@ -47,6 +47,19 @@ public sealed class DamageController : ControllerBase
         return Ok(new TransformativeResponse(damage));
     }
 
+    /// <summary>
+    /// Evaluates a full rotation (an ordered sequence of hits and/or transformative procs), returning
+    /// per-step damage plus the rotation's floor (no crits), maximum (all crits) and expected totals,
+    /// and DPS when a duration was supplied.
+    /// </summary>
+    /// <param name="rotation">The rotation to evaluate.</param>
+    /// <returns>The <see cref="RotationResult"/>.</returns>
+    /// <response code="200">The rotation was computed.</response>
+    [HttpPost("rotation")]
+    [ProducesResponseType(typeof(RotationResult), StatusCodes.Status200OK)]
+    public ActionResult<RotationResult> Rotation([FromBody] Rotation rotation) =>
+        Ok(_calculator.CalculateRotation(rotation));
+
     /// <summary>Request body for the transformative reaction endpoint.</summary>
     /// <param name="Reaction">The transformative reaction.</param>
     /// <param name="CharacterLevel">The reacting character's level.</param>

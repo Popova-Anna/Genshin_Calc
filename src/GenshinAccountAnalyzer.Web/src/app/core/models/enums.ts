@@ -47,3 +47,25 @@ export type RatingTier = 'F' | 'D' | 'C' | 'B' | 'A' | 'S' | 'SS';
 export type RecommendationPriority = 'Low' | 'Medium' | 'High';
 
 export type ImportSource = 'Unknown' | 'Enka' | 'HoYoLab' | 'Akasha';
+
+// --- Domain.Damage enums (GenshinAccountAnalyzer.Calculator formulas) ---
+
+export type ScalingType = 'Atk' | 'Hp' | 'Def';
+
+export type AmplifyingReaction = 'None' | 'Vaporize' | 'Melt';
+
+export type AdditiveReaction = 'None' | 'Aggravate' | 'Spread';
+
+export type TransformativeReaction =
+  | 'Overloaded'
+  | 'Superconduct'
+  | 'ElectroCharged'
+  | 'Swirl'
+  | 'Shatter'
+  | 'Burning'
+  | 'Bloom'
+  | 'Hyperbloom'
+  | 'Burgeon'
+  | 'Crystallize'
+  | 'LunarCharged'
+  | 'LunarCrystallize';
